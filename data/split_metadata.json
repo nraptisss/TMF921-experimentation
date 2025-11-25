@@ -1,0 +1,10 @@
+{
+  "total_scenarios": 574,
+  "train_size": 401,
+  "val_size": 86,
+  "test_size": 87,
+  "train_ratio": 0.6986062717770035,
+  "val_ratio": 0.14982578397212543,
+  "test_ratio": 0.15156794425087108,
+  "seed": 42
+}

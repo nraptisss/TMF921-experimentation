@@ -1,0 +1,25 @@
+{
+  "experiment": "rag_cloud_20_scenarios",
+  "model": "gpt-oss:20b-cloud",
+  "honest_counts": {
+    "total_scenarios": 20,
+    "processing_failures": 2,
+    "processing_failure_rate": 0.1,
+    "successfully_processed": 18,
+    "processing_success_rate": 0.9,
+    "valid_intents": 18,
+    "validation_success_rate_on_processed": 1.0,
+    "overall_success_rate": 0.9
+  },
+  "num_corrections": 0,
+  "feaci": {
+    "format_correctness": 100.0,
+    "accuracy": 100.0,
+    "cost_avg_tokens": 2443.1111111111113,
+    "cost_total_tokens": 43976,
+    "inference_time_avg_seconds": 10.02791362338596,
+    "inference_time_total_seconds": 180.50244522094727,
+    "num_results": 18
+  },
+  "timestamp": "2025-11-25T17:23:16.655550"
+}

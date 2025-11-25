@@ -1,0 +1,77 @@
+{
+  "model": "gpt-oss:20b-cloud",
+  "num_scenarios": 30,
+  "results": {
+    "1_baseline": {
+      "config": {
+        "name": "1_baseline",
+        "use_rag": false,
+        "use_name_correction": false,
+        "use_examples": false,
+        "description": "Baseline (zero-shot)"
+      },
+      "accuracy": 96.66666666666667
+    },
+    "2_few_shot": {
+      "config": {
+        "name": "2_few_shot",
+        "use_rag": false,
+        "use_name_correction": false,
+        "use_examples": true,
+        "description": "Few-shot (3 examples)"
+      },
+      "accuracy": 0.0
+    },
+    "3_rag": {
+      "config": {
+        "name": "3_rag",
+        "use_rag": true,
+        "use_name_correction": false,
+        "use_examples": false,
+        "description": "RAG only"
+      },
+      "accuracy": 93.33333333333333
+    },
+    "4_correction": {
+      "config": {
+        "name": "4_correction",
+        "use_rag": false,
+        "use_name_correction": true,
+        "use_examples": false,
+        "description": "Name correction only"
+      },
+      "accuracy": 93.33333333333333
+    },
+    "5_rag_correction": {
+      "config": {
+        "name": "5_rag_correction",
+        "use_rag": true,
+        "use_name_correction": true,
+        "use_examples": false,
+        "description": "RAG + correction"
+      },
+      "accuracy": 100.0
+    },
+    "6_few_shot_correction": {
+      "config": {
+        "name": "6_few_shot_correction",
+        "use_rag": false,
+        "use_name_correction": true,
+        "use_examples": true,
+        "description": "Few-shot + correction"
+      },
+      "accuracy": 3.3333333333333335
+    },
+    "7_full_system": {
+      "config": {
+        "name": "7_full_system",
+        "use_rag": true,
+        "use_name_correction": true,
+        "use_examples": true,
+        "description": "Full system"
+      },
+      "accuracy": 96.66666666666667
+    }
+  },
+  "timestamp": "2025-11-25T18:54:15.183558"
+}

@@ -1,0 +1,468 @@
+id,scenario,generated_intent_json,automated_valid,automated_errors,human_valid,semantic_errors,notes
+0,"Translate intent 'support quality assurance testing' into: test automation framework, regression test coverage >90%.","{
+  ""name"": ""Quality Assurance Testing Support Intent"",
+  ""description"": ""Intent to support quality assurance testing with a test automation framework and regression test coverage greater than 90%."",
+  ""serviceSpecCharacteristic"": []
+}",True,,,,
+1,"Recognize intent pattern 'autonomous vehicle platooning communication' and apply very low latency, deterministic slice.","{
+  ""name"": ""Autonomous Vehicle Platooning Deterministic Low-Latency Slice"",
+  ""description"": ""Network slice for autonomous vehicle platooning requiring deterministic communication with very low latency, group multicast support, and high vehicle velocity."",
+  ""serviceSpecCharacteristic"": [
+    {
+      ""name"": ""Deterministic communication: Availability"",
+      ""value"": {
+        ""value"": ""Supported"",
+        ""unitOfMeasure"": ""boolean""
+      }
+    },
+    {
+      ""name"": ""Deterministic communication"",
+      ""value"": {
+        ""value"": ""Supported"",
+        ""unitOfMeasure"": ""boolean""
+      }
+    },
+    {
+      ""name"": ""Deterministic communication: Periodicity"",
+      ""value"": {
+        ""value"": ""1"",
+        ""unitOfMeasure"": ""ms""
+      }
+    },
+    {
+      ""name"": ""Group communication support"",
+      ""value"": {
+        ""value"": ""Multicast"",
+        ""unitOfMeasure"": ""enum""
+      }
+    },
+    {
+      ""name"": ""Supported device velocity"",
+      ""value"": {
+        ""value"": ""High"",
+        ""unitOfMeasure"": ""enum""
+      }
+    }
+  ]
+}",True,,,,
+2,"Translate intent 'support network virtualization at scale' into: VNF management, chaining across 100 functions.","{
+  ""name"": ""Network Virtualization Scale Intent"",
+  ""description"": ""Intent to support network virtualization at scale with VNF management and chaining across 100 functions."",
+  ""serviceSpecCharacteristic"": [
+    {
+      ""name"": ""Simultaneous use of the network slice"",
+      ""value"": {
+        ""value"": ""High"",
+        ""unitOfMeasure"": ""none""
+      }
+    },
+    {
+      ""name"": ""Supported data network"",
+      ""value"": {
+        ""value"": ""VirtualNetwork1, VirtualNetwork2, VirtualNetwork3"",
+        ""unitOfMeasure"": ""none""
+      }
+    },
+    {
+      ""name"": ""Deterministic communication: Availability"",
+      ""value"": {
+        ""value"": true,
+        ""unitOfMeasure"": ""none""
+      }
+    },
+    {
+      ""name"": ""Downlink maximum throughput per UE: Service category"",
+      ""value"": {
+        ""value"": ""1000000"",
+        ""unitOfMeasure"": ""kbps""
+      }
+    },
+    {
+      ""name"": ""Energy efficiency"",
+      ""value"": {
+        ""value"": true,
+        ""unitOfMeasure"": ""none""
+      }
+    },
+    {
+      ""name"": ""NB-IoT support"",
+      ""value"": {
+        ""value"": false,
+        ""unitOfMeasure"": ""none""
+      }
+    }
+  ]
+}",True,,,,
+3,Recognize intent 'benchmark network performance' and enable comparative metrics collection.,"{
+  ""name"": ""Benchmark Network Performance Intent"",
+  ""description"": ""Intent to benchmark network performance by enabling comparative metrics collection for key KPIs such as downlink throughput, uplink throughput, and energy efficiency."",
+  ""serviceSpecCharacteristic"": [
+    {
+      ""name"": ""Performance monitoring: Availability"",
+      ""value"": {
+        ""value"": [
+          ""Downlink throughput per network slice"",
+          ""Uplink throughput per network slice: Maximum uplink throughput"",
+          ""Energy efficiency""
+        ],
+        ""unitOfMeasure"": """"
+      }
+    }
+  ]
+}",True,,,,
+4,"Translate intent 'support continuous service evolution' into: evolution framework, iterative enhancement.","{
+  ""name"": ""Continuous Service Evolution Intent"",
+  ""description"": ""Intent to support continuous service evolution through an evolution framework and iterative enhancement, enabling flexible slice usage and QoS adjustments over time."",
+  ""serviceSpecCharacteristic"": [
+    {
+      ""name"": ""Simultaneous use of the network slice"",
+      ""value"": {
+        ""value"": ""Allowed"",
+        ""unitOfMeasure"": ""enum""
+      }
+    },
+    {
+      ""name"": ""Simultaneous use of the network slice: Service category"",
+      ""value"": {
+        ""value"": ""Evolution"",
+        ""unitOfMeasure"": ""enum""
+      }
+    },
+    {
+      ""name"": ""Slice quality of service"",
+      ""value"": {
+        ""value"": ""9"",
+        ""unitOfMeasure"": ""5QI""
+      }
+    },
+    {
+      ""name"": ""Supported data network"",
+      ""value"": {
+        ""value"": ""Internet"",
+        ""unitOfMeasure"": ""network""
+      }
+    },
+    {
+      ""name"": ""Deterministic communication"",
+      ""value"": {
+        ""value"": ""Periodic"",
+        ""unitOfMeasure"": ""enum""
+      }
+    }
+  ]
+}",True,,,,
+5,"Translate intent 'enable AI-driven network optimization' into: AI model deployment, optimization latency <1 minute.","{
+  ""name"": ""AI-Driven Network Optimization"",
+  ""description"": ""Deploy AI model to optimize network performance with optimization latency less than 1 minute"",
+  ""serviceSpecCharacteristic"": [
+    {
+      ""name"": ""Performance prediction: Availability"",
+      ""value"": {
+        ""value"": ""1"",
+        ""unitOfMeasure"": ""min""
+      }
+    },
+    {
+      ""name"": ""Energy efficiency"",
+      ""value"": {
+        ""value"": ""true"",
+        ""unitOfMeasure"": """"
+      }
+    }
+  ]
+}",True,,,,
+6,"Parse intent 'we need massive IoT deployment' into network parameters: 1 Mbps bandwidth per device, 50ms latency tolerance, 10,000 node scalability, mMTC slice type.","{
+  ""name"": ""Massive IoT Deployment Slice"",
+  ""description"": ""Network slice for massive IoT deployment with 1 Mbps per device, 50 ms latency tolerance, supporting up to 10,000 nodes, mMTC slice type."",
+  ""serviceSpecCharacteristic"": [
+    {
+      ""name"": ""NB-IoT support"",
+      ""value"": {
+        ""value"": true,
+        ""unitOfMeasure"": ""boolean""
+      }
+    },
+    {
+      ""name"": ""Maximum supported packet size"",
+      ""value"": {
+        ""value"": 512,
+        ""unitOfMeasure"": ""bytes""
+      }
+    },
+    {
+      ""name"": ""Downlink throughput per network slice: Maximum downlink throughput"",
+      ""value"": {
+        ""value"": 10000000,
+        ""unitOfMeasure"": ""kbps""
+      }
+    },
+    {
+      ""name"": ""Uplink throughput per network slice: Maximum uplink throughput"",
+      ""value"": {
+        ""value"": 10000000,
+        ""unitOfMeasure"": ""kbps""
+      }
+    },
+    {
+      ""name"": ""Slice quality of service"",
+      ""value"": {
+        ""value"": ""5"",
+        ""unitOfMeasure"": ""5QI""
+      }
+    },
+    {
+      ""name"": ""MMTel support"",
+      ""value"": {
+        ""value"": false,
+        ""unitOfMeasure"": ""boolean""
+      }
+    },
+    {
+      ""name"": ""Multimedia Priority Service: Multimedia Priority Service support"",
+      ""value"": {
+        ""value"": false,
+        ""unitOfMeasure"": ""boolean""
+      }
+    }
+  ]
+}",True,,,,
+7,"Translate intent 'demonstrate environmental sustainability' into: carbon footprint tracking, green credential certification.","{
+  ""name"": ""Environmental Sustainability Demonstration Slice"",
+  ""description"": ""Network slice configured to support carbon footprint tracking and green credential certification through energy efficiency monitoring"",
+  ""serviceSpecCharacteristic"": [
+    {
+      ""name"": ""Energy efficiency: Network slice energy efficiency KPI"",
+      ""value"": {
+        ""value"": true,
+        ""unitOfMeasure"": ""boolean""
+      }
+    },
+    {
+      ""name"": ""Energy efficiency"",
+      ""value"": {
+        ""value"": true,
+        ""unitOfMeasure"": ""boolean""
+      }
+    }
+  ]
+}",True,,,,
+8,"Translate intent 'reduce configuration time' into: automated provisioning, <5 minute setup latency.","{
+  ""name"": ""Automated Provisioning with <5 Minute Setup Latency"",
+  ""description"": ""Intent to reduce configuration time by enabling automated provisioning and ensuring setup latency less than 5 minutes."",
+  ""serviceSpecCharacteristic"": [
+    {
+      ""name"": ""Slice quality of service: Packet Delay Budget"",
+      ""value"": {
+        ""value"": ""300000"",
+        ""unitOfMeasure"": ""ms""
+      }
+    }
+  ]
+}",True,,,,
+9,"Translate intent 'support network resilience testing' into: chaos engineering framework, failure scenario simulation.","{
+  ""name"": ""Network Resilience Testing Intent"",
+  ""description"": ""Intent to support network resilience testing using a chaos engineering framework and failure scenario simulation, ensuring deterministic communication, mission\u2011critical support, and comprehensive performance monitoring."",
+  ""serviceSpecCharacteristic"": [
+    {
+      ""name"": ""Deterministic communication: Availability"",
+      ""value"": {
+        ""value"": ""true"",
+        ""unitOfMeasure"": ""boolean""
+      }
+    },
+    {
+      ""name"": ""Mission critical support"",
+      ""value"": {
+        ""value"": ""true"",
+        ""unitOfMeasure"": ""boolean""
+      }
+    },
+    {
+      ""name"": ""Supported data network"",
+      ""value"": {
+        ""value"": ""5G NR"",
+        ""unitOfMeasure"": ""string""
+      }
+    },
+    {
+      ""name"": ""Performance monitoring: Availability"",
+      ""value"": {
+        ""value"": ""Availability, Latency, Throughput"",
+        ""unitOfMeasure"": ""kpi""
+      }
+    }
+  ]
+}",True,,,,
+10,"Infer customer experience from intent 'optimize customer experience' into: experience optimization metrics, usability focus.","{
+  ""name"": ""Customer Experience Optimization Network Slice"",
+  ""description"": ""Network slice designed to optimize customer experience by ensuring high availability, sufficient throughput, energy efficiency, and usability across supported data networks."",
+  ""serviceSpecCharacteristic"": [
+    {
+      ""name"": ""Performance prediction: Availability"",
+      ""value"": {
+        ""value"": ""99.99"",
+        ""unitOfMeasure"": ""percent""
+      }
+    },
+    {
+      ""name"": ""Uplink maximum throughput per UE"",
+      ""value"": {
+        ""value"": ""10000"",
+        ""unitOfMeasure"": ""kbps""
+      }
+    },
+    {
+      ""name"": ""Downlink maximum throughput per UE: Service category"",
+      ""value"": {
+        ""value"": ""High"",
+        ""unitOfMeasure"": ""none""
+      }
+    },
+    {
+      ""name"": ""Energy efficiency"",
+      ""value"": {
+        ""value"": ""true"",
+        ""unitOfMeasure"": ""boolean""
+      }
+    },
+    {
+      ""name"": ""Supported data network"",
+      ""value"": {
+        ""value"": ""5G"",
+        ""unitOfMeasure"": ""none""
+      }
+    },
+    {
+      ""name"": ""Simultaneous use of the network slice"",
+      ""value"": {
+        ""value"": ""Allowed"",
+        ""unitOfMeasure"": ""none""
+      }
+    }
+  ]
+}",True,,,,
+11,"Recognize intent 'enable service excellence' and map to: excellence program launch, quality improvement initiative.","{
+  ""name"": ""Enable Service Excellence Intent"",
+  ""description"": ""Intent to launch an excellence program and quality improvement initiative, ensuring high availability and QoS for the service slice."",
+  ""serviceSpecCharacteristic"": [
+    {
+      ""name"": ""Simultaneous use of the network slice"",
+      ""value"": {
+        ""value"": ""Exclusive"",
+        ""unitOfMeasure"": ""none""
+      }
+    },
+    {
+      ""name"": ""Supported data network"",
+      ""value"": {
+        ""value"": ""Internet"",
+        ""unitOfMeasure"": ""none""
+      }
+    },
+    {
+      ""name"": ""Slice quality of service"",
+      ""value"": {
+        ""value"": ""5QI=9"",
+        ""unitOfMeasure"": ""none""
+      }
+    },
+    {
+      ""name"": ""Performance monitoring: Availability"",
+      ""value"": {
+        ""value"": ""99.99"",
+        ""unitOfMeasure"": ""percent""
+      }
+    }
+  ]
+}",True,,,,
+12,"Recognize intent pattern 'medical imaging distribution' and apply high-bandwidth, high-reliability, privacy-protected slice.","{
+  ""name"": ""Medical Imaging Distribution High-Bandwidth High-Reliability Privacy-Protected Slice"",
+  ""description"": ""Network slice for medical imaging distribution requiring high bandwidth, high reliability, and privacy protection"",
+  ""serviceSpecCharacteristic"": [
+    {
+      ""name"": ""Supported data network"",
+      ""value"": {
+        ""value"": ""Medical Imaging Distribution Network"",
+        ""unitOfMeasure"": ""string""
+      }
+    },
+    {
+      ""name"": ""Uplink throughput per network slice: Maximum uplink throughput"",
+      ""value"": {
+        ""value"": ""100000"",
+        ""unitOfMeasure"": ""kbps""
+      }
+    },
+    {
+      ""name"": ""Downlink maximum throughput per UE: Service category"",
+      ""value"": {
+        ""value"": ""200000"",
+        ""unitOfMeasure"": ""kbps""
+      }
+    },
+    {
+      ""name"": ""Simultaneous use of the network slice"",
+      ""value"": {
+        ""value"": ""HighReliability"",
+        ""unitOfMeasure"": ""enum""
+      }
+    }
+  ]
+}",True,,,,
+13,"Infer customer satisfaction from intent 'maximize customer satisfaction' into: satisfaction metrics, improvement tracking.","{
+  ""name"": ""Customer Satisfaction Monitoring and Improvement Intent"",
+  ""description"": ""Intent to maximize customer satisfaction by monitoring current availability and predicting improved availability to track satisfaction metrics and improvement progress"",
+  ""serviceSpecCharacteristic"": [
+    {
+      ""name"": ""Performance monitoring: Availability"",
+      ""value"": {
+        ""value"": ""99.95"",
+        ""unitOfMeasure"": ""percent""
+      }
+    },
+    {
+      ""name"": ""Performance prediction: Availability"",
+      ""value"": {
+        ""value"": ""99.99"",
+        ""unitOfMeasure"": ""percent""
+      }
+    }
+  ]
+}",True,,,,
+14,"Recognize intent 'enable intelligent service placement' and map to: placement optimization algorithm, latency minimization.","{
+  ""name"": ""Intelligent Service Placement with Latency Minimization"",
+  ""description"": ""Enable intelligent service placement using placement optimization algorithms and minimize latency through deterministic communication"",
+  ""serviceSpecCharacteristic"": [
+    {
+      ""name"": ""Positioning support: Availability"",
+      ""value"": {
+        ""value"": ""GNSS, Cell ID"",
+        ""unitOfMeasure"": ""methods""
+      }
+    },
+    {
+      ""name"": ""Deterministic communication: Availability"",
+      ""value"": {
+        ""value"": ""true"",
+        ""unitOfMeasure"": ""boolean""
+      }
+    }
+  ]
+}",True,,,,
+15,"Parse intent 'enable transparent operations' into: operational visibility dashboard, real-time monitoring.","{
+  ""name"": ""Enable Transparent Operations with Real-Time Monitoring"",
+  ""description"": ""Provides an operational visibility dashboard and real-time monitoring of network slice availability."",
+  ""serviceSpecCharacteristic"": [
+    {
+      ""name"": ""Performance monitoring: Availability"",
+      ""value"": {
+        ""value"": ""99.999"",
+        ""unitOfMeasure"": ""percent""
+      }
+    }
+  ]
+}",True,,,,
+16,"Infer customer segmentation from intent 'serve both consumer and enterprise markets' into: consumer slice (cost-optimized), enterprise slice (performance-optimized).",null,False,,,,
+17,"Translate intent 'support customer SLA negotiation' into: SLA customization framework, dynamic pricing model.",null,False,,,,
+18,"Recognize intent pattern 'smart factory real-time monitoring' and apply deterministic, synchronized slice configuration.",null,False,,,,
+19,"Translate intent 'reduce system administration burden' into: management simplification metrics, admin time reduction target.",null,False,,,,

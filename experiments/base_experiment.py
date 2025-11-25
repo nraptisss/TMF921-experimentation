@@ -209,26 +209,48 @@ class BaseExperiment(ABC):
         print(f"  [CHECKPOINT] Saved {num_scenarios} results")
     
     def compute_and_save_metrics(self):
-        """Compute FEACI metrics and save results."""
+        """Compute FEACI metrics with full transparency and honest reporting."""
         print(f"\nComputing metrics...")
         
-        # Compute FEACI metrics
+        # HONEST COUNTS
+        total_scenarios = len(self.scenarios)
+        successfully_processed = len([r for r in self.results if r.get('generated_intent')])
+        json_failures = total_scenarios - successfully_processed
+        
+        # Of successfully processed, how many are valid?
+        valid_results = [r for r in self.results if r.get('validation', {}).get('overall_valid', False)]
+        
+        # FEACI on successfully processed only
         feaci = compute_feaci_metrics(self.results)
         
-        # Print metrics
+        print("\n" + "="*80)
+        print("HONEST METRICS REPORTING")
+        print("="*80)
+        
+        print(f"\nTotal Scenarios:        {total_scenarios}")
+        print(f"Processing Failures:    {json_failures} ({json_failures/total_scenarios*100:.1f}%)")
+        print(f"Successfully Processed: {successfully_processed} ({successfully_processed/total_scenarios*100:.1f}%)")
+        print(f"Valid Intents:          {len(valid_results)} ({len(valid_results)/successfully_processed*100:.1f}% of processed)")
+        
+        print(f"\n**Overall Success Rate: {len(valid_results)}/{total_scenarios} = {len(valid_results)/total_scenarios*100:.1f}%**")
+        
+        # Print FEACI metrics
         print_feaci_metrics(feaci)
         
-        # Save full results
-        results_file = self.results_dir / "all_results.json"
-        with open(results_file, 'w') as f:
-            json.dump(self.results, f, indent=2)
-        
-        # Save metrics summary
+        # Save COMPREHENSIVE metrics
         metrics_summary = {
             'experiment': self.experiment_name,
             'model': self.model_name,
-            'num_scenarios': self.num_scenarios,
-            'num_successful': feaci['num_results'],
+            'honest_counts': {
+                'total_scenarios': total_scenarios,
+                'processing_failures': json_failures,
+                'processing_failure_rate': json_failures / total_scenarios,
+                'successfully_processed': successfully_processed,
+                'processing_success_rate': successfully_processed / total_scenarios,
+                'valid_intents': len(valid_results),
+                'validation_success_rate_on_processed': len(valid_results) / successfully_processed if successfully_processed > 0 else 0,
+                'overall_success_rate': len(valid_results) / total_scenarios
+            },
             'num_corrections': sum(len(r.get('name_corrections', [])) for r in self.results if r.get('name_corrections')),
             'feaci': feaci,
             'timestamp': datetime.now().isoformat()

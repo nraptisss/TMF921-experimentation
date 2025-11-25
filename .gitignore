@@ -15,6 +15,23 @@ lib64/
 parts/
 sdist/
 var/
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
 wheels/
 *.egg-info/
 .installed.cfg
@@ -69,3 +86,10 @@ Thumbs.db
 tmp/
 temp/
 *.tmp
+_cleanup_plan.md
+
+# Archive (keep locally, don't push)
+_archive/
+
+# Large PDFs (optional - comment out if you want to include)
+# *.pdf
