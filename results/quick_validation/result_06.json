@@ -1,0 +1,59 @@
+{
+  "scenario": "Deploy avalanche detection: 10 Mbps mountain network, 500ms latency, alert distribution.",
+  "generated_intent": {
+    "name": "Avalanche Detection Intent",
+    "description": "Deploy a network slice for avalanche detection with 10 Mbps throughput, 500ms latency, and alert distribution.",
+    "serviceSpecCharacteristic": [
+      {
+        "name": "Downlink throughput per network slice: Maximum downlink throughput",
+        "value": {
+          "value": 10000,
+          "unitOfMeasure": "kbps"
+        }
+      },
+      {
+        "name": "E2E latency",
+        "value": {
+          "value": 500,
+          "unitOfMeasure": "ms"
+        }
+      },
+      {
+        "name": "Availability",
+        "value": {
+          "value": 99.99,
+          "unitOfMeasure": "percent"
+        }
+      },
+      {
+        "name": "Area of Service: Region specification",
+        "value": {
+          "value": "Mountain region",
+          "unitOfMeasure": ""
+        }
+      },
+      {
+        "name": "Downlink throughput per network slice: Guaranteed downlink throughput quota",
+        "value": {
+          "value": 10000,
+          "unitOfMeasure": "kbps"
+        }
+      }
+    ]
+  },
+  "raw_response": "{\n  \"name\": \"Avalanche Detection Intent\",\n  \"description\": \"Deploy a network slice for avalanche detection with 10 Mbps throughput, 500ms latency, and alert distribution.\",\n  \"serviceSpecCharacteristic\": [\n    {\n      \"name\": \"Downlink throughput per network slice: Maximum downlink throughput\",\n      \"value\": {\n        \"value\": 10000,\n        \"unitOfMeasure\": \"kbps\"\n      }\n    },\n    {\n      \"name\": \"E2E latency\",\n      \"value\": {\n        \"value\": 500,\n        \"unitOfMeasure\": \"ms\"\n      }\n    ",
+  "validation": {
+    "format_valid": true,
+    "characteristics_valid": false,
+    "plausibility_valid": true,
+    "errors": [
+      "Characteristic 'E2E latency' not found in GST specification"
+    ],
+    "warnings": [],
+    "overall_valid": false
+  },
+  "metrics": {
+    "tokens": 1132,
+    "time_seconds": 94.69655275344849
+  }
+}

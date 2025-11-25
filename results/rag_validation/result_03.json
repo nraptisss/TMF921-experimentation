@@ -1,0 +1,49 @@
+{
+  "scenario": "Create broadcast news slice with 100 Mbps for 4K video, 20ms latency, and simultaneous multi-region coverage.",
+  "generated_intent": {
+    "name": "Broadcast News Slice",
+    "description": "Create broadcast news slice with 100 Mbps for 4K video, 20ms latency, and simultaneous multi-region coverage.",
+    "serviceSpecCharacteristic": [
+      {
+        "name": "Downlink throughput per network slice: Maximum downlink throughput",
+        "value": {
+          "value": "100000",
+          "unitOfMeasure": "kbps"
+        }
+      },
+      {
+        "name": "Uplink throughput per network slice: Maximum uplink throughput",
+        "value": {
+          "value": "100000",
+          "unitOfMeasure": "kbps"
+        }
+      },
+      {
+        "name": "Delay tolerance",
+        "value": {
+          "value": "20",
+          "unitOfMeasure": "ms"
+        }
+      }
+    ]
+  },
+  "retrieved_characteristics": [
+    "Uplink throughput per network slice: Maximum uplink throughput",
+    "Downlink throughput per network slice: Maximum downlink throughput"
+  ],
+  "name_corrections": [
+    "E2E latency \u2192 Delay tolerance"
+  ],
+  "validation": {
+    "format_valid": true,
+    "characteristics_valid": true,
+    "plausibility_valid": true,
+    "errors": [],
+    "warnings": [],
+    "overall_valid": true
+  },
+  "metrics": {
+    "tokens": 1008,
+    "time_seconds": 99.1627140045166
+  }
+}

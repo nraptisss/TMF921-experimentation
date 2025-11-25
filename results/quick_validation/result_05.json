@@ -1,0 +1,43 @@
+{
+  "scenario": "Create blood pressure monitoring: 1 Mbps aggregated, 1000ms latency tolerance, cardiac alert system.",
+  "generated_intent": {
+    "name": "Blood Pressure Monitoring Intent",
+    "description": "Provides a guaranteed 1 Mbps aggregated data rate with 1000 ms latency tolerance for cardiac alert system.",
+    "serviceSpecCharacteristic": [
+      {
+        "name": "Downlink throughput per network slice: Maximum downlink throughput",
+        "value": {
+          "value": 1048576,
+          "unitOfMeasure": "kbps"
+        }
+      },
+      {
+        "name": "Delay tolerance",
+        "value": {
+          "value": 1000,
+          "unitOfMeasure": "ms"
+        }
+      },
+      {
+        "name": "Slice quality of service: Packet Delay Budget",
+        "value": {
+          "value": 1000,
+          "unitOfMeasure": "ms"
+        }
+      }
+    ]
+  },
+  "raw_response": "{\n  \"name\": \"Blood Pressure Monitoring Intent\",\n  \"description\": \"Provides a guaranteed 1 Mbps aggregated data rate with 1000 ms latency tolerance for cardiac alert system.\",\n  \"serviceSpecCharacteristic\": [\n    {\n      \"name\": \"Downlink throughput per network slice: Maximum downlink throughput\",\n      \"value\": {\n        \"value\": 1048576,\n        \"unitOfMeasure\": \"kbps\"\n      }\n    },\n    {\n      \"name\": \"Delay tolerance\",\n      \"value\": {\n        \"value\": 1000,\n        \"unitOfMeasure\": \"ms\"\n   ",
+  "validation": {
+    "format_valid": true,
+    "characteristics_valid": true,
+    "plausibility_valid": true,
+    "errors": [],
+    "warnings": [],
+    "overall_valid": true
+  },
+  "metrics": {
+    "tokens": 1054,
+    "time_seconds": 77.01914691925049
+  }
+}

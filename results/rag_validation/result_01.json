@@ -1,0 +1,50 @@
+{
+  "scenario": "Provision connected distillery automation: 50 Mbps per distillery, 100ms latency, temperature profiles.",
+  "generated_intent": {
+    "name": "Connected Distillery Automation Network Slice",
+    "description": "Network slice for connected distillery automation requiring 50 Mbps uplink and downlink throughput, 100 ms latency, and temperature profiles.",
+    "serviceSpecCharacteristic": [
+      {
+        "name": "Downlink throughput per network slice: Guaranteed downlink throughput quota",
+        "value": {
+          "value": "50000",
+          "unitOfMeasure": "kbps"
+        }
+      },
+      {
+        "name": "Uplink throughput per network slice: Guaranteed uplink throughput quota",
+        "value": {
+          "value": "50000",
+          "unitOfMeasure": "kbps"
+        }
+      },
+      {
+        "name": "Delay tolerance",
+        "value": {
+          "value": "100",
+          "unitOfMeasure": "ms"
+        }
+      }
+    ]
+  },
+  "retrieved_characteristics": [
+    "Uplink throughput per network slice: Guaranteed uplink throughput quota",
+    "Downlink throughput per network slice: Guaranteed downlink throughput quota",
+    "Uplink throughput per network slice: Maximum uplink throughput"
+  ],
+  "name_corrections": [
+    "E2E latency \u2192 Delay tolerance"
+  ],
+  "validation": {
+    "format_valid": true,
+    "characteristics_valid": true,
+    "plausibility_valid": true,
+    "errors": [],
+    "warnings": [],
+    "overall_valid": true
+  },
+  "metrics": {
+    "tokens": 1124,
+    "time_seconds": 53.365023374557495
+  }
+}

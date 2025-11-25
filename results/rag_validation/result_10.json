@@ -1,0 +1,51 @@
+{
+  "scenario": "Create environmental sensor network monitoring: 50 kbps per sensor cluster, nationwide coverage, 3600s aggregation interval.",
+  "generated_intent": {
+    "name": "Environmental Sensor Network Monitoring",
+    "description": "Nationwide coverage for environmental sensor network monitoring with 50 kbps per sensor cluster and 3600s aggregation interval.",
+    "serviceSpecCharacteristic": [
+      {
+        "name": "Availability",
+        "value": {
+          "value": "1.000",
+          "unitOfMeasure": "percent"
+        }
+      },
+      {
+        "name": "NB-IoT support",
+        "value": {
+          "value": true,
+          "unitOfMeasure": ""
+        }
+      },
+      {
+        "name": "Performance monitoring: Availability",
+        "value": {
+          "value": [
+            "kqi1",
+            "kpi2"
+          ],
+          "unitOfMeasure": ""
+        }
+      }
+    ]
+  },
+  "retrieved_characteristics": [
+    "Performance monitoring: Availability",
+    "NB-IoT support",
+    "Energy efficiency"
+  ],
+  "name_corrections": [],
+  "validation": {
+    "format_valid": true,
+    "characteristics_valid": true,
+    "plausibility_valid": true,
+    "errors": [],
+    "warnings": [],
+    "overall_valid": true
+  },
+  "metrics": {
+    "tokens": 1014,
+    "time_seconds": 101.60346031188965
+  }
+}

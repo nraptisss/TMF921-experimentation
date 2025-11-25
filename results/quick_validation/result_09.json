@@ -1,0 +1,52 @@
+{
+  "scenario": "Deploy connected vegan food producer: 50 Mbps per facility, 100ms latency, plant-based.",
+  "generated_intent": {
+    "name": "Vegan Food Producer Network Slice",
+    "description": "Deploy a connected vegan food producer network slice with guaranteed 50 Mbps per facility, 100ms latency, and plant-based services.",
+    "serviceSpecCharacteristic": [
+      {
+        "name": "Downlink throughput per network slice: Maximum downlink throughput",
+        "value": {
+          "value": 50000,
+          "unitOfMeasure": "kbps"
+        }
+      },
+      {
+        "name": "E2E latency",
+        "value": {
+          "value": 100,
+          "unitOfMeasure": "ms"
+        }
+      },
+      {
+        "name": "Availability",
+        "value": {
+          "value": 99.9,
+          "unitOfMeasure": "percent"
+        }
+      },
+      {
+        "name": "Area of Service: Region specification",
+        "value": {
+          "value": "Global",
+          "unitOfMeasure": ""
+        }
+      }
+    ]
+  },
+  "raw_response": "{\n  \"name\": \"Vegan Food Producer Network Slice\",\n  \"description\": \"Deploy a connected vegan food producer network slice with guaranteed 50 Mbps per facility, 100ms latency, and plant-based services.\",\n  \"serviceSpecCharacteristic\": [\n    {\n      \"name\": \"Downlink throughput per network slice: Maximum downlink throughput\",\n      \"value\": {\n        \"value\": 50000,\n        \"unitOfMeasure\": \"kbps\"\n      }\n    },\n    {\n      \"name\": \"E2E latency\",\n      \"value\": {\n        \"value\": 100,\n        \"unitO",
+  "validation": {
+    "format_valid": true,
+    "characteristics_valid": false,
+    "plausibility_valid": true,
+    "errors": [
+      "Characteristic 'E2E latency' not found in GST specification"
+    ],
+    "warnings": [],
+    "overall_valid": false
+  },
+  "metrics": {
+    "tokens": 1091,
+    "time_seconds": 86.08561444282532
+  }
+}

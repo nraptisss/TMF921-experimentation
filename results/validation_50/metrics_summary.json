@@ -1,0 +1,16 @@
+{
+  "experiment": "validation_50_scenarios",
+  "model": "llama3:latest",
+  "num_scenarios": 50,
+  "num_successful": 50,
+  "num_corrections": 80,
+  "feaci": {
+    "format_correctness": 100.0,
+    "accuracy": 80.0,
+    "cost_avg_tokens": 1161.54,
+    "cost_total_tokens": 58077,
+    "inference_time_avg_seconds": 33.85919198513031,
+    "inference_time_total_seconds": 1692.9595992565155
+  },
+  "timestamp": "2025-11-25T10:03:53.905402"
+}

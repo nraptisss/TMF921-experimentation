@@ -1,0 +1,51 @@
+{
+  "scenario": "Configure connected allergy-safe kitchen: 50 Mbps per facility, 100ms latency, cross-contamination prevention.",
+  "generated_intent": {
+    "name": "Allergy-Safe Kitchen Network Slice",
+    "description": "Configure connected allergy-safe kitchen with 50 Mbps per facility, 100ms latency, and cross-contamination prevention.",
+    "serviceSpecCharacteristic": [
+      {
+        "name": "Simultaneous use of the network slice: Service category",
+        "value": {
+          "value": "general",
+          "unitOfMeasure": ""
+        }
+      },
+      {
+        "name": "Uplink throughput per network slice: Maximum uplink throughput",
+        "value": {
+          "value": 50000,
+          "unitOfMeasure": "kbps"
+        }
+      },
+      {
+        "name": "Delay tolerance",
+        "value": {
+          "value": 100,
+          "unitOfMeasure": "ms"
+        }
+      }
+    ]
+  },
+  "retrieved_characteristics": [
+    "Simultaneous use of the network slice: Service category",
+    "Uplink throughput per network slice: Maximum uplink throughput",
+    "NB-IoT support",
+    "Simultaneous use of the network slice"
+  ],
+  "name_corrections": [
+    "E2E latency \u2192 Delay tolerance"
+  ],
+  "validation": {
+    "format_valid": true,
+    "characteristics_valid": true,
+    "plausibility_valid": true,
+    "errors": [],
+    "warnings": [],
+    "overall_valid": true
+  },
+  "metrics": {
+    "tokens": 1132,
+    "time_seconds": 110.28960251808167
+  }
+}

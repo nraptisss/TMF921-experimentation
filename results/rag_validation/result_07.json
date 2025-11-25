@@ -1,0 +1,50 @@
+{
+  "scenario": "Establish multi-unit laundry service: 2 Mbps aggregated, 1000ms latency tolerance, machine scheduling.",
+  "generated_intent": {
+    "name": "Multi-Unit Laundry Service",
+    "description": "Establish a network slice for multi-unit laundry service with 2 Mbps aggregated bandwidth, 1000ms latency tolerance, and machine scheduling.",
+    "serviceSpecCharacteristic": [
+      {
+        "name": "Downlink maximum throughput per UE: Service category",
+        "value": {
+          "value": "Machine-Type-Communications",
+          "unitOfMeasure": ""
+        }
+      },
+      {
+        "name": "Downlink throughput per network slice: Guaranteed downlink throughput quota",
+        "value": {
+          "value": "2000",
+          "unitOfMeasure": "kbps"
+        }
+      },
+      {
+        "name": "Delay tolerance",
+        "value": {
+          "value": "1000",
+          "unitOfMeasure": "ms"
+        }
+      }
+    ]
+  },
+  "retrieved_characteristics": [
+    "Simultaneous use of the network slice: Service category"
+  ],
+  "name_corrections": [
+    "Service category \u2192 Downlink maximum throughput per UE: Service category",
+    "Simultaneous use of the network slice: Guaranteed downlink throughput quota \u2192 Downlink throughput per network slice: Guaranteed downlink throughput quota",
+    "Latency tolerance \u2192 Delay tolerance"
+  ],
+  "validation": {
+    "format_valid": true,
+    "characteristics_valid": true,
+    "plausibility_valid": true,
+    "errors": [],
+    "warnings": [],
+    "overall_valid": true
+  },
+  "metrics": {
+    "tokens": 943,
+    "time_seconds": 92.56017589569092
+  }
+}

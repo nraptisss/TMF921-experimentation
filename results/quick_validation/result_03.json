@@ -1,0 +1,54 @@
+{
+  "scenario": "Create broadcast news slice with 100 Mbps for 4K video, 20ms latency, and simultaneous multi-region coverage.",
+  "generated_intent": {
+    "name": "Broadcast News Slice",
+    "description": "Create a broadcast news slice with 100 Mbps for 4K video, 20ms latency, and simultaneous multi-region coverage.",
+    "serviceSpecCharacteristic": [
+      {
+        "name": "Downlink throughput per network slice: Maximum downlink throughput",
+        "value": {
+          "value": 100000,
+          "unitOfMeasure": "kbps"
+        }
+      },
+      {
+        "name": "E2E latency",
+        "value": {
+          "value": 20,
+          "unitOfMeasure": "ms"
+        }
+      },
+      {
+        "name": "Area of Service: Region specification",
+        "value": {
+          "value": [
+            "Global"
+          ],
+          "unitOfMeasure": ""
+        }
+      },
+      {
+        "name": "Availability",
+        "value": {
+          "value": 99.9,
+          "unitOfMeasure": "%"
+        }
+      }
+    ]
+  },
+  "raw_response": "{\n  \"name\": \"Broadcast News Slice\",\n  \"description\": \"Create a broadcast news slice with 100 Mbps for 4K video, 20ms latency, and simultaneous multi-region coverage.\",\n  \"serviceSpecCharacteristic\": [\n    {\n      \"name\": \"Downlink throughput per network slice: Maximum downlink throughput\",\n      \"value\": {\n        \"value\": 100000,\n        \"unitOfMeasure\": \"kbps\"\n      }\n    },\n    {\n      \"name\": \"E2E latency\",\n      \"value\": {\n        \"value\": 20,\n        \"unitOfMeasure\": \"ms\"\n      }\n    },\n  ",
+  "validation": {
+    "format_valid": true,
+    "characteristics_valid": false,
+    "plausibility_valid": true,
+    "errors": [
+      "Characteristic 'E2E latency' not found in GST specification"
+    ],
+    "warnings": [],
+    "overall_valid": false
+  },
+  "metrics": {
+    "tokens": 1092,
+    "time_seconds": 92.90876054763794
+  }
+}

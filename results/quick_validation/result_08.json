@@ -1,0 +1,45 @@
+{
+  "scenario": "Provision connected fitness network: 2 Mbps per facility, 500ms latency, class broadcast and monitoring.",
+  "generated_intent": {
+    "name": "Connected Fitness Network",
+    "description": "Provision a network slice for connected fitness applications with guaranteed 2 Mbps throughput and 500ms latency.",
+    "serviceSpecCharacteristic": [
+      {
+        "name": "Downlink throughput per network slice: Maximum downlink throughput",
+        "value": {
+          "value": 2000000,
+          "unitOfMeasure": "kbps"
+        }
+      },
+      {
+        "name": "E2E latency",
+        "value": {
+          "value": 500,
+          "unitOfMeasure": "ms"
+        }
+      },
+      {
+        "name": "Availability",
+        "value": {
+          "value": 99.99,
+          "unitOfMeasure": "percent"
+        }
+      }
+    ]
+  },
+  "raw_response": "{\n  \"name\": \"Connected Fitness Network\",\n  \"description\": \"Provision a network slice for connected fitness applications with guaranteed 2 Mbps throughput and 500ms latency.\",\n  \"serviceSpecCharacteristic\": [\n    {\n      \"name\": \"Downlink throughput per network slice: Maximum downlink throughput\",\n      \"value\": {\n        \"value\": 2000000,\n        \"unitOfMeasure\": \"kbps\"\n      }\n    },\n    {\n      \"name\": \"E2E latency\",\n      \"value\": {\n        \"value\": 500,\n        \"unitOfMeasure\": \"ms\"\n      }\n",
+  "validation": {
+    "format_valid": true,
+    "characteristics_valid": false,
+    "plausibility_valid": true,
+    "errors": [
+      "Characteristic 'E2E latency' not found in GST specification"
+    ],
+    "warnings": [],
+    "overall_valid": false
+  },
+  "metrics": {
+    "tokens": 1049,
+    "time_seconds": 82.89313817024231
+  }
+}

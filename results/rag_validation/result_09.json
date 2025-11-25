@@ -1,0 +1,39 @@
+{
+  "scenario": "Deploy connected vegan food producer: 50 Mbps per facility, 100ms latency, plant-based.",
+  "generated_intent": {
+    "name": "Connected Vegan Food Producer Network Slice",
+    "description": "Network slice for connected vegan food producer applications requiring 50 Mbps per facility, 100ms latency, and plant-based.",
+    "serviceSpecCharacteristic": [
+      {
+        "name": "Downlink throughput per network slice: Guaranteed downlink throughput quota",
+        "value": {
+          "value": "50000",
+          "unitOfMeasure": "kbps"
+        }
+      },
+      {
+        "name": "Delay tolerance",
+        "value": {
+          "value": "100",
+          "unitOfMeasure": "ms"
+        }
+      }
+    ]
+  },
+  "retrieved_characteristics": [],
+  "name_corrections": [
+    "E2E latency \u2192 Delay tolerance"
+  ],
+  "validation": {
+    "format_valid": true,
+    "characteristics_valid": true,
+    "plausibility_valid": true,
+    "errors": [],
+    "warnings": [],
+    "overall_valid": true
+  },
+  "metrics": {
+    "tokens": 845,
+    "time_seconds": 78.16110372543335
+  }
+}

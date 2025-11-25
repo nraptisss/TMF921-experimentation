@@ -1,0 +1,39 @@
+{
+  "scenario": "Deploy smart retail checkout-free with computer vision: 50 Mbps per store, 100ms latency, real-time inventory.",
+  "generated_intent": {
+    "name": "Smart Retail Checkout-Free Network Slice",
+    "description": "Network slice for smart retail checkout-free applications requiring 50 Mbps per store, 100ms latency, and real-time inventory updates",
+    "serviceSpecCharacteristic": [
+      {
+        "name": "Downlink throughput per network slice: Guaranteed downlink throughput quota",
+        "value": {
+          "value": "50000",
+          "unitOfMeasure": "kbps"
+        }
+      },
+      {
+        "name": "Delay tolerance",
+        "value": {
+          "value": "100",
+          "unitOfMeasure": "ms"
+        }
+      }
+    ]
+  },
+  "retrieved_characteristics": [],
+  "name_corrections": [
+    "E2E latency \u2192 Delay tolerance"
+  ],
+  "validation": {
+    "format_valid": true,
+    "characteristics_valid": true,
+    "plausibility_valid": true,
+    "errors": [],
+    "warnings": [],
+    "overall_valid": true
+  },
+  "metrics": {
+    "tokens": 851,
+    "time_seconds": 83.8859806060791
+  }
+}

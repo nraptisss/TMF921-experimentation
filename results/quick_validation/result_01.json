@@ -1,0 +1,52 @@
+{
+  "scenario": "Provision connected distillery automation: 50 Mbps per distillery, 100ms latency, temperature profiles.",
+  "generated_intent": {
+    "name": "Connected Distillery Automation Intent",
+    "description": "Provision a network slice for connected distillery automation with guaranteed 50 Mbps throughput and 100 ms latency.",
+    "serviceSpecCharacteristic": [
+      {
+        "name": "Downlink throughput per network slice: Maximum downlink throughput",
+        "value": {
+          "value": 50000,
+          "unitOfMeasure": "kbps"
+        }
+      },
+      {
+        "name": "E2E latency",
+        "value": {
+          "value": 100,
+          "unitOfMeasure": "ms"
+        }
+      },
+      {
+        "name": "Availability",
+        "value": {
+          "value": 99.9,
+          "unitOfMeasure": "percent"
+        }
+      },
+      {
+        "name": "Area of Service: Region specification",
+        "value": {
+          "value": "Global",
+          "unitOfMeasure": ""
+        }
+      }
+    ]
+  },
+  "raw_response": "{\n  \"name\": \"Connected Distillery Automation Intent\",\n  \"description\": \"Provision a network slice for connected distillery automation with guaranteed 50 Mbps throughput and 100 ms latency.\",\n  \"serviceSpecCharacteristic\": [\n    {\n      \"name\": \"Downlink throughput per network slice: Maximum downlink throughput\",\n      \"value\": {\n        \"value\": 50000,\n        \"unitOfMeasure\": \"kbps\"\n      }\n    },\n    {\n      \"name\": \"E2E latency\",\n      \"value\": {\n        \"value\": 100,\n        \"unitOfMeasure\":",
+  "validation": {
+    "format_valid": true,
+    "characteristics_valid": false,
+    "plausibility_valid": true,
+    "errors": [
+      "Characteristic 'E2E latency' not found in GST specification"
+    ],
+    "warnings": [],
+    "overall_valid": false
+  },
+  "metrics": {
+    "tokens": 1088,
+    "time_seconds": 108.60302782058716
+  }
+}

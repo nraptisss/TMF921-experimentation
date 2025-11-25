@@ -1,0 +1,4707 @@
+{
+	"name": "GST External",
+	"description": "The purpose of this specification template is to provide the standardised list of attributes that can characterise a type of network slice. The Service Designer is encouraged to tailor the template to its service needs",
+	"version": "10.0.0",
+	"isBundle": false,
+	"attachment": [],
+	"relatedParty": [],
+	"resourceSpecification": [],
+	"serviceLevelSpecification": [],
+	"serviceSpecCharacteristic": [
+		{
+			"name": "Availability",
+			"configurable": false,
+			"description": "(Communication service) availability: percentage value of the amount of time the end-to-end communication service is delivered according to an agreed QoS, divided by the amount of time the system is expected to deliver the end-to-end service according to the specification in a specific area, see also 3GPP TS 22.261",
+			"extensible": null,
+			"isUnique": true,
+			"maxCardinality": 1,
+			"minCardinality": 0,
+			"regex": null,
+			"valueType": "FLOAT",
+			"serviceSpecCharRelationship": [
+				{
+					"name": "Character Attribute",
+					"role": "tag",
+					"relationshipType": "tag"
+				},
+				{
+					"name": "Functional",
+					"role": "tag",
+					"relationshipType": "tag"
+				}
+			],
+			"serviceSpecCharacteristicValue": [
+				{
+					"isDefault": true,
+					"rangeInterval": null,
+					"regex": null,
+					"unitOfMeasure": "percent",
+					"valueFrom": null,
+					"valueTo": null,
+					"valueType": "FLOAT",
+					"validFor": null,
+					"value": {
+						"value": "99",
+						"alias": "High availability"
+					}
+				}
+			]
+		},
+		{
+			"name": "Area of Service",
+			"configurable": false,
+			"description": "This attribute specifies the area where the UEs can access a particular network slice. Therefore, the attribute specifies the list of the countries where the service will be provided. The list is specific to NSPs and their roaming agreements. In case the list comprises more than one entry, roaming agreements between the HPMN and the VPMNs are required.",
+			"extensible": null,
+			"isUnique": true,
+			"maxCardinality": 1,
+			"minCardinality": 0,
+			"regex": null,
+			"valueType": "SET",
+			"serviceSpecCharRelationship": [
+				{
+					"name": "Character Attribute",
+					"role": "tag",
+					"relationshipType": "tag"
+				},
+				{
+					"name": "Operation",
+					"role": "tag",
+					"relationshipType": "tag"
+				},
+				{
+					"name": "Scalability Attribute",
+					"role": "tag",
+					"relationshipType": "tag"
+				},
+				{
+					"name": "KPI",
+					"role": "tag",
+					"relationshipType": "tag"
+				},
+				{
+					"role": "Region specification",
+					"name": "Area of Service: Region specification",
+					"relationshipType": "aggregation"
+				},
+				{
+					"role": "Minimum altitude",
+					"name": "Area of Service: Minimum altitude",
+					"relationshipType": "aggregation"
+				}
+			],
+			"serviceSpecCharacteristicValue": [
+				{
+					"isDefault": true,
+					"rangeInterval": null,
+					"regex": null,
+					"unitOfMeasure": "N/A",
+					"valueFrom": null,
+					"valueTo": null,
+					"valueType": "TEXT",
+					"validFor": null,
+					"value": {
+						"value": "GR",
+						"alias": "ISO 3166-1 Alpha-2 country codes"
+					}
+				}
+			]
+		},
+		{
+			"name": "Area of Service: Region specification",
+			"configurable": false,
+			"description": "For every single country listed in the area of service attribute it needs to be indicated if the service will be provided in the whole country or just in part of the country. If the NSC requires a specific location, this attribute can be used to specify the regions of the country where the service will be provided. It needs to be completed for every country listed in the Area of service attribute. The list of regions is specific for each country and the way to define these regions is the decision of the NSC and NSP.",
+			"extensible": null,
+			"isUnique": true,
+			"maxCardinality": 1,
+			"minCardinality": 0,
+			"regex": null,
+			"valueType": "SET",
+			"serviceSpecCharRelationship": [
+				{
+					"name": "Character Attribute",
+					"role": "tag",
+					"relationshipType": "tag"
+				},
+				{
+					"name": "Operation",
+					"role": "tag",
+					"relationshipType": "tag"
+				},
+				{
+					"name": "Scalability Attribute",
+					"role": "tag",
+					"relationshipType": "tag"
+				},
+				{
+					"name": "KPI",
+					"role": "tag",
+					"relationshipType": "tag"
+				}
+			],
+			"serviceSpecCharacteristicValue": [
+				{
+					"isDefault": true,
+					"rangeInterval": null,
+					"regex": null,
+					"unitOfMeasure": "N/A",
+					"valueFrom": null,
+					"valueTo": null,
+					"valueType": "INTEGER",
+					"validFor": null,
+					"value": {
+						"value": "0",
+						"alias": "Full Country"
+					}
+				},
+				{
+					"isDefault": false,
+					"rangeInterval": null,
+					"regex": null,
+					"unitOfMeasure": "N/A",
+					"valueFrom": null,
+					"valueTo": null,
+					"valueType": "INTEGER",
+					"validFor": null,
+					"value": {
+						"value": "1",
+						"alias": "Local Region A"
+					}
+				},
+				{
+					"isDefault": false,
+					"rangeInterval": null,
+					"regex": null,
+					"unitOfMeasure": "N/A",
+					"valueFrom": null,
+					"valueTo": null,
+					"valueType": "INTEGER",
+					"validFor": null,
+					"value": {
+						"value": "2",
+						"alias": "Local Region B"
+					}
+				}
+			]
+		},
+		{
+			"name": "Area of Service: Minimum altitude",
+			"configurable": false,
+			"description": "This parameter describes the minimum height required for the service that the network slice should support. If the NSC requires a different minimum altitude per region, this parameter needs to be provided for every region listed in Region specification parameter.",
+			"extensible": null,
+			"isUnique": true,
+			"maxCardinality": 1,
+			"minCardinality": 0,
+			"regex": null,
+			"valueType": "INTEGER",
+			"serviceSpecCharRelationship": [
+				{
+					"name": "Character Attribute",
+					"role": "tag",
+					"relationshipType": "tag"
+				},
+				{
+					"name": "Functional",
+					"role": "tag",
+					"relationshipType": "tag"
+				}
+			],
+			"serviceSpecCharacteristicValue": [
+				{
+					"isDefault": false,
+					"rangeInterval": null,
+					"regex": null,
+					"unitOfMeasure": "meters",
+					"valueFrom": null,
+					"valueTo": null,
+					"valueType": "INTEGER",
+					"validFor": null,
+					"value": {
+						"value": "610"
+					}
+				}
+			]
+		},
+		{
+			"name": "Delay tolerance",
+			"configurable": false,
+			"description": "Provide the NSC with service delivery flexibility, especially for the vertical services that are not chasing a high system performance. For instance, the service will be delivered once the mobile system has sufficient resources or during the off-peak hours. For this type of traffic, it is not too critical how long it takes to deliver the amount of data, e.g. within hours, days, weeks, etc.",
+			"extensible": null,
+			"isUnique": true,
+			"maxCardinality": 1,
+			"minCardinality": 0,
+			"regex": null,
+			"valueType": "BINARY",
+			"serviceSpecCharRelationship": [
+				{
+					"name": "Character Attribute",
+					"role": "tag",
+					"relationshipType": "tag"
+				},
+				{
+					"name": "Functional",
+					"role": "tag",
+					"relationshipType": "tag"
+				},
+				{
+					"name": "KPI",
+					"role": "tag",
+					"relationshipType": "tag"
+				}
+			],
+			"serviceSpecCharacteristicValue": [
+				{
+					"isDefault": true,
+					"rangeInterval": null,
+					"regex": null,
+					"unitOfMeasure": "N/A",
+					"valueFrom": null,
+					"valueTo": null,
+					"valueType": "BINARY",
+					"validFor": null,
+					"value": {
+						"value": "0",
+						"alias": "Not supported"
+					}
+				},
+				{
+					"isDefault": false,
+					"rangeInterval": null,
+					"regex": null,
+					"unitOfMeasure": "N/A",
+					"valueFrom": null,
+					"valueTo": null,
+					"valueType": "BINARY",
+					"validFor": null,
+					"value": {
+						"value": "1",
+						"alias": "Supported"
+					}
+				}
+			]
+		},
+		{
+			"name": "Deterministic communication",
+			"description": "This attribute defines if the network slice supports deterministic communication for periodic. UE traffic. Periodic traffic refers to the type of traffic with periodic transmissions.",
+			"serviceSpecCharRelationship": [
+				{
+					"name": "Character Attribute",
+					"role": "tag",
+					"relationshipType": "tag"
+				},
+				{
+					"name": "Performance",
+					"role": "tag",
+					"relationshipType": "tag"
+				},
+				{
+					"name": "KPI",
+					"role": "tag",
+					"relationshipType": "tag"
+				},
+				{
+					"role": "Availability",
+					"name": "Deterministic communication: Availability",
+					"relationshipType": "aggregation"
+				},
+				{
+					"role": "Periodicity",
+					"name": "Deterministic communication: Periodicity",
+					"relationshipType": "aggregation"
+				}
+			]
+		},
+		{
+			"name": "Deterministic communication: Availability",
+			"configurable": false,
+			"description": "This parameter describes if the network slice supports deterministic communication.",
+			"extensible": null,
+			"isUnique": true,
+			"maxCardinality": 1,
+			"minCardinality": 0,
+			"regex": null,
+			"valueType": "BINARY",
+			"serviceSpecCharRelationship": [
+				{
+					"name": "Character Attribute",
+					"role": "tag",
+					"relationshipType": "tag"
+				},
+				{
+					"name": "Performance",
+					"role": "tag",
+					"relationshipType": "tag"
+				},
+				{
+					"name": "KPI",
+					"role": "tag",
+					"relationshipType": "tag"
+				}
+			],
+			"serviceSpecCharacteristicValue": [
+				{
+					"isDefault": true,
+					"rangeInterval": null,
+					"regex": null,
+					"unitOfMeasure": "N/A",
+					"valueFrom": null,
+					"valueTo": null,
+					"valueType": "BINARY",
+					"validFor": null,
+					"value": {
+						"value": "0",
+						"alias": "Not supported"
+					}
+				},
+				{
+					"isDefault": false,
+					"rangeInterval": null,
+					"regex": null,
+					"unitOfMeasure": "N/A",
+					"valueFrom": null,
+					"valueTo": null,
+					"valueType": "BINARY",
+					"validFor": null,
+					"value": {
+						"value": "1",
+						"alias": "Supported"
+					}
+				}
+			]
+		},
+		{
+			"name": "Deterministic communication: Periodicity",
+			"configurable": false,
+			"description": "This parameter provides a list of periodicities supported by the network slice. Conditional: This parameter must be present when the “Availability” is set to Supported.",
+			"extensible": null,
+			"isUnique": true,
+			"maxCardinality": 1,
+			"minCardinality": 0,
+			"regex": null,
+			"valueType": "FLOAT",
+			"serviceSpecCharRelationship": [
+				{
+					"name": "Character Attribute",
+					"role": "tag",
+					"relationshipType": "tag"
+				},
+				{
+					"name": "Performance",
+					"role": "tag",
+					"relationshipType": "tag"
+				},
+				{
+					"name": "KPI",
+					"role": "tag",
+					"relationshipType": "tag"
+				},
+				{
+					"role": "Availability",
+					"name": "Deterministic communication: Availability",
+					"relationshipType": "dependency"
+				}
+			],
+			"serviceSpecCharacteristicValue": [
+				{
+					"isDefault": false,
+					"rangeInterval": null,
+					"regex": null,
+					"unitOfMeasure": "Seconds",
+					"valueFrom": null,
+					"valueTo": null,
+					"valueType": "FLOAT",
+					"validFor": null,
+					"value": {
+						"value": "200"
+					}
+				}
+			]
+		},
+		{
+			"name": "Downlink throughput per network slice",
+			"description": "This attribute relates to the aggregated data rate in downlink for all UEs together in the network slice (this is not per UE).",
+			"serviceSpecCharRelationship": [
+				{
+					"role": "Guaranteed downlink throughput quota",
+					"name": "Downlink throughput per network slice: Guaranteed downlink throughput quota",
+					"relationshipType": "aggregation"
+				},
+				{
+					"role": "Maximum downlink throughput",
+					"name": "Downlink throughput per network slice: Maximum downlink throughput",
+					"relationshipType": "aggregation"
+				}
+			]
+		},
+		{
+			"name": "Downlink throughput per network slice: Guaranteed downlink throughput quota",
+			"configurable": false,
+			"description": "This parameter describes the guaranteed throughput/data rate supported by the network slice for the aggregate of all GBR QoS flows in downlink belonging to the set of all UEs using the network slice. Not including this parameter or if the value is 0, best effort traffic is expected where no minimum throughput is guaranteed.",
+			"extensible": null,
+			"isUnique": true,
+			"maxCardinality": 1,
+			"minCardinality": 0,
+			"regex": null,
+			"valueType": "INTEGER",
+			"serviceSpecCharRelationship": [
+				{
+					"name": "Scalability Attribute",
+					"role": "tag",
+					"relationshipType": "tag"
+				},
+				{
+					"name": "KPI",
+					"role": "tag",
+					"relationshipType": "tag"
+				}
+			],
+			"serviceSpecCharacteristicValue": [
+				{
+					"isDefault": false,
+					"rangeInterval": null,
+					"regex": null,
+					"unitOfMeasure": "kbps",
+					"valueFrom": null,
+					"valueTo": null,
+					"valueType": "INTEGER",
+					"validFor": null,
+					"value": {
+						"value": "0"
+					}
+				}
+			]
+		},
+		{
+			"name": "Downlink throughput per network slice: Maximum downlink throughput",
+			"configurable": false,
+			"description": "This parameter defines the maximum data rate supported by the network slice for all UEs together in downlink. Note: The sum of all data rates in downlink for all UEs does not exceed this value",
+			"extensible": null,
+			"isUnique": true,
+			"maxCardinality": 1,
+			"minCardinality": 0,
+			"regex": null,
+			"valueType": "INTEGER",
+			"serviceSpecCharRelationship": [
+				{
+					"name": "Scalability Attribute",
+					"role": "tag",
+					"relationshipType": "tag"
+				},
+				{
+					"name": "KPI",
+					"role": "tag",
+					"relationshipType": "tag"
+				}
+			],
+			"serviceSpecCharacteristicValue": [
+				{
+					"isDefault": false,
+					"rangeInterval": null,
+					"regex": null,
+					"unitOfMeasure": "kbps",
+					"valueFrom": null,
+					"valueTo": null,
+					"valueType": "INTEGER",
+					"validFor": null,
+					"value": {
+						"value": "100000"
+					}
+				}
+			]
+		},
+		{
+			"name": "Downlink maximum throughput per UE",
+			"configurable": false,
+			"description": "This attribute describes the maximum data rate supported by the network slice per UE in downlink. The attribute is comprised of a list of Service Category parameters with the associated Maximum Downlink Throughput per UE value.",
+			"serviceSpecCharRelationship": [
+				{
+					"role": "Maximum downlink throughput per UE value",
+					"name": "Downlink maximum throughput per UE: Maximum downlink throughput per UE value",
+					"relationshipType": "aggregation"
+				},
+				{
+					"role": "Service category",
+					"name": "Downlink maximum throughput per UE: Service category",
+					"relationshipType": "aggregation"
+				}
+			]
+		},
+		{
+			"name": "Downlink maximum throughput per UE: Maximum downlink throughput per UE value",
+			"configurable": false,
+			"description": "This parameter defines the Maximum Downlink Throughput per UE value. This may be associated with a Service Category parameter.",
+			"extensible": null,
+			"isUnique": true,
+			"maxCardinality": 1,
+			"minCardinality": 0,
+			"regex": null,
+			"valueType": "INTEGER",
+			"serviceSpecCharRelationship": [
+				{
+					"name": "Character Attribute",
+					"role": "tag",
+					"relationshipType": "tag"
+				},
+				{
+					"name": "Performance",
+					"role": "tag",
+					"relationshipType": "tag"
+				},
+				{
+					"name": "KPI",
+					"role": "tag",
+					"relationshipType": "tag"
+				}
+			],
+			"serviceSpecCharacteristicValue": [
+				{
+					"isDefault": false,
+					"rangeInterval": null,
+					"regex": null,
+					"unitOfMeasure": "kbps",
+					"valueFrom": null,
+					"valueTo": null,
+					"valueType": "INTEGER",
+					"validFor": null,
+					"value": {
+						"value": "50000"
+					}
+				}
+			]
+		},
+		{
+			"name": "Downlink maximum throughput per UE: Service category",
+			"configurable": false,
+			"description": "This parameter defines a service category which may be assigned to certain groups of devices using the network slice. If present, it shall be associated with a Maximum Downlink Throughput Value parameter.",
+			"extensible": null,
+			"isUnique": true,
+			"maxCardinality": 1,
+			"minCardinality": 0,
+			"regex": null,
+			"valueType": "ENUM",
+			"serviceSpecCharRelationship": [
+				{
+					"name": "Character Attribute",
+					"role": "tag",
+					"relationshipType": "tag"
+				},
+				{
+					"name": "Functional",
+					"role": "tag",
+					"relationshipType": "tag"
+				}
+			],
+			"serviceSpecCharacteristicValue": [
+				{
+					"isDefault": false,
+					"rangeInterval": null,
+					"regex": null,
+					"unitOfMeasure": "N/A",
+					"valueFrom": null,
+					"valueTo": null,
+					"valueType": "TEXT",
+					"validFor": null,
+					"value": {
+						"value": "Service Category 1",
+						"alias": "50000 kbps"
+					}
+				},
+				{
+					"isDefault": false,
+					"rangeInterval": null,
+					"regex": null,
+					"unitOfMeasure": "N/A",
+					"valueFrom": null,
+					"valueTo": null,
+					"valueType": "TEXT",
+					"validFor": null,
+					"value": {
+						"value": "Service Category 2",
+						"alias": "400000 kbps"
+					}
+				},
+				{
+					"isDefault": false,
+					"rangeInterval": null,
+					"regex": null,
+					"unitOfMeasure": "N/A",
+					"valueFrom": null,
+					"valueTo": null,
+					"valueType": "TEXT",
+					"validFor": null,
+					"value": {
+						"value": "Service Category 3",
+						"alias": "1000000 kbps"
+					}
+				}
+			]
+		},
+		{
+			"name": "Energy efficiency",
+			"description": "This attribute describes whether the network slice supports the energy efficiency KPI. The energy efficiency is evaluated only when the network is running.",
+			"serviceSpecCharRelationship": [
+				{
+					"role": "Network slice energy efficiency KPI",
+					"name": "Energy efficiency: Network slice energy efficiency KPI",
+					"relationshipType": "aggregation"
+				}
+			]
+		},
+		{
+			"name": "Energy efficiency: Network slice energy efficiency KPI",
+			"configurable": false,
+			"description": "Network slice energy efficiency KPI is defined in 3GPP Release 17 TS 28.554 Section 6.7. It is defined as a ratio between the performance of a network slice and its energy consumption.",
+			"extensible": null,
+			"isUnique": true,
+			"maxCardinality": 1,
+			"minCardinality": 0,
+			"regex": null,
+			"valueType": "BINARY",
+			"serviceSpecCharRelationship": [
+				{
+					"name": "Character Attribute",
+					"role": "tag",
+					"relationshipType": "tag"
+				},
+				{
+					"name": "Operational",
+					"role": "tag",
+					"relationshipType": "tag"
+				},
+				{
+					"name": "KPI",
+					"role": "tag",
+					"relationshipType": "tag"
+				}
+			],
+			"serviceSpecCharacteristicValue": [
+				{
+					"isDefault": true,
+					"rangeInterval": null,
+					"regex": null,
+					"unitOfMeasure": "N/A",
+					"valueFrom": null,
+					"valueTo": null,
+					"valueType": "BINARY",
+					"validFor": null,
+					"value": {
+						"value": "0",
+						"alias": "Not supported"
+					}
+				},
+				{
+					"isDefault": false,
+					"rangeInterval": null,
+					"regex": null,
+					"unitOfMeasure": "N/A",
+					"valueFrom": null,
+					"valueTo": null,
+					"valueType": "BINARY",
+					"validFor": null,
+					"value": {
+						"value": "1",
+						"alias": "Supported"
+					}
+				}
+			]
+		},
+		{
+			"name": "Group communication support",
+			"configurable": false,
+			"description": "This attribute describes which type of group communication is provided by the network slice. This attribute applies to 3GPP access type only.",
+			"extensible": null,
+			"isUnique": true,
+			"maxCardinality": 1,
+			"minCardinality": 0,
+			"regex": null,
+			"valueType": "ENUM",
+			"serviceSpecCharRelationship": [
+				{
+					"name": "Character Attribute",
+					"role": "tag",
+					"relationshipType": "tag"
+				},
+				{
+					"name": "Functional",
+					"role": "tag",
+					"relationshipType": "tag"
+				}
+			],
+			"serviceSpecCharacteristicValue": [
+				{
+					"isDefault": true,
+					"rangeInterval": null,
+					"regex": null,
+					"unitOfMeasure": "N/A",
+					"valueFrom": null,
+					"valueTo": null,
+					"valueType": "INTEGER",
+					"validFor": null,
+					"value": {
+						"value": "0",
+						"alias": "Not supported"
+					}
+				},
+				{
+					"isDefault": false,
+					"rangeInterval": null,
+					"regex": null,
+					"unitOfMeasure": "N/A",
+					"valueFrom": null,
+					"valueTo": null,
+					"valueType": "INTEGER",
+					"validFor": null,
+					"value": {
+						"value": "1",
+						"alias": "Single Cell Point to Multipoint (SCPTM)"
+					}
+				},
+				{
+					"isDefault": false,
+					"rangeInterval": null,
+					"regex": null,
+					"unitOfMeasure": "N/A",
+					"valueFrom": null,
+					"valueTo": null,
+					"valueType": "INTEGER",
+					"validFor": null,
+					"value": {
+						"value": "2",
+						"alias": "Broadcast/Multicast"
+					}
+				},
+				{
+					"isDefault": false,
+					"rangeInterval": null,
+					"regex": null,
+					"unitOfMeasure": "N/A",
+					"valueFrom": null,
+					"valueTo": null,
+					"valueType": "INTEGER",
+					"validFor": null,
+					"value": {
+						"value": "3",
+						"alias": "Broadcast/Multicast + SC-PTM"
+					}
+				},
+				{
+					"isDefault": false,
+					"rangeInterval": null,
+					"regex": null,
+					"unitOfMeasure": "N/A",
+					"valueFrom": null,
+					"valueTo": null,
+					"valueType": "INTEGER",
+					"validFor": null,
+					"value": {
+						"value": "4",
+						"alias": "Unicast"
+					}
+				}
+			]
+		},
+		{
+			"name": "Maximum supported packet size",
+			"configurable": false,
+			"description": "This attribute describes the maximum packet size supported by the network slice and may be important for URLLC (Ultra-Reliable Low Latency Communication) and MIoT (Massive IoT), or to indicate a supported maximum transmission unit (MTU).",
+			"extensible": null,
+			"isUnique": true,
+			"maxCardinality": 1,
+			"minCardinality": 0,
+			"regex": null,
+			"valueType": "INTEGER",
+			"serviceSpecCharRelationship": [
+				{
+					"name": "Character Attribute",
+					"role": "tag",
+					"relationshipType": "tag"
+				},
+				{
+					"name": "Performance",
+					"role": "tag",
+					"relationshipType": "tag"
+				}
+			],
+			"serviceSpecCharacteristicValue": [
+				{
+					"isDefault": true,
+					"rangeInterval": null,
+					"regex": null,
+					"unitOfMeasure": "Bytes",
+					"valueFrom": null,
+					"valueTo": null,
+					"valueType": "INTEGER",
+					"validFor": null,
+					"value": {
+						"value": "1500"
+					}
+				}
+			]
+		},
+		{
+			"name": "Mission critical support",
+			"configurable": false,
+			"description": "Mission-critical (MC) leads to a priority of the network slice relative to others, for C-plane (Control Plane) and U-plane (User Plane) decisions. This is relative to a customer provider relationship and to a PLMN (Public land Mobile Network)",
+			"extensible": null,
+			"isUnique": true,
+			"maxCardinality": 1,
+			"minCardinality": 0,
+			"regex": null,
+			"valueType": "BINARY",
+			"serviceSpecCharRelationship": [
+				{
+					"role": "Mission-critical capability support",
+					"name": "Mission critical support: Mission-critical capability support",
+					"relationshipType": "aggregation"
+				},
+				{
+					"role": "Mission-critical service support",
+					"name": "Mission critical support: Mission-critical service support",
+					"relationshipType": "aggregation"
+				}
+			],
+			"serviceSpecCharacteristicValue": [
+				{
+					"isDefault": true,
+					"rangeInterval": null,
+					"regex": null,
+					"unitOfMeasure": "N/A",
+					"valueFrom": null,
+					"valueTo": null,
+					"valueType": "BINARY",
+					"validFor": null,
+					"value": {
+						"value": "0",
+						"alias": "Non-mission-critical"
+					}
+				},
+				{
+					"isDefault": false,
+					"rangeInterval": null,
+					"regex": null,
+					"unitOfMeasure": "N/A",
+					"valueFrom": null,
+					"valueTo": null,
+					"valueType": "BINARY",
+					"validFor": null,
+					"value": {
+						"value": "1",
+						"alias": "Mission-critical"
+					}
+				}
+			]
+		},
+		{
+			"name": "Mission critical support: Mission-critical capability support",
+			"configurable": false,
+			"description": "This parameter specifies what capabilities are available to support mission-critical services. More than one capability may be supported at once. Conditional: This parameter must be present if Mission critical support is set to Mission-critical.",
+			"extensible": null,
+			"isUnique": true,
+			"maxCardinality": 1,
+			"minCardinality": 0,
+			"regex": null,
+			"valueType": "SET",
+			"serviceSpecCharRelationship": [
+				{
+					"name": "Character Attribute",
+					"role": "tag",
+					"relationshipType": "tag"
+				},
+				{
+					"name": "Functional",
+					"role": "tag",
+					"relationshipType": "tag"
+				},
+				{
+					"role": "Mission critical support",
+					"name": "Mission critical support",
+					"relationshipType": "dependency"
+				}
+			],
+			"serviceSpecCharacteristicValue": [
+				{
+					"isDefault": true,
+					"rangeInterval": null,
+					"regex": null,
+					"unitOfMeasure": "N/A",
+					"valueFrom": null,
+					"valueTo": null,
+					"valueType": "INTEGER",
+					"validFor": null,
+					"value": {
+						"value": "0",
+						"alias": "Inter-user prioritization"
+					}
+				},
+				{
+					"isDefault": false,
+					"rangeInterval": null,
+					"regex": null,
+					"unitOfMeasure": "N/A",
+					"valueFrom": null,
+					"valueTo": null,
+					"valueType": "INTEGER",
+					"validFor": null,
+					"value": {
+						"value": "1",
+						"alias": "Pre-emption"
+					}
+				},
+				{
+					"isDefault": false,
+					"rangeInterval": null,
+					"regex": null,
+					"unitOfMeasure": "N/A",
+					"valueFrom": null,
+					"valueTo": null,
+					"valueType": "INTEGER",
+					"validFor": null,
+					"value": {
+						"value": "2",
+						"alias": "Local control"
+					}
+				}
+			]
+		},
+		{
+			"name": "Mission critical support: Mission-critical service support",
+			"configurable": false,
+			"description": "This attribute specifies whether or not the network slice supports mission-critical push-to-talk (MCPTT), mission-critical data (MCData)], mission-critical video (MCVideo), or mission-critical interworking. Conditional: This parameter must be present if Mission critical support is set to Mission-critical.",
+			"extensible": null,
+			"isUnique": true,
+			"maxCardinality": 1,
+			"minCardinality": 0,
+			"regex": null,
+			"valueType": "SET",
+			"serviceSpecCharRelationship": [
+				{
+					"name": "Character Attribute",
+					"role": "tag",
+					"relationshipType": "tag"
+				},
+				{
+					"name": "Functional",
+					"role": "tag",
+					"relationshipType": "tag"
+				},
+				{
+					"role": "Mission critical support",
+					"name": "Mission critical support",
+					"relationshipType": "dependency"
+				}
+			],
+			"serviceSpecCharacteristicValue": [
+				{
+					"isDefault": true,
+					"rangeInterval": null,
+					"regex": null,
+					"unitOfMeasure": "N/A",
+					"valueFrom": null,
+					"valueTo": null,
+					"valueType": "INTEGER",
+					"validFor": null,
+					"value": {
+						"value": "0",
+						"alias": "MCPTT"
+					}
+				},
+				{
+					"isDefault": false,
+					"rangeInterval": null,
+					"regex": null,
+					"unitOfMeasure": "N/A",
+					"valueFrom": null,
+					"valueTo": null,
+					"valueType": "INTEGER",
+					"validFor": null,
+					"value": {
+						"value": "1",
+						"alias": "MCData"
+					}
+				},
+				{
+					"isDefault": false,
+					"rangeInterval": null,
+					"regex": null,
+					"unitOfMeasure": "N/A",
+					"valueFrom": null,
+					"valueTo": null,
+					"valueType": "INTEGER",
+					"validFor": null,
+					"value": {
+						"value": "2",
+						"alias": "MCVideo"
+					}
+				},
+				{
+					"isDefault": false,
+					"rangeInterval": null,
+					"regex": null,
+					"unitOfMeasure": "N/A",
+					"valueFrom": null,
+					"valueTo": null,
+					"valueType": "INTEGER",
+					"validFor": null,
+					"value": {
+						"value": "3",
+						"alias": "MC interworking"
+					}
+				}
+			]
+		},
+		{
+			"name": "MMTel support",
+			"configurable": false,
+			"description": "This attribute describes whether the network slice supports IP Multimedia Subsystem (IMS) and Multimedia Telephony Service MMTel. This parameter describes whether the GSMA PRD NG.114 compliant MMTel deployment is supported in the network slice.",
+			"extensible": null,
+			"isUnique": true,
+			"maxCardinality": 1,
+			"minCardinality": 0,
+			"regex": null,
+			"valueType": "BINARY",
+			"serviceSpecCharRelationship": [
+				{
+					"name": "Character Attribute",
+					"role": "tag",
+					"relationshipType": "tag"
+				},
+				{
+					"name": "Functional",
+					"role": "tag",
+					"relationshipType": "tag"
+				}
+			],
+			"serviceSpecCharacteristicValue": [
+				{
+					"isDefault": true,
+					"rangeInterval": null,
+					"regex": null,
+					"unitOfMeasure": "N/A",
+					"valueFrom": null,
+					"valueTo": null,
+					"valueType": "BINARY",
+					"validFor": null,
+					"value": {
+						"value": "0",
+						"alias": "Not supported"
+					}
+				},
+				{
+					"isDefault": false,
+					"rangeInterval": null,
+					"regex": null,
+					"unitOfMeasure": "N/A",
+					"valueFrom": null,
+					"valueTo": null,
+					"valueType": "BINARY",
+					"validFor": null,
+					"value": {
+						"value": "1",
+						"alias": "Supported"
+					}
+				}
+			]
+		},
+		{
+			"name": "NB-IoT support",
+			"configurable": false,
+			"description": "This attribute describes whether NB-IoT is supported in the RAN in the network slice.",
+			"extensible": null,
+			"isUnique": true,
+			"maxCardinality": 1,
+			"minCardinality": 0,
+			"regex": null,
+			"valueType": "BINARY",
+			"serviceSpecCharacteristicValue": [
+				{
+					"isDefault": true,
+					"rangeInterval": null,
+					"regex": null,
+					"unitOfMeasure": "N/A",
+					"valueFrom": null,
+					"valueTo": null,
+					"valueType": "BINARY",
+					"validFor": null,
+					"value": {
+						"value": "0",
+						"alias": "Not supported"
+					}
+				},
+				{
+					"isDefault": false,
+					"rangeInterval": null,
+					"regex": null,
+					"unitOfMeasure": "N/A",
+					"valueFrom": null,
+					"valueTo": null,
+					"valueType": "BINARY",
+					"validFor": null,
+					"value": {
+						"value": "1",
+						"alias": "Supported"
+					}
+				}
+			]
+		},
+		{
+			"name": "Network functions owned by Network Slice Customer",
+			"configurable": false,
+			"description": "A NSC can own some network functions. This attribute provides a list of network functions to be provided by the NSC. If the list is empty, or this attribute is not included, the NSC is not providing any network function relevant for the network slice.",
+			"extensible": null,
+			"isUnique": true,
+			"maxCardinality": 1,
+			"minCardinality": 0,
+			"regex": null,
+			"valueType": "SET",
+			"serviceSpecCharRelationship": [
+				{
+					"name": "Character Attribute",
+					"role": "tag",
+					"relationshipType": "tag"
+				},
+				{
+					"name": "Functional",
+					"role": "tag",
+					"relationshipType": "tag"
+				},
+				{
+					"name": "Operational",
+					"role": "tag",
+					"relationshipType": "tag"
+				}
+			],
+			"serviceSpecCharacteristicValue": [
+				{
+					"isDefault": true,
+					"rangeInterval": null,
+					"regex": null,
+					"unitOfMeasure": "N/A",
+					"valueFrom": null,
+					"valueTo": null,
+					"valueType": "TEXT",
+					"validFor": null,
+					"value": {
+						"value": "UPF",
+						"alias": "UPF"
+					}
+				},
+				{
+					"isDefault": false,
+					"rangeInterval": null,
+					"regex": null,
+					"unitOfMeasure": "N/A",
+					"valueFrom": null,
+					"valueTo": null,
+					"valueType": "TEXT",
+					"validFor": null,
+					"value": {
+						"value": "UDM",
+						"alias": "UDM"
+					}
+				},
+				{
+					"isDefault": false,
+					"rangeInterval": null,
+					"regex": null,
+					"unitOfMeasure": "N/A",
+					"valueFrom": null,
+					"valueTo": null,
+					"valueType": "TEXT",
+					"validFor": null,
+					"value": {
+						"value": "AUSF",
+						"alias": "AUSF"
+					}
+				},
+				{
+					"isDefault": false,
+					"rangeInterval": null,
+					"regex": null,
+					"unitOfMeasure": "N/A",
+					"valueFrom": null,
+					"valueTo": null,
+					"valueType": "TEXT",
+					"validFor": null,
+					"value": {
+						"value": "AF",
+						"alias": "AF"
+					}
+				},
+				{
+					"isDefault": false,
+					"rangeInterval": null,
+					"regex": null,
+					"unitOfMeasure": "N/A",
+					"valueFrom": null,
+					"valueTo": null,
+					"valueType": "TEXT",
+					"validFor": null,
+					"value": {
+						"value": "PCF",
+						"alias": "PCF"
+					}
+				}
+			]
+		},
+		{
+			"name": "Maximum number of PDU sessions",
+			"configurable": false,
+			"description": "This attribute describes the maximum number of concurrent PDU supported by the network slice as specified by the Maximum number of PDU sessions parameter. If the network slice also requires taking into  account Packet Data Network (PDN) connections that can be handed over to the 5GS while the UEs are in the EPS, this is specified in the optional attribute EPS counting required. If the parameter EPS counting required is missing, then no counting happens of any PDN connections in EPS. In roaming case (i.e. when the Area of Service attribute includes roaming partners' PMNs), the number of PDU sessions includes any Local Breakout PDU sessions if the Parameter Local Break Out (LBO) PDU Sessions Counting Required is set to Yes. Otherwise (including the case where this parameter is not present), Local Breakout PDU sessions are not counted.",
+			"extensible": null,
+			"isUnique": true,
+			"maxCardinality": 1,
+			"minCardinality": 0,
+			"regex": null,
+			"valueType": "INTEGER",
+			"serviceSpecCharRelationship": [
+				{
+					"name": "Scalability Attribute",
+					"role": "tag",
+					"relationshipType": "tag"
+				},
+				{
+					"role": "EPS counting required",
+					"name": "Maximum number of PDU sessions: EPS counting required",
+					"relationshipType": "aggregation"
+				},
+				{
+					"role": "LBO PDU Sessions Counting required",
+					"name": "Maximum number of PDU sessions: LBO PDU Sessions Counting required",
+					"relationshipType": "aggregation"
+				}
+			],
+			"serviceSpecCharacteristicValue": [
+				{
+					"isDefault": false,
+					"rangeInterval": null,
+					"regex": null,
+					"unitOfMeasure": "N/A",
+					"valueFrom": null,
+					"valueTo": null,
+					"valueType": "INTEGER",
+					"validFor": null,
+					"value": {
+						"value": "100000"
+					}
+				}
+			]
+		},
+		{
+			"name": "Maximum number of PDU sessions: EPS counting required",
+			"configurable": false,
+			"description": "If this parameter indicates that EPS counting is required, the PDU sessions counting shall also take into account the PDN connections in the EPS connected to an APN that maps to a DNN/S-NSSAI of the network slice",
+			"extensible": null,
+			"isUnique": true,
+			"maxCardinality": 1,
+			"minCardinality": 0,
+			"regex": null,
+			"valueType": "BINARY",
+			"serviceSpecCharRelationship": [
+				{
+					"name": "Scalability Attribute",
+					"role": "tag",
+					"relationshipType": "tag"
+				}
+			],
+			"serviceSpecCharacteristicValue": [
+				{
+					"isDefault": true,
+					"rangeInterval": null,
+					"regex": null,
+					"unitOfMeasure": "N/A",
+					"valueFrom": null,
+					"valueTo": null,
+					"valueType": "BINARY",
+					"validFor": null,
+					"value": {
+						"value": "0",
+						"alias": "No"
+					}
+				},
+				{
+					"isDefault": false,
+					"rangeInterval": null,
+					"regex": null,
+					"unitOfMeasure": "N/A",
+					"valueFrom": null,
+					"valueTo": null,
+					"valueType": "BINARY",
+					"validFor": null,
+					"value": {
+						"value": "1",
+						"alias": "Yes"
+					}
+				}
+			]
+		},
+		{
+			"name": "Maximum number of PDU sessions: LBO PDU Sessions Counting required",
+			"configurable": false,
+			"description": "This parameter specifies whether the LBO PDU sessions are counted. If the value is 'Yes' then LBO sessions are counted also, if the value is set to 'No', then LBO sessions are not counted. If this parameter is not present, then the LBO PDU sessions are not counted.",
+			"extensible": null,
+			"isUnique": true,
+			"maxCardinality": 1,
+			"minCardinality": 0,
+			"regex": null,
+			"valueType": "BINARY",
+			"serviceSpecCharRelationship": [
+				{
+					"name": "Scalability Attribute",
+					"role": "tag",
+					"relationshipType": "tag"
+				}
+			],
+			"serviceSpecCharacteristicValue": [
+				{
+					"isDefault": true,
+					"rangeInterval": null,
+					"regex": null,
+					"unitOfMeasure": "N/A",
+					"valueFrom": null,
+					"valueTo": null,
+					"valueType": "BINARY",
+					"validFor": null,
+					"value": {
+						"value": "0",
+						"alias": "No"
+					}
+				},
+				{
+					"isDefault": false,
+					"rangeInterval": null,
+					"regex": null,
+					"unitOfMeasure": "N/A",
+					"valueFrom": null,
+					"valueTo": null,
+					"valueType": "BINARY",
+					"validFor": null,
+					"value": {
+						"value": "1",
+						"alias": "Yes"
+					}
+				}
+			]
+		},
+		{
+			"name": "Maximum number of UEs",
+			"configurable": false,
+			"description": "This attribute describes the maximum number of UEs that can use the network slice simultaneously as specified by the 'Maximum number of UEs' parameter. If the network slice also requires taking into account UEs using PDN connections that can be handed over to the 5GS while they are in the EPS, this is specified in the optional attribute 'EPS counting required'. If the parameter 'EPS counting required' is missing, then no counting of UEs happens while they are in EPS. In roaming case (i.e. when the Area of Service attribute includes roaming partners' PMNs), the number of UEs includes any roaming UEs if the parameter 'Roaming UEs Counting Required' is set to 'Yes'. Otherwise (including the case where this parameter is not present), roaming UEs are not counted.",
+			"extensible": null,
+			"isUnique": true,
+			"maxCardinality": 1,
+			"minCardinality": 0,
+			"regex": null,
+			"valueType": "INTEGER",
+			"serviceSpecCharRelationship": [
+				{
+					"name": "Scalability Attribute",
+					"role": "tag",
+					"relationshipType": "tag"
+				},
+				{
+					"role": "EPS counting required",
+					"name": "Maximum number of UEs: EPS counting required",
+					"relationshipType": "aggregation"
+				},
+				{
+					"role": "Roaming UEs Counting required",
+					"name": "Maximum number of UEs: Roaming UEs Counting required",
+					"relationshipType": "aggregation"
+				}
+			],
+			"serviceSpecCharacteristicValue": [
+				{
+					"isDefault": true,
+					"rangeInterval": null,
+					"regex": null,
+					"unitOfMeasure": "N/A",
+					"valueFrom": null,
+					"valueTo": null,
+					"valueType": "INTEGER",
+					"validFor": null,
+					"value": {
+						"value": "100000"
+					}
+				}
+			]
+		},
+		{
+			"name": "Maximum number of UEs: EPS counting required",
+			"configurable": false,
+			"description": "If this parameter indicates that EPS counting is required, the UE counting shall also take into account the UEs in the EPS with at least one PDN connection in the network slice, i.e. it is required to count the UEs that have at least one PDU session connected to an APN that maps to a DNN/S-NSSAI of the network slice",
+			"extensible": null,
+			"isUnique": true,
+			"maxCardinality": 1,
+			"minCardinality": 0,
+			"regex": null,
+			"valueType": "BINARY",
+			"serviceSpecCharRelationship": [
+				{
+					"name": "Scalability Attribute",
+					"role": "tag",
+					"relationshipType": "tag"
+				}
+			],
+			"serviceSpecCharacteristicValue": [
+				{
+					"isDefault": true,
+					"rangeInterval": null,
+					"regex": null,
+					"unitOfMeasure": "N/A",
+					"valueFrom": null,
+					"valueTo": null,
+					"valueType": "BINARY",
+					"validFor": null,
+					"value": {
+						"value": "0",
+						"alias": "No"
+					}
+				},
+				{
+					"isDefault": false,
+					"rangeInterval": null,
+					"regex": null,
+					"unitOfMeasure": "N/A",
+					"valueFrom": null,
+					"valueTo": null,
+					"valueType": "BINARY",
+					"validFor": null,
+					"value": {
+						"value": "1",
+						"alias": "Yes"
+					}
+				}
+			]
+		},
+		{
+			"name": "Maximum number of UEs: Roaming UEs Counting required",
+			"configurable": false,
+			"description": "This parameter specifies whether roaming UEs are counted. If the value is 'Yes', then roaming UEs are counted also, if the value is set to 'No', then roaming UEs are not counted. If this parameter is not present, then the roaming UEs are not counted.",
+			"extensible": null,
+			"isUnique": true,
+			"maxCardinality": 1,
+			"minCardinality": 0,
+			"regex": null,
+			"valueType": "BINARY",
+			"serviceSpecCharRelationship": [
+				{
+					"name": "Scalability Attribute",
+					"role": "tag",
+					"relationshipType": "tag"
+				}
+			],
+			"serviceSpecCharacteristicValue": [
+				{
+					"isDefault": true,
+					"rangeInterval": null,
+					"regex": null,
+					"unitOfMeasure": "N/A",
+					"valueFrom": null,
+					"valueTo": null,
+					"valueType": "BINARY",
+					"validFor": null,
+					"value": {
+						"value": "0",
+						"alias": "No"
+					}
+				},
+				{
+					"isDefault": false,
+					"rangeInterval": null,
+					"regex": null,
+					"unitOfMeasure": "N/A",
+					"valueFrom": null,
+					"valueTo": null,
+					"valueType": "BINARY",
+					"validFor": null,
+					"value": {
+						"value": "1",
+						"alias": "Yes"
+					}
+				}
+			]
+		},
+		{
+			"name": "Performance monitoring",
+			"configurable": false,
+			"description": "This attribute provides the capability for NSC and NOP to monitor Key Quality Indicators (KQIs) and Key Performance Indicators (KPIs). KQIs reflect the end-to-end service performance and quality while KPIs reflect the performance of the network.",
+			"regex": null,
+			"valueType": "BINARY",
+			"serviceSpecCharRelationship": [
+				{
+					"role": "Availability",
+					"name": "Performance monitoring: Availability",
+					"relationshipType": "aggregation"
+				},
+				{
+					"role": "Monitoring sample frequency",
+					"name": "Performance monitoring:  Monitoring sample frequency",
+					"relationshipType": "aggregation"
+				}
+			]
+		},
+		{
+			"name": "Performance monitoring: Availability",
+			"configurable": false,
+			"description": "This parameter contains a list of KQIs and KPIs available for monitoring. If the list is empty this attribute is not available in the network slice and the other parameters might be ignored.",
+			"extensible": null,
+			"isUnique": true,
+			"maxCardinality": 1,
+			"minCardinality": 0,
+			"regex": null,
+			"valueType": "SET",
+			"serviceSpecCharRelationship": [
+				{
+					"name": "Character Attribute",
+					"role": "tag",
+					"relationshipType": "tag"
+				},
+				{
+					"name": "Operational",
+					"role": "tag",
+					"relationshipType": "tag"
+				},
+				{
+					"name": "Functional",
+					"role": "tag",
+					"relationshipType": "tag"
+				}
+			],
+			"serviceSpecCharacteristicValue": [
+				{
+					"isDefault": false,
+					"rangeInterval": null,
+					"regex": null,
+					"unitOfMeasure": "N/A",
+					"valueFrom": null,
+					"valueTo": null,
+					"valueType": "INTEGER",
+					"validFor": null,
+					"value": {
+						"value": "0",
+						"alias": "Throughput"
+					}
+				},
+				{
+					"isDefault": false,
+					"rangeInterval": null,
+					"regex": null,
+					"unitOfMeasure": "N/A",
+					"valueFrom": null,
+					"valueTo": null,
+					"valueType": "INTEGER",
+					"validFor": null,
+					"value": {
+						"value": "1",
+						"alias": "Latency"
+					}
+				},
+				{
+					"isDefault": false,
+					"rangeInterval": null,
+					"regex": null,
+					"unitOfMeasure": "N/A",
+					"valueFrom": null,
+					"valueTo": null,
+					"valueType": "INTEGER",
+					"validFor": null,
+					"value": {
+						"value": "2",
+						"alias": "Service Request Success Rate"
+					}
+				}
+			]
+		},
+		{
+			"name": "Performance monitoring: Monitoring sample frequency",
+			"configurable": false,
+			"description": "This parameter describes how often the KQIs and KPIs are monitored. Only the KQIs of communication services offered by the NSP can be monitored. For over-the-top services, the NSP is not able to access the KQIs.",
+			"extensible": null,
+			"isUnique": true,
+			"maxCardinality": 1,
+			"minCardinality": 0,
+			"regex": null,
+			"valueType": "ENUM",
+			"serviceSpecCharRelationship": [
+				{
+					"name": "Character Attribute",
+					"role": "tag",
+					"relationshipType": "tag"
+				},
+				{
+					"name": "Operational",
+					"role": "tag",
+					"relationshipType": "tag"
+				},
+				{
+					"name": "Functional",
+					"role": "tag",
+					"relationshipType": "tag"
+				},
+				{
+					"name": "KPI",
+					"role": "tag",
+					"relationshipType": "tag"
+				}
+			],
+			"serviceSpecCharacteristicValue": [
+				{
+					"isDefault": false,
+					"rangeInterval": null,
+					"regex": null,
+					"unitOfMeasure": "N/A",
+					"valueFrom": null,
+					"valueTo": null,
+					"valueType": "INTEGER",
+					"validFor": null,
+					"value": {
+						"value": "0",
+						"alias": "Per second"
+					}
+				},
+				{
+					"isDefault": false,
+					"rangeInterval": null,
+					"regex": null,
+					"unitOfMeasure": "N/A",
+					"valueFrom": null,
+					"valueTo": null,
+					"valueType": "INTEGER",
+					"validFor": null,
+					"value": {
+						"value": "1",
+						"alias": "Per minute"
+					}
+				},
+				{
+					"isDefault": false,
+					"rangeInterval": null,
+					"regex": null,
+					"unitOfMeasure": "N/A",
+					"valueFrom": null,
+					"valueTo": null,
+					"valueType": "INTEGER",
+					"validFor": null,
+					"value": {
+						"value": "2",
+						"alias": "Per hour"
+					}
+				}
+			]
+		},
+		{
+			"name": "Performance prediction",
+			"configurable": false,
+			"description": "This attribute defines the capability to allow the mobile system to predict the network and service status. Predictive QoS (Quality of Service) can be done for various Key Quality Indicators (KQIs) and Key Performance Indicators (KPIs). KQIs reflect the end-to-end service performance and quality, while KPIs reflect the performance of the network. The prediction is done for a specific point of time in the future and for a specific geolocation. Only the KQIs of communication services offered by the NSP can be predicted. For over-the-top services, the NSP is not able to access the KQIs.",
+			"regex": null,
+			"valueType": "BINARY",
+			"serviceSpecCharRelationship": [
+				{
+					"role": "Availability",
+					"name": "Performance prediction: Availability",
+					"relationshipType": "aggregation"
+				},
+				{
+					"role": "Prediction frequency",
+					"name": "Performance prediction: Prediction frequency",
+					"relationshipType": "aggregation"
+				}
+			]
+		},
+		{
+			"name": "Performance prediction: Availability",
+			"configurable": false,
+			"description": "This parameter contains a list of KQIs and KPIs available for prediction. If the list is empty, the attribute is not available in the network slice and the other parameters might be ignored.",
+			"extensible": null,
+			"isUnique": true,
+			"maxCardinality": 1,
+			"minCardinality": 0,
+			"regex": null,
+			"valueType": "SET",
+			"serviceSpecCharRelationship": [
+				{
+					"name": "Character Attribute",
+					"role": "tag",
+					"relationshipType": "tag"
+				}
+			],
+			"serviceSpecCharacteristicValue": [
+				{
+					"isDefault": false,
+					"rangeInterval": null,
+					"regex": null,
+					"unitOfMeasure": "N/A",
+					"valueFrom": null,
+					"valueTo": null,
+					"valueType": "INTEGER",
+					"validFor": null,
+					"value": {
+						"value": "0",
+						"alias": "Throughput"
+					}
+				},
+				{
+					"isDefault": false,
+					"rangeInterval": null,
+					"regex": null,
+					"unitOfMeasure": "N/A",
+					"valueFrom": null,
+					"valueTo": null,
+					"valueType": "INTEGER",
+					"validFor": null,
+					"value": {
+						"value": "1",
+						"alias": "Latency"
+					}
+				},
+				{
+					"isDefault": false,
+					"rangeInterval": null,
+					"regex": null,
+					"unitOfMeasure": "N/A",
+					"valueFrom": null,
+					"valueTo": null,
+					"valueType": "INTEGER",
+					"validFor": null,
+					"value": {
+						"value": "2",
+						"alias": "Service Request Success Rate"
+					}
+				}
+			]
+		},
+		{
+			"name": "Performance prediction: Prediction frequency",
+			"configurable": false,
+			"description": "This parameter describes how often KQIs and KPIs prediction values are provided.",
+			"extensible": null,
+			"isUnique": true,
+			"maxCardinality": 1,
+			"minCardinality": 0,
+			"regex": null,
+			"valueType": "ENUM",
+			"serviceSpecCharRelationship": [
+				{
+					"name": "Character Attribute",
+					"role": "tag",
+					"relationshipType": "tag"
+				},
+				{
+					"name": "Operational",
+					"role": "tag",
+					"relationshipType": "tag"
+				},
+				{
+					"name": "Functional",
+					"role": "tag",
+					"relationshipType": "tag"
+				},
+				{
+					"name": "KPI",
+					"role": "tag",
+					"relationshipType": "tag"
+				}
+			],
+			"serviceSpecCharacteristicValue": [
+				{
+					"isDefault": false,
+					"rangeInterval": null,
+					"regex": null,
+					"unitOfMeasure": "N/A",
+					"valueFrom": null,
+					"valueTo": null,
+					"valueType": "INTEGER",
+					"validFor": null,
+					"value": {
+						"value": "0",
+						"alias": "Per second"
+					}
+				},
+				{
+					"isDefault": false,
+					"rangeInterval": null,
+					"regex": null,
+					"unitOfMeasure": "N/A",
+					"valueFrom": null,
+					"valueTo": null,
+					"valueType": "INTEGER",
+					"validFor": null,
+					"value": {
+						"value": "1",
+						"alias": "Per minute"
+					}
+				},
+				{
+					"isDefault": false,
+					"rangeInterval": null,
+					"regex": null,
+					"unitOfMeasure": "N/A",
+					"valueFrom": null,
+					"valueTo": null,
+					"valueType": "INTEGER",
+					"validFor": null,
+					"value": {
+						"value": "2",
+						"alias": "Per hour"
+					}
+				}
+			]
+		},
+		{
+			"name": "Positioning support",
+			"configurable": false,
+			"description": "This attribute describes if the network slice provides geo-localization methods or supporting methods.",
+			"regex": null,
+			"valueType": "SET",
+			"serviceSpecCharRelationship": [
+				{
+					"role": "Availability",
+					"name": "Positioning support: Availability",
+					"relationshipType": "aggregation"
+				},
+				{
+					"role": "Prediction frequency",
+					"name": "Positioning support: Prediction frequency",
+					"relationshipType": "aggregation"
+				},
+				{
+					"role": "Prediction frequency",
+					"name": "Positioning support: Accuracy",
+					"relationshipType": "aggregation"
+				}
+			]
+		},
+		{
+			"name": "Positioning support: Availability",
+			"configurable": false,
+			"description": "This parameter describes if this attribute is provided by the network slice and contains a list of positioning methods provided by the slice. If the list is empty this attribute is not available in the network slice and the other parameters might be ignored.",
+			"extensible": null,
+			"isUnique": true,
+			"maxCardinality": 1,
+			"minCardinality": 0,
+			"regex": null,
+			"valueType": "SET",
+			"serviceSpecCharRelationship": [
+				{
+					"name": "Character Attribute",
+					"role": "tag",
+					"relationshipType": "tag"
+				},
+				{
+					"name": "Functional",
+					"role": "tag",
+					"relationshipType": "tag"
+				},
+				{
+					"name": "KPI",
+					"role": "tag",
+					"relationshipType": "tag"
+				}
+			],
+			"serviceSpecCharacteristicValue": [
+				{
+					"isDefault": false,
+					"rangeInterval": null,
+					"regex": null,
+					"unitOfMeasure": "N/A",
+					"valueFrom": null,
+					"valueTo": null,
+					"valueType": "INTEGER",
+					"validFor": null,
+					"value": {
+						"value": "0",
+						"alias": "CID (LTE and NR)"
+					}
+				},
+				{
+					"isDefault": false,
+					"rangeInterval": null,
+					"regex": null,
+					"unitOfMeasure": "N/A",
+					"valueFrom": null,
+					"valueTo": null,
+					"valueType": "INTEGER",
+					"validFor": null,
+					"value": {
+						"value": "1",
+						"alias": "E-CID (LTE and NR)"
+					}
+				},
+				{
+					"isDefault": false,
+					"rangeInterval": null,
+					"regex": null,
+					"unitOfMeasure": "N/A",
+					"valueFrom": null,
+					"valueTo": null,
+					"valueType": "INTEGER",
+					"validFor": null,
+					"value": {
+						"value": "2",
+						"alias": "OTDOA (LTE and NR)"
+					}
+				},
+				{
+					"isDefault": false,
+					"rangeInterval": null,
+					"regex": null,
+					"unitOfMeasure": "N/A",
+					"valueFrom": null,
+					"valueTo": null,
+					"valueType": "INTEGER",
+					"validFor": null,
+					"value": {
+						"value": "3",
+						"alias": "RF fingerprinting"
+					}
+				},
+				{
+					"isDefault": false,
+					"rangeInterval": null,
+					"regex": null,
+					"unitOfMeasure": "N/A",
+					"valueFrom": null,
+					"valueTo": null,
+					"valueType": "INTEGER",
+					"validFor": null,
+					"value": {
+						"value": "4",
+						"alias": "AECID"
+					}
+				},
+				{
+					"isDefault": false,
+					"rangeInterval": null,
+					"regex": null,
+					"unitOfMeasure": "N/A",
+					"valueFrom": null,
+					"valueTo": null,
+					"valueType": "INTEGER",
+					"validFor": null,
+					"value": {
+						"value": "5",
+						"alias": "Hybrid positioning"
+					}
+				},
+				{
+					"isDefault": false,
+					"rangeInterval": null,
+					"regex": null,
+					"unitOfMeasure": "N/A",
+					"valueFrom": null,
+					"valueTo": null,
+					"valueType": "INTEGER",
+					"validFor": null,
+					"value": {
+						"value": "6",
+						"alias": "NET-RTK"
+					}
+				}
+			]
+		},
+		{
+			"name": "Positioning support: Prediction frequency",
+			"configurable": false,
+			"description": "This parameter describes how often location information is provided. This parameter simply defines how often the customer is allowed to request location information. This is not related to the time it takes to determine the location, which is a characteristic of the positioning method.",
+			"extensible": null,
+			"isUnique": true,
+			"maxCardinality": 1,
+			"minCardinality": 0,
+			"regex": null,
+			"valueType": "ENUM",
+			"serviceSpecCharRelationship": [
+				{
+					"name": "Character Attribute",
+					"role": "tag",
+					"relationshipType": "tag"
+				},
+				{
+					"name": "Functional",
+					"role": "tag",
+					"relationshipType": "tag"
+				},
+				{
+					"name": "KPI",
+					"role": "tag",
+					"relationshipType": "tag"
+				}
+			],
+			"serviceSpecCharacteristicValue": [
+				{
+					"isDefault": false,
+					"rangeInterval": null,
+					"regex": null,
+					"unitOfMeasure": "N/A",
+					"valueFrom": null,
+					"valueTo": null,
+					"valueType": "INTEGER",
+					"validFor": null,
+					"value": {
+						"value": "0",
+						"alias": "Per second"
+					}
+				},
+				{
+					"isDefault": false,
+					"rangeInterval": null,
+					"regex": null,
+					"unitOfMeasure": "N/A",
+					"valueFrom": null,
+					"valueTo": null,
+					"valueType": "INTEGER",
+					"validFor": null,
+					"value": {
+						"value": "1",
+						"alias": "Per minute"
+					}
+				},
+				{
+					"isDefault": false,
+					"rangeInterval": null,
+					"regex": null,
+					"unitOfMeasure": "N/A",
+					"valueFrom": null,
+					"valueTo": null,
+					"valueType": "INTEGER",
+					"validFor": null,
+					"value": {
+						"value": "2",
+						"alias": "Per hour"
+					}
+				}
+			]
+		},
+		{
+			"name": "Positioning support: Accuracy",
+			"configurable": false,
+			"description": "This parameter describes the accuracy (+/- 0.01m) of the location information. Accuracy depends on the respective positioning solution applied in the network slice.",
+			"extensible": null,
+			"isUnique": true,
+			"maxCardinality": 1,
+			"minCardinality": 0,
+			"regex": null,
+			"valueType": "FLOAT",
+			"serviceSpecCharRelationship": [
+				{
+					"name": "Character Attribute",
+					"role": "tag",
+					"relationshipType": "tag"
+				},
+				{
+					"name": "Functional",
+					"role": "tag",
+					"relationshipType": "tag"
+				},
+				{
+					"name": "KPI",
+					"role": "tag",
+					"relationshipType": "tag"
+				}
+			],
+			"serviceSpecCharacteristicValue": [
+				{
+					"isDefault": false,
+					"rangeInterval": null,
+					"regex": null,
+					"unitOfMeasure": "meter",
+					"valueFrom": null,
+					"valueTo": null,
+					"valueType": "FLOAT",
+					"validFor": null,
+					"value": {
+						"value": "0.01"
+					}
+				}
+			]
+		},
+		{
+			"name": "Radio spectrum",
+			"configurable": false,
+			"description": "Defines the radio spectrum in which the network slice should be supported. This is important information, as: 1) Some UEs of the NSC might be capable of using certain frequency bands only, 2) The NSC may only own or have access to certain frequency bands.",
+			"extensible": null,
+			"isUnique": true,
+			"maxCardinality": 1,
+			"minCardinality": 0,
+			"regex": null,
+			"valueType": "SET",
+			"serviceSpecCharRelationship": [
+				{
+					"name": "Scalability Attribute",
+					"role": "tag",
+					"relationshipType": "tag"
+				}
+			],
+			"serviceSpecCharacteristicValue": [
+				{
+					"isDefault": false,
+					"rangeInterval": null,
+					"regex": null,
+					"unitOfMeasure": "N/A",
+					"valueFrom": null,
+					"valueTo": null,
+					"valueType": "TEXT",
+					"validFor": null,
+					"value": {
+						"value": "n1",
+						"alias": "UL: 1920 MHz - 1980 MHz DL: 2110 MHz - 2170 MHz FDD"
+					}
+				},
+				{
+					"isDefault": false,
+					"rangeInterval": null,
+					"regex": null,
+					"unitOfMeasure": "N/A",
+					"valueFrom": null,
+					"valueTo": null,
+					"valueType": "TEXT",
+					"validFor": null,
+					"value": {
+						"value": "n77",
+						"alias": "UL: 3300 MHz - 4200 MHz DL: 3300 MHz - 4200 MHz TDD"
+					}
+				},
+				{
+					"isDefault": false,
+					"rangeInterval": null,
+					"regex": null,
+					"unitOfMeasure": "N/A",
+					"valueFrom": null,
+					"valueTo": null,
+					"valueType": "TEXT",
+					"validFor": null,
+					"value": {
+						"value": "n78",
+						"alias": "UL: 3300 MHz - 3800 MHz DL: 3300 MHz - 3800 MHz TDD"
+					}
+				},
+				{
+					"isDefault": false,
+					"rangeInterval": null,
+					"regex": null,
+					"unitOfMeasure": "N/A",
+					"valueFrom": null,
+					"valueTo": null,
+					"valueType": "TEXT",
+					"validFor": null,
+					"value": {
+						"value": "n79",
+						"alias": "UL: 4400 MHz - 5000 MHz DL: 4400 MHz - 5000 MHz TDD"
+					}
+				}
+			]
+		},
+		{
+			"name": "Monitoring and analytics",
+			"configurable": false,
+			"description": "This attribute helps the NSC to understand or investigate the root cause of network service performance degradation or failure. The network can provide an interface to expose monitoring and analytics information (e.g. via Network Exposure Function (NEF) as defined in 3GPP TS 23.502)",
+			"extensible": null,
+			"isUnique": true,
+			"maxCardinality": 1,
+			"minCardinality": 0,
+			"regex": null,
+			"valueType": "ENUM",
+			"serviceSpecCharRelationship": [
+				{
+					"name": "Character Attribute",
+					"role": "tag",
+					"relationshipType": "tag"
+				},
+				{
+					"name": "Operational",
+					"role": "tag",
+					"relationshipType": "tag"
+				},
+				{
+					"name": "Functional",
+					"role": "tag",
+					"relationshipType": "tag"
+				},
+				{
+					"name": "KPI",
+					"role": "tag",
+					"relationshipType": "tag"
+				}
+			],
+			"serviceSpecCharacteristicValue": [
+				{
+					"isDefault": true,
+					"rangeInterval": null,
+					"regex": null,
+					"unitOfMeasure": "N/A",
+					"valueFrom": null,
+					"valueTo": null,
+					"valueType": "INTEGER",
+					"validFor": null,
+					"value": {
+						"value": "0",
+						"alias": "Not supported"
+					}
+				},
+				{
+					"isDefault": false,
+					"rangeInterval": null,
+					"regex": null,
+					"unitOfMeasure": "N/A",
+					"valueFrom": null,
+					"valueTo": null,
+					"valueType": "INTEGER",
+					"validFor": null,
+					"value": {
+						"value": "1",
+						"alias": "Passive investigation"
+					}
+				},
+				{
+					"isDefault": false,
+					"rangeInterval": null,
+					"regex": null,
+					"unitOfMeasure": "N/A",
+					"valueFrom": null,
+					"valueTo": null,
+					"valueType": "INTEGER",
+					"validFor": null,
+					"value": {
+						"value": "2",
+						"alias": "Active investigation"
+					}
+				}
+			]
+		},
+		{
+			"name": "Session and Service Continuity support",
+			"configurable": false,
+			"description": "The attribute defines the continuity of a Protocol Data Unit (PDU) session. The following three Session and Service Continuity (SSC) modes are specified: SSC mode 1 - the network preserves the connectivity service provided to the UE (the IP address is preserved), SSC mode 2 - the network may release the connectivity service delivered to the UE and release the corresponding PDU Session (the release of the PDU Session induces the release of IP address(es) that had been allocated to the UE), SSC mode 3 - changes to the user plane can be visible to the UE, while the network ensures that the UE suffers no loss of connectivity service (the IP address is not preserved in this mode when the PDU Session Anchor changes)",
+			"extensible": null,
+			"isUnique": true,
+			"maxCardinality": 1,
+			"minCardinality": 0,
+			"regex": null,
+			"valueType": "ENUM",
+			"serviceSpecCharRelationship": [
+				{
+					"name": "Character Attribute",
+					"role": "tag",
+					"relationshipType": "tag"
+				},
+				{
+					"name": "Functional",
+					"role": "tag",
+					"relationshipType": "tag"
+				},
+				{
+					"name": "KPI",
+					"role": "tag",
+					"relationshipType": "tag"
+				}
+			],
+			"serviceSpecCharacteristicValue": [
+				{
+					"isDefault": false,
+					"rangeInterval": null,
+					"regex": null,
+					"unitOfMeasure": "N/A",
+					"valueFrom": null,
+					"valueTo": null,
+					"valueType": "INTEGER",
+					"validFor": null,
+					"value": {
+						"value": "1",
+						"alias": "SSC mode 1"
+					}
+				},
+				{
+					"isDefault": false,
+					"rangeInterval": null,
+					"regex": null,
+					"unitOfMeasure": "N/A",
+					"valueFrom": null,
+					"valueTo": null,
+					"valueType": "INTEGER",
+					"validFor": null,
+					"value": {
+						"value": "2",
+						"alias": "SSC mode 2"
+					}
+				},
+				{
+					"isDefault": false,
+					"rangeInterval": null,
+					"regex": null,
+					"unitOfMeasure": "N/A",
+					"valueFrom": null,
+					"valueTo": null,
+					"valueType": "INTEGER",
+					"validFor": null,
+					"value": {
+						"value": "3",
+						"alias": "SSC mode 3"
+					}
+				}
+			]
+		},
+		{
+			"name": "Simultaneous use of the network slice",
+			"configurable": false,
+			"description": "This attribute describes whether a network slice can be simultaneously used by a UE together with other network slices and if so, with which other classes of network slices. The attribute is comprised of a list of Service Category Parameters with the associated Simultaneous Use Class parameter value. If no Service Category parameters are present, all UEs in the network slice are associated with the same Simultaneous Use Class.",
+			"extensible": null,
+			"isUnique": true,
+			"maxCardinality": 1,
+			"minCardinality": 0,
+			"regex": null,
+			"valueType": "ENUM",
+			"serviceSpecCharRelationship": [
+				{
+					"name": "Character Attribute",
+					"role": "tag",
+					"relationshipType": "tag"
+				},
+				{
+					"name": "Functional",
+					"role": "tag",
+					"relationshipType": "tag"
+				},
+				{
+					"role": "Service category",
+					"name": "Simultaneous use of the network slice: Service category",
+					"relationshipType": "aggregation"
+				}
+			],
+			"serviceSpecCharacteristicValue": [
+				{
+					"isDefault": true,
+					"rangeInterval": null,
+					"regex": null,
+					"unitOfMeasure": "N/A",
+					"valueFrom": null,
+					"valueTo": null,
+					"valueType": "INTEGER",
+					"validFor": null,
+					"value": {
+						"value": "0",
+						"alias": "Can be used simultaneously with any network slice"
+					}
+				},
+				{
+					"isDefault": false,
+					"rangeInterval": null,
+					"regex": null,
+					"unitOfMeasure": "N/A",
+					"valueFrom": null,
+					"valueTo": null,
+					"valueType": "INTEGER",
+					"validFor": null,
+					"value": {
+						"value": "1",
+						"alias": "Can be used simultaneously with any network slices with same SST value but different SD values"
+					}
+				},
+				{
+					"isDefault": false,
+					"rangeInterval": null,
+					"regex": null,
+					"unitOfMeasure": "N/A",
+					"valueFrom": null,
+					"valueTo": null,
+					"valueType": "INTEGER",
+					"validFor": null,
+					"value": {
+						"value": "2",
+						"alias": "Can be used simultaneously with any network slice with the same SD value but different SST value"
+					}
+				},
+				{
+					"isDefault": false,
+					"rangeInterval": null,
+					"regex": null,
+					"unitOfMeasure": "N/A",
+					"valueFrom": null,
+					"valueTo": null,
+					"valueType": "INTEGER",
+					"validFor": null,
+					"value": {
+						"value": "3",
+						"alias": "Cannot be used simultaneously with any another network slice"
+					}
+				},
+				{
+					"isDefault": false,
+					"rangeInterval": null,
+					"regex": null,
+					"unitOfMeasure": "N/A",
+					"valueFrom": null,
+					"valueTo": null,
+					"valueType": "INTEGER",
+					"validFor": null,
+					"value": {
+						"value": "4",
+						"alias": "operator defined class"
+					}
+				}
+			]
+		},
+		{
+			"name": "Simultaneous use of the network slice: Service category",
+			"configurable": false,
+			"description": "This parameter defines a service category which may be assigned to a UE. If present, it shall be associated with a Simultaneous Use Class parameter value",
+			"extensible": null,
+			"isUnique": true,
+			"maxCardinality": 1,
+			"minCardinality": 0,
+			"regex": null,
+			"valueType": "ENUM",
+			"serviceSpecCharRelationship": [
+				{
+					"name": "Character Attribute",
+					"role": "tag",
+					"relationshipType": "tag"
+				},
+				{
+					"name": "Functional",
+					"role": "tag",
+					"relationshipType": "tag"
+				}
+			],
+			"serviceSpecCharacteristicValue": [
+				{
+					"isDefault": false,
+					"rangeInterval": null,
+					"regex": null,
+					"unitOfMeasure": "N/A",
+					"valueFrom": null,
+					"valueTo": null,
+					"valueType": "TEXT",
+					"validFor": null,
+					"value": {
+						"value": "Service Category 1"
+					}
+				},
+				{
+					"isDefault": false,
+					"rangeInterval": null,
+					"regex": null,
+					"unitOfMeasure": "N/A",
+					"valueFrom": null,
+					"valueTo": null,
+					"valueType": "TEXT",
+					"validFor": null,
+					"value": {
+						"value": "Service Category 2"
+					}
+				},
+				{
+					"isDefault": false,
+					"rangeInterval": null,
+					"regex": null,
+					"unitOfMeasure": "N/A",
+					"valueFrom": null,
+					"valueTo": null,
+					"valueType": "TEXT",
+					"validFor": null,
+					"value": {
+						"value": "Service Category 3"
+					}
+				}
+			]
+		},
+		{
+			"name": "Slice quality of service",
+			"configurable": false,
+			"description": "This attribute defines all the QoS relevant parameters supported by the network slice. For the 5G QoS Identifier (5QI) parameter, 3GPP has already defined standardised values (see 3GPP TS 23.501). By preselecting a 5G QoS Identifier (5QI) these parameters should automatically be filled out with the standardised values.",
+			"extensible": null,
+			"isUnique": true,
+			"maxCardinality": 1,
+			"minCardinality": 0,
+			"regex": null,
+			"valueType": "SET",
+			"serviceSpecCharRelationship": [
+				{
+					"role": "3GPP 5QI",
+					"name": "Slice quality of service: 3GPP 5QI",
+					"relationshipType": "aggregation"
+				},
+				{
+					"role": "Resource Type",
+					"name": "Slice quality of service: Resource Type",
+					"relationshipType": "aggregation"
+				},
+				{
+					"role": "Priority Level",
+					"name": "Slice quality of service: Priority Level",
+					"relationshipType": "aggregation"
+				},
+				{
+					"role": "Packet Delay Budget",
+					"name": "Slice quality of service: Packet Delay Budget",
+					"relationshipType": "aggregation"
+				},
+				{
+					"role": "Packet Error Rate",
+					"name": "Slice quality of service: Packet Error Rate",
+					"relationshipType": "aggregation"
+				},
+				{
+					"role": "Averaging Window",
+					"name": "Slice quality of service: Averaging Window",
+					"relationshipType": "aggregation"
+				},
+				{
+					"role": "Maximum Data Burst Volume",
+					"name": "Slice quality of service: Maximum Data Burst Volume",
+					"relationshipType": "aggregation"
+				},
+				{
+					"role": "Guaranteed Flow Bit Rate - Downlink",
+					"name": "Slice quality of service: Guaranteed Flow Bit Rate - Downlink",
+					"relationshipType": "aggregation"
+				},
+				{
+					"role": "Guaranteed Flow Bit Rate - Uplink",
+					"name": "Slice quality of service: Guaranteed Flow Bit Rate - Uplink",
+					"relationshipType": "aggregation"
+				},
+				{
+					"role": "Maximum Flow Bit Rate - Downlink",
+					"name": "Slice quality of service: Maximum Flow Bit Rate - Downlink",
+					"relationshipType": "aggregation"
+				},
+				{
+					"role": "Maximum Flow Bit Rate - Uplink",
+					"name": "Slice quality of service: Maximum Flow Bit Rate - Uplink",
+					"relationshipType": "aggregation"
+				},
+				{
+					"role": "Maximum Packet Loss Rate",
+					"name": "Slice quality of service parameters: Maximum Packet Loss Rate",
+					"relationshipType": "aggregation"
+				}
+			]
+		},
+		{
+			"name": "Slice quality of service: 3GPP 5QI",
+			"configurable": false,
+			"description": "A 5QI is a scalar used as a reference to 5G QoS characteristics defined in 3GPP TS 23.501, i.e. access node-specific parameters that control QoS forwarding treatment for the QoS Flow (e.g. scheduling weights, admission thresholds, queue management thresholds, link layer protocol configuration, etc.). The 5G QoS characteristics for pre-configured 5QI values are pre-configured in the Access Network (AN). The 5G QoS characteristics for QoS Flows with dynamically assigned 5QI are signalled as part of the QoS profile (see 3GPP TS 23.501).",
+			"extensible": null,
+			"isUnique": true,
+			"maxCardinality": 1,
+			"minCardinality": 0,
+			"regex": null,
+			"valueType": "SET",
+			"serviceSpecCharRelationship": [
+				{
+					"name": "Character Attribute",
+					"role": "tag",
+					"relationshipType": "tag"
+				},
+				{
+					"name": "Operational",
+					"role": "tag",
+					"relationshipType": "tag"
+				},
+				{
+					"name": "Functional",
+					"role": "tag",
+					"relationshipType": "tag"
+				},
+				{
+					"name": "KPI",
+					"role": "tag",
+					"relationshipType": "tag"
+				}
+			],
+			"serviceSpecCharacteristicValue": [
+				{
+					"unitOfMeasure": "N/A",
+					"valueType": "INTEGER",
+					"value": {
+						"value": "1",
+						"alias": "Conversational Voice"
+					}
+				},
+				{
+					"unitOfMeasure": "N/A",
+					"valueType": "INTEGER",
+					"value": {
+						"value": "2",
+						"alias": "Conversational Video (Live Streaming)"
+					}
+				},
+				{
+					"unitOfMeasure": "N/A",
+					"valueType": "INTEGER",
+					"value": {
+						"value": "3",
+						"alias": "Real Time Gaming, V2X messages Electricity distribution - medium voltage, Process automation - monitoring"
+					}
+				},
+				{
+					"unitOfMeasure": "N/A",
+					"valueType": "INTEGER",
+					"value": {
+						"value": "4",
+						"alias": "Non-Conversational Video (Buffered Streaming)"
+					}
+				},
+				{
+					"unitOfMeasure": "N/A",
+					"valueType": "INTEGER",
+					"value": {
+						"value": "5",
+						"alias": "IMS Signalling"
+					}
+				},
+				{
+					"unitOfMeasure": "N/A",
+					"valueType": "INTEGER",
+					"value": {
+						"value": "6",
+						"alias": "Video (Buffered Streaming) TCP-based (e.g., www, email, chat, ftp, p2p file sharing, progressive video, etc.)"
+					}
+				},
+				{
+					"unitOfMeasure": "N/A",
+					"valueType": "INTEGER",
+					"value": {
+						"value": "7",
+						"alias": "Voice, Video (Live Streaming) Interactive Gaming"
+					}
+				},
+				{
+					"unitOfMeasure": "N/A",
+					"valueType": "INTEGER",
+					"value": {
+						"value": "8",
+						"alias": "Video (Buffered Streaming) TCP-based (e.g., www, email, chat, ftp, p2p file sharing, progressive video, etc.)"
+					}
+				},
+				{
+					"unitOfMeasure": "N/A",
+					"valueType": "INTEGER",
+					"value": {
+						"value": "9",
+						"alias": "Video (Buffered Streaming) TCP-based (e.g., www, email, chat, ftp, p2p file sharing, progressive video, etc.)"
+					}
+				},
+				{
+					"unitOfMeasure": "N/A",
+					"valueType": "INTEGER",
+					"value": {
+						"value": "65",
+						"alias": "Mission Critical user plane Push To Talk voice (e.g., MCPTT)"
+					}
+				}
+			]
+		},
+		{
+			"name": "Slice quality of service: Resource Type",
+			"configurable": false,
+			"description": "The Resource Type determines if dedicated network resources related to the QoS Flow-level Guaranteed Flow Bit Rate (GFBR) value, are permanently allocated (see clause 5.7.3.2 of 3GPP TS 23.501). This value needs to be provided for each customised 5QI value selected.",
+			"extensible": null,
+			"isUnique": true,
+			"maxCardinality": 1,
+			"minCardinality": 0,
+			"regex": null,
+			"valueType": "ENUM",
+			"serviceSpecCharRelationship": [
+				{
+					"name": "Character Attribute",
+					"role": "tag",
+					"relationshipType": "tag"
+				},
+				{
+					"name": "Operational",
+					"role": "tag",
+					"relationshipType": "tag"
+				},
+				{
+					"name": "Functional",
+					"role": "tag",
+					"relationshipType": "tag"
+				},
+				{
+					"name": "KPI",
+					"role": "tag",
+					"relationshipType": "tag"
+				},
+				{
+					"role": "3GPP 5QI",
+					"name": "Slice quality of service: 3GPP 5QI",
+					"relationshipType": "dependency"
+				}
+			],
+			"serviceSpecCharacteristicValue": [
+				{
+					"unitOfMeasure": "N/A",
+					"valueType": "INTEGER",
+					"value": {
+						"value": "0",
+						"alias": "GBR (Mission Critical Video user plane)"
+					}
+				},
+				{
+					"unitOfMeasure": "N/A",
+					"valueType": "INTEGER",
+					"value": {
+						"value": "1",
+						"alias": "Delay critical GBR (Intelligent Transport Systems)"
+					}
+				},
+				{
+					"unitOfMeasure": "N/A",
+					"valueType": "INTEGER",
+					"value": {
+						"value": "2",
+						"alias": "Non-GBR (Voice, AR)"
+					}
+				}
+			]
+		},
+		{
+			"name": "Slice quality of service: Priority Level",
+			"configurable": false,
+			"description": "The Priority level associated with 5G QoS characteristics indicates a priority in scheduling resources among QoS Flows. The Priority level shall be used to differentiate between QoS Flows of the same UE, and it shall also be used to differentiate between QoS Flows from different UEs. Once all QoS requirements up to GFBR are fulfilled for all the Guaranteed Bit Rate (GBR) QoS Flows, the Priority Level may also be used to distribute resources between GBR QoS Flows (for rates above GFBR up to MFBR, Maximum Flow Bit Rate) and non- GBR QoS Flows, in an implementation specific manner. The lowest Priority level value corresponds to the highest Priority (see clause 5.7.3.3 of 3GPP TS 23.501). This value needs to be provided for each customised 5QI value selected.",
+			"extensible": null,
+			"isUnique": true,
+			"maxCardinality": 1,
+			"minCardinality": 0,
+			"regex": null,
+			"valueType": "ENUM",
+			"serviceSpecCharRelationship": [
+				{
+					"name": "Character Attribute",
+					"role": "tag",
+					"relationshipType": "tag"
+				},
+				{
+					"name": "Operational",
+					"role": "tag",
+					"relationshipType": "tag"
+				},
+				{
+					"name": "Functional",
+					"role": "tag",
+					"relationshipType": "tag"
+				},
+				{
+					"name": "KPI",
+					"role": "tag",
+					"relationshipType": "tag"
+				},
+				{
+					"role": "3GPP 5QI",
+					"name": "Slice quality of service: 3GPP 5QI",
+					"relationshipType": "dependency"
+				}
+			],
+			"serviceSpecCharacteristicValue": [
+				{
+					"unitOfMeasure": "N/A",
+					"valueType": "INTEGER",
+					"value": {
+						"value": "10",
+						"alias": "IMS signalling"
+					}
+				},
+				{
+					"unitOfMeasure": "N/A",
+					"valueType": "INTEGER",
+					"value": {
+						"value": "30",
+						"alias": "Real time gaming"
+					}
+				}
+			]
+		},
+		{
+			"name": "Slice quality of service: Packet Delay Budget",
+			"configurable": false,
+			"description": "The Packet Delay Budget (PDB) defines an upper bound for the time that a packet may be delayed between the UE and the UPF, that terminates the N6 interface. For a certain 5QI the value of the PDB is the same in UL (Uplink) and DL (Downlink). In the case of 3GPP access, the PDB is used to support the configuration of scheduling and link layer functions (e.g. the setting of scheduling priority weights and HARQ (Hybrid Automatic Repeat request) target operating points) (see clause 5.7.3.4 of 3GPP TS 23.501). If the value is set to 0, no special measures are used to bring latency down to a minimum required by low-latency use cases.",
+			"extensible": null,
+			"isUnique": true,
+			"maxCardinality": 1,
+			"minCardinality": 0,
+			"regex": null,
+			"valueType": "INTEGER",
+			"serviceSpecCharRelationship": [
+				{
+					"name": "Character Attribute",
+					"role": "tag",
+					"relationshipType": "tag"
+				},
+				{
+					"name": "Operational",
+					"role": "tag",
+					"relationshipType": "tag"
+				},
+				{
+					"name": "Functional",
+					"role": "tag",
+					"relationshipType": "tag"
+				},
+				{
+					"name": "KPI",
+					"role": "tag",
+					"relationshipType": "tag"
+				},
+				{
+					"role": "3GPP 5QI",
+					"name": "Slice quality of service: 3GPP 5QI",
+					"relationshipType": "dependency"
+				}
+			],
+			"serviceSpecCharacteristicValue": [
+				{
+					"unitOfMeasure": "Milliseconds",
+					"valueType": "INTEGER",
+					"value": {
+						"value": "20",
+						"alias": "Cooperative driving"
+					}
+				},
+				{
+					"unitOfMeasure": "Milliseconds",
+					"valueType": "INTEGER",
+					"value": {
+						"value": "30",
+						"alias": "Virtual reality"
+					}
+				}
+			]
+		},
+		{
+			"name": "Slice quality of service: Packet Error Rate",
+			"configurable": false,
+			"description": "The Packet Error Rate (PER) defines an upper bound for the rate of PDUs (e.g. IP packets) that have been processed by the sender but that are not successfully delivered by the corresponding receiver. The purpose of the PER is to allow for the appropriate link layer, protocol configurations (e.g. RLC and HARQ in RAN of a 3GPP access). For all 5QIs the value of the PER is the same in UL and DL. For GBR QoS Flows with Delay critical GBR resource type, a packet which is delayed more than PDB (but which complies with the GFBR and MDBV (Maximum Data Burst Volume) requirements) is counted as lost, and included in the PER. This value needs to be provided for each customised 5QI value selected.",
+			"extensible": null,
+			"isUnique": true,
+			"maxCardinality": 1,
+			"minCardinality": 0,
+			"regex": null,
+			"valueType": "FLOAT",
+			"serviceSpecCharRelationship": [
+				{
+					"name": "Character Attribute",
+					"role": "tag",
+					"relationshipType": "tag"
+				},
+				{
+					"name": "Operational",
+					"role": "tag",
+					"relationshipType": "tag"
+				},
+				{
+					"name": "Functional",
+					"role": "tag",
+					"relationshipType": "tag"
+				},
+				{
+					"name": "KPI",
+					"role": "tag",
+					"relationshipType": "tag"
+				},
+				{
+					"role": "3GPP 5QI",
+					"name": "Slice quality of service: 3GPP 5QI",
+					"relationshipType": "dependency"
+				}
+			],
+			"serviceSpecCharacteristicValue": [
+				{
+					"unitOfMeasure": "N/A",
+					"valueType": "FLOAT",
+					"value": {
+						"value": "0.000001",
+						"alias": "Mission critical data"
+					}
+				},
+				{
+					"unitOfMeasure": "N/A",
+					"valueType": "FLOAT",
+					"value": {
+						"value": "0.01",
+						"alias": "V2X messaging"
+					}
+				}
+			]
+		},
+		{
+			"name": "Slice quality of service: Averaging Window",
+			"configurable": false,
+			"description": "Each GBR QoS Flow shall be associated with an Averaging window. The Averaging window represents the duration over which the GFBR and MFBR shall be calculated (e.g. in the (R)AN, UPF, UE). (see clause 5.7.3.6 of 3GPP TS 23.501). This value needs to be provided for each Operator-specific 5QI value selected and for any selected standardised 5QI value using non default Averaging Window.",
+			"extensible": null,
+			"isUnique": true,
+			"maxCardinality": 1,
+			"minCardinality": 0,
+			"regex": null,
+			"valueType": "INTEGER",
+			"serviceSpecCharRelationship": [
+				{
+					"name": "Character Attribute",
+					"role": "tag",
+					"relationshipType": "tag"
+				},
+				{
+					"name": "Operational",
+					"role": "tag",
+					"relationshipType": "tag"
+				},
+				{
+					"name": "Functional",
+					"role": "tag",
+					"relationshipType": "tag"
+				},
+				{
+					"name": "KPI",
+					"role": "tag",
+					"relationshipType": "tag"
+				},
+				{
+					"role": "3GPP 5QI",
+					"name": "Slice quality of service: 3GPP 5QI",
+					"relationshipType": "dependency"
+				}
+			],
+			"serviceSpecCharacteristicValue": [
+				{
+					"unitOfMeasure": "Milliseconds",
+					"valueType": "INTEGER",
+					"value": {
+						"value": "1"
+					}
+				}
+			]
+		},
+		{
+			"name": "Slice quality of service: Maximum Data Burst Volume",
+			"configurable": false,
+			"description": "Each GBR QoS Flow with Delay-critical resource type shall be associated with a Maximum Data Burst Volume (MDBV). MDBV denotes the largest amount of data that the 5G-AN is required to serve within a period of 5G-AN PDB (i.e. 5G-AN part of the PDB) (see clause 5.7.3.7 of 3GPP TS 23.501). This value needs to be provided for each Operator-specific 5QI value selected and for any selected standardised 5QI value using non default Maximum Data Burst Volume.",
+			"extensible": null,
+			"isUnique": true,
+			"maxCardinality": 1,
+			"minCardinality": 0,
+			"regex": null,
+			"valueType": "INTEGER",
+			"serviceSpecCharRelationship": [
+				{
+					"name": "Character Attribute",
+					"role": "tag",
+					"relationshipType": "tag"
+				},
+				{
+					"name": "Operational",
+					"role": "tag",
+					"relationshipType": "tag"
+				},
+				{
+					"name": "Functional",
+					"role": "tag",
+					"relationshipType": "tag"
+				},
+				{
+					"name": "KPI",
+					"role": "tag",
+					"relationshipType": "tag"
+				},
+				{
+					"role": "3GPP 5QI",
+					"name": "Slice quality of service: 3GPP 5QI",
+					"relationshipType": "dependency"
+				}
+			],
+			"serviceSpecCharacteristicValue": [
+				{
+					"unitOfMeasure": "Bytes",
+					"valueType": "INTEGER",
+					"value": {
+						"value": "0"
+					}
+				}
+			]
+		},
+		{
+			"name": "Slice quality of service: Guaranteed Flow Bit Rate - Downlink",
+			"configurable": false,
+			"description": "Each GBR QoS Flow is associated with a Guaranteed Flow Bit Rate (GFBR) - Downlink (DL) (see clause 5.7.1.2 of 3GPP TS 23.501). A recommended value of GFBR-DL may be provided for GBR QoS Flow on a per selected 5QI value basis (5QI value that is of resource type GBR or Delay-critical GBR).",
+			"extensible": null,
+			"isUnique": true,
+			"maxCardinality": 1,
+			"minCardinality": 0,
+			"regex": null,
+			"valueType": "INTEGER",
+			"serviceSpecCharRelationship": [
+				{
+					"name": "Character Attribute",
+					"role": "tag",
+					"relationshipType": "tag"
+				},
+				{
+					"name": "Operational",
+					"role": "tag",
+					"relationshipType": "tag"
+				},
+				{
+					"name": "Functional",
+					"role": "tag",
+					"relationshipType": "tag"
+				},
+				{
+					"name": "KPI",
+					"role": "tag",
+					"relationshipType": "tag"
+				}
+			],
+			"serviceSpecCharacteristicValue": [
+				{
+					"unitOfMeasure": "kbps",
+					"valueType": "INTEGER",
+					"value": {
+						"value": "0"
+					}
+				}
+			]
+		},
+		{
+			"name": "Slice quality of service: Guaranteed Flow Bit Rate - Uplink",
+			"configurable": false,
+			"description": "Each GBR QoS Flow is associated with a Guaranteed Flow Bit Rate (GFBR) - Uplink (UL) (see clause 5.7.1.2 of 3GPP TS 23.501). A recommended value of GFBR-UL may be provided for GBR QoS Flow on a per selected 5QI value basis (5QI value that is of resource type GBR or Delay-critical GBR).",
+			"extensible": null,
+			"isUnique": true,
+			"maxCardinality": 1,
+			"minCardinality": 0,
+			"regex": null,
+			"valueType": "INTEGER",
+			"serviceSpecCharRelationship": [
+				{
+					"name": "Character Attribute",
+					"role": "tag",
+					"relationshipType": "tag"
+				},
+				{
+					"name": "Operational",
+					"role": "tag",
+					"relationshipType": "tag"
+				},
+				{
+					"name": "Functional",
+					"role": "tag",
+					"relationshipType": "tag"
+				},
+				{
+					"name": "KPI",
+					"role": "tag",
+					"relationshipType": "tag"
+				}
+			],
+			"serviceSpecCharacteristicValue": [
+				{
+					"unitOfMeasure": "kbps",
+					"valueType": "INTEGER",
+					"value": {
+						"value": "0"
+					}
+				}
+			]
+		},
+		{
+			"name": "Slice quality of service: Maximum Flow Bit Rate - Downlink",
+			"configurable": false,
+			"description": "Each GBR QoS Flow is associated with a Maximum Flow Bit Rate (MFBR) - Downlink (DL) (see clause 5.7.1.2 of 3GPP TS 23.501). A recommended value of MFBR-DL may be provided for GBR QoS Flow on a per selected 5QI value basis (5QI value that is of resource type GBR or Delay-critical GBR).",
+			"extensible": null,
+			"isUnique": true,
+			"maxCardinality": 1,
+			"minCardinality": 0,
+			"regex": null,
+			"valueType": "INTEGER",
+			"serviceSpecCharRelationship": [
+				{
+					"name": "Character Attribute",
+					"role": "tag",
+					"relationshipType": "tag"
+				},
+				{
+					"name": "Operational",
+					"role": "tag",
+					"relationshipType": "tag"
+				},
+				{
+					"name": "Functional",
+					"role": "tag",
+					"relationshipType": "tag"
+				},
+				{
+					"name": "KPI",
+					"role": "tag",
+					"relationshipType": "tag"
+				}
+			],
+			"serviceSpecCharacteristicValue": [
+				{
+					"unitOfMeasure": "kbps",
+					"valueType": "INTEGER",
+					"value": {
+						"value": "0"
+					}
+				}
+			]
+		},
+		{
+			"name": "Slice quality of service: Maximum Flow Bit Rate - Uplink",
+			"configurable": false,
+			"description": "Each GBR QoS Flow is associated with a Maximum Flow Bit Rate (MFBR) - Uplink (UL) (see clause 5.7.1.2 of 3GPP TS 23.501). A recommended value of MFBR-UL may be provided for GBR QoS Flow on a per selected 5QI value basis (5QI value that is of resource type GBR or Delay-critical GBR).",
+			"extensible": null,
+			"isUnique": true,
+			"maxCardinality": 1,
+			"minCardinality": 0,
+			"regex": null,
+			"valueType": "INTEGER",
+			"serviceSpecCharRelationship": [
+				{
+					"name": "Character Attribute",
+					"role": "tag",
+					"relationshipType": "tag"
+				},
+				{
+					"name": "Operational",
+					"role": "tag",
+					"relationshipType": "tag"
+				},
+				{
+					"name": "Functional",
+					"role": "tag",
+					"relationshipType": "tag"
+				},
+				{
+					"name": "KPI",
+					"role": "tag",
+					"relationshipType": "tag"
+				}
+			],
+			"serviceSpecCharacteristicValue": [
+				{
+					"unitOfMeasure": "kbps",
+					"valueType": "INTEGER",
+					"value": {
+						"value": "0"
+					}
+				}
+			]
+		},
+		{
+			"name": "Slice quality of service parameters: Maximum Packet Loss Rate",
+			"configurable": false,
+			"description": "The Maximum Packet Loss Rate (UL, DL) indicates the maximum rate for lost packets of the QoS flow that can be tolerated in the uplink (UL) and downlink (DL) direction. The Maximum Packet Loss Rate (UL, DL) can only be provided for a GBR QoS flow belonging to voice media.",
+			"extensible": null,
+			"isUnique": true,
+			"maxCardinality": 1,
+			"minCardinality": 0,
+			"regex": null,
+			"valueType": "INTEGER",
+			"serviceSpecCharRelationship": [
+				{
+					"name": "Character Attribute",
+					"role": "tag",
+					"relationshipType": "tag"
+				},
+				{
+					"name": "Operational",
+					"role": "tag",
+					"relationshipType": "tag"
+				},
+				{
+					"name": "Functional",
+					"role": "tag",
+					"relationshipType": "tag"
+				},
+				{
+					"name": "KPI",
+					"role": "tag",
+					"relationshipType": "tag"
+				}
+			],
+			"serviceSpecCharacteristicValue": [
+				{
+					"unitOfMeasure": "Percentage",
+					"valueType": "INTEGER",
+					"value": {
+						"value": "0"
+					}
+				}
+			]
+		},
+		{
+			"name": "Support for non-IP traffic",
+			"configurable": false,
+			"description": "This attribute provides non-IP Session support (Ethernet session and forwarding support) of communication devices",
+			"extensible": null,
+			"isUnique": true,
+			"maxCardinality": 1,
+			"minCardinality": 0,
+			"regex": null,
+			"valueType": "BINARY",
+			"serviceSpecCharRelationship": [
+				{
+					"name": "Character Attribute",
+					"role": "tag",
+					"relationshipType": "tag"
+				},
+				{
+					"name": "Functional",
+					"role": "tag",
+					"relationshipType": "tag"
+				},
+				{
+					"name": "KPI",
+					"role": "tag",
+					"relationshipType": "tag"
+				}
+			],
+			"serviceSpecCharacteristicValue": [
+				{
+					"isDefault": true,
+					"unitOfMeasure": "N/A",
+					"valueType": "INTEGER",
+					"value": {
+						"value": "0",
+						"alias": "Not supported"
+					}
+				},
+				{
+					"unitOfMeasure": "N/A",
+					"valueType": "INTEGER",
+					"value": {
+						"value": "1",
+						"alias": "Supported"
+					}
+				}
+			]
+		},
+		{
+			"name": "Supported device velocity",
+			"configurable": false,
+			"description": "Maximum speed supported by the network slice at which a defined QoS and seamless transfer between TRxPs (Transmission Reception Point(s)), which may belong to different deployment layers and/or radio access technologies (multi-layer/-RAT), can be achieved.",
+			"extensible": null,
+			"isUnique": true,
+			"maxCardinality": 1,
+			"minCardinality": 0,
+			"regex": null,
+			"valueType": "ENUM",
+			"serviceSpecCharRelationship": [
+				{
+					"name": "Character Attribute",
+					"role": "tag",
+					"relationshipType": "tag"
+				},
+				{
+					"name": "Performance",
+					"role": "tag",
+					"relationshipType": "tag"
+				},
+				{
+					"name": "KPI",
+					"role": "tag",
+					"relationshipType": "tag"
+				}
+			],
+			"serviceSpecCharacteristicValue": [
+				{
+					"unitOfMeasure": "Kilometres per hour (km/h)",
+					"valueType": "INTEGER",
+					"value": {
+						"value": "0",
+						"alias": "Stationary: 0 km/h"
+					}
+				},
+				{
+					"unitOfMeasure": "Kilometres per hour (km/h)",
+					"valueType": "INTEGER",
+					"value": {
+						"value": "1",
+						"alias": "Pedestrian: 10 km/h"
+					}
+				},
+				{
+					"unitOfMeasure": "Kilometres per hour (km/h)",
+					"valueType": "INTEGER",
+					"value": {
+						"value": "2",
+						"alias": "Vehicular: 120 km/h"
+					}
+				},
+				{
+					"unitOfMeasure": "Kilometres per hour (km/h)",
+					"valueType": "INTEGER",
+					"value": {
+						"value": "3",
+						"alias": "High speed vehicular: 500 km/h"
+					}
+				}
+			]
+		},
+		{
+			"name": "Synchronicity",
+			"configurable": false,
+			"description": "This attribute provides synchronicity of communication devices. Two cases are most important in this context: 1) Synchronicity between a base station and a mobile device and 2) Synchronicity between mobile devices.",
+			"extensible": null,
+			"isUnique": true,
+			"maxCardinality": 1,
+			"minCardinality": 0,
+			"regex": null,
+			"valueType": "INTEGER",
+			"serviceSpecCharRelationship": [
+				{
+					"role": "Availability",
+					"name": "Synchronicity: Availability",
+					"relationshipType": "aggregation"
+				},
+				{
+					"role": "Accuracy",
+					"name": "Synchronicity: Accuracy",
+					"relationshipType": "aggregation"
+				}
+			]
+		},
+		{
+			"name": "Synchronicity: Availability",
+			"configurable": false,
+			"description": "The synchronicity between devices over PC5 in absence of the network is not in scope of this parameter.",
+			"extensible": null,
+			"isUnique": true,
+			"maxCardinality": 1,
+			"minCardinality": 0,
+			"regex": null,
+			"valueType": "ENUM",
+			"serviceSpecCharRelationship": [
+				{
+					"name": "Character Attribute",
+					"role": "tag",
+					"relationshipType": "tag"
+				},
+				{
+					"name": "Functional",
+					"role": "tag",
+					"relationshipType": "tag"
+				}
+			],
+			"serviceSpecCharacteristicValue": [
+				{
+					"isDefault": true,
+					"unitOfMeasure": "N/A",
+					"valueType": "INTEGER",
+					"value": {
+						"value": "0",
+						"alias": "Not supported"
+					}
+				},
+				{
+					"unitOfMeasure": "N/A",
+					"valueType": "INTEGER",
+					"value": {
+						"value": "1",
+						"alias": "Between BS and UE"
+					}
+				},
+				{
+					"unitOfMeasure": "N/A",
+					"valueType": "INTEGER",
+					"value": {
+						"value": "2",
+						"alias": "Between BS and UE & UE and UE"
+					}
+				}
+			]
+		},
+		{
+			"name": "Synchronicity: Accuracy",
+			"configurable": false,
+			"description": "This parameter describes the accuracy of the synchronicity.",
+			"extensible": null,
+			"isUnique": true,
+			"maxCardinality": 1,
+			"minCardinality": 0,
+			"regex": null,
+			"valueType": "FLOAT",
+			"serviceSpecCharRelationship": [
+				{
+					"name": "Character Attribute",
+					"role": "tag",
+					"relationshipType": "tag"
+				},
+				{
+					"name": "Functional",
+					"role": "tag",
+					"relationshipType": "tag"
+				}
+			],
+			"serviceSpecCharacteristicValue": [
+				{
+					"unitOfMeasure": "Seconds",
+					"valueType": "FLOAT",
+					"value": {
+						"value": "0,000001"
+					}
+				}
+			]
+		},
+		{
+			"name": "UE density",
+			"configurable": false,
+			"description": "This attribute describes the maximum number of connected and/or accessible devices per unit area (per km2) supported by the network slice.",
+			"extensible": null,
+			"isUnique": true,
+			"maxCardinality": 1,
+			"minCardinality": 0,
+			"regex": null,
+			"valueType": "INTEGER",
+			"serviceSpecCharRelationship": [
+				{
+					"name": "Scalability Attribute",
+					"role": "tag",
+					"relationshipType": "tag"
+				}
+			],
+			"serviceSpecCharacteristicValue": [
+				{
+					"unitOfMeasure": "Number per km2",
+					"valueType": "INTEGER",
+					"value": {
+						"value": "10000",
+						"alias": "10,000 devices per km2"
+					}
+				},
+				{
+					"unitOfMeasure": "Number per km2",
+					"valueType": "INTEGER",
+					"value": {
+						"value": "1000000",
+						"alias": "1,000,000 devices per km2"
+					}
+				}
+			]
+		},
+		{
+			"name": "Uplink throughput per network slice",
+			"configurable": false,
+			"description": "This attribute relates to the aggregated data rate in uplink for all UEs together in the network slice (this is not per UE).",
+			"extensible": null,
+			"isUnique": true,
+			"maxCardinality": 1,
+			"minCardinality": 0,
+			"regex": null,
+			"valueType": "INTEGER",
+			"serviceSpecCharRelationship": [
+				{
+					"name": "Scalability Attribute",
+					"role": "tag",
+					"relationshipType": "tag"
+				},
+				{
+					"role": "Guaranteed uplink throughput quota",
+					"name": "Uplink throughput per network slice: Guaranteed uplink throughput quota",
+					"relationshipType": "aggregation"
+				},
+				{
+					"role": "Maximum uplink throughput",
+					"name": "Uplink throughput per network slice: Maximum uplink throughput",
+					"relationshipType": "aggregation"
+				}
+			]
+		},
+		{
+			"name": "Uplink throughput per network slice: Guaranteed uplink throughput quota",
+			"configurable": false,
+			"description": "This parameter describes the guaranteed throughput/data rate supported by the network slice for the aggregate of all GBR QoS flows in uplink belonging to the set of all UEs using the network slice. Not including this parameter or if the value is 0, best effort traffic is expected where no minimum throughput is guaranteed.",
+			"extensible": null,
+			"isUnique": true,
+			"maxCardinality": 1,
+			"minCardinality": 0,
+			"regex": null,
+			"valueType": "INTEGER",
+			"serviceSpecCharRelationship": [
+				{
+					"name": "Scalability Attribute",
+					"role": "tag",
+					"relationshipType": "tag"
+				}
+			],
+			"serviceSpecCharacteristicValue": [
+				{
+					"unitOfMeasure": "kbps",
+					"valueType": "INTEGER",
+					"value": {
+						"value": "0"
+					}
+				}
+			]
+		},
+		{
+			"name": "Uplink throughput per network slice: Maximum uplink throughput",
+			"configurable": false,
+			"description": "This parameter describes the maximum data rate supported by the network slice for all UEs together in uplink.",
+			"extensible": null,
+			"isUnique": true,
+			"maxCardinality": 1,
+			"minCardinality": 0,
+			"regex": null,
+			"valueType": "INTEGER",
+			"serviceSpecCharRelationship": [
+				{
+					"name": "Scalability Attribute",
+					"role": "tag",
+					"relationshipType": "tag"
+				}
+			],
+			"serviceSpecCharacteristicValue": [
+				{
+					"unitOfMeasure": "kbps",
+					"valueType": "INTEGER",
+					"value": {
+						"value": "100000"
+					}
+				}
+			]
+		},
+		{
+			"name": "Uplink maximum throughput per UE",
+			"configurable": false,
+			"description": "This attribute describes the maximum data rate supported by the network slice per UE in uplink. The attribute is comprised of a list of Service Category parameters with the associated Maximum Uplink Throughput per UE value. If no Service Category parameter is present, all devices in the network slice experience the same Maximum Uplink Throughput per UE value. If Service Category parameters are present, then the UEs will be associated with a specific Maximum Uplink Throughput per UE parameter value depending on which Service Category the UE is associated with for the network slice.",
+			"serviceSpecCharRelationship": [
+				{
+					"role": "Maximum Uplink Throughput per UE value",
+					"name": "Uplink maximum throughput per UE: Maximum Uplink Throughput per UE value",
+					"relationshipType": "aggregation"
+				},
+				{
+					"role": "Service category",
+					"name": "Uplink maximum throughput per UE: Service category",
+					"relationshipType": "aggregation"
+				}
+			]
+		},
+		{
+			"name": "Uplink maximum throughput per UE: Maximum Uplink Throughput per UE value",
+			"configurable": false,
+			"description": "This parameter defines the Maximum Uplink Throughput per UE value. This may be associated with a Service Category parameter.",
+			"extensible": null,
+			"isUnique": true,
+			"maxCardinality": 1,
+			"minCardinality": 0,
+			"regex": null,
+			"valueType": "INTEGER",
+			"serviceSpecCharRelationship": [
+				{
+					"name": "Character Attribute",
+					"role": "tag",
+					"relationshipType": "tag"
+				},
+				{
+					"name": "Functional",
+					"role": "tag",
+					"relationshipType": "tag"
+				},
+				{
+					"name": "KPI",
+					"role": "tag",
+					"relationshipType": "tag"
+				}
+			],
+			"serviceSpecCharacteristicValue": [
+				{
+					"isDefault": false,
+					"rangeInterval": null,
+					"regex": null,
+					"unitOfMeasure": "kbps",
+					"valueFrom": null,
+					"valueTo": null,
+					"valueType": "INTEGER",
+					"validFor": null,
+					"value": {
+						"value": "0"
+					}
+				}
+			]
+		},
+		{
+			"name": "Uplink maximum throughput per UE: Service category",
+			"configurable": false,
+			"description": "This parameter defines a service category which may be assigned to certain groups of devices using the network slice. If present, it shall be associated with a Maximum Uplink Throughput Value parameter.",
+			"extensible": null,
+			"isUnique": true,
+			"maxCardinality": 1,
+			"minCardinality": 0,
+			"regex": null,
+			"valueType": "ENUM",
+			"serviceSpecCharRelationship": [
+				{
+					"name": "Character Attribute",
+					"role": "tag",
+					"relationshipType": "tag"
+				},
+				{
+					"name": "Functional",
+					"role": "tag",
+					"relationshipType": "tag"
+				},
+				{
+					"name": "KPI",
+					"role": "tag",
+					"relationshipType": "tag"
+				}
+			],
+			"serviceSpecCharacteristicValue": [
+				{
+					"isDefault": false,
+					"rangeInterval": null,
+					"regex": null,
+					"unitOfMeasure": "N/A",
+					"valueFrom": null,
+					"valueTo": null,
+					"valueType": "TEXT",
+					"validFor": null,
+					"value": {
+						"value": "Service Category 1",
+						"alias": "Service category 1 (10,000 kbps)"
+					}
+				},
+				{
+					"isDefault": false,
+					"rangeInterval": null,
+					"regex": null,
+					"unitOfMeasure": "N/A",
+					"valueFrom": null,
+					"valueTo": null,
+					"valueType": "TEXT",
+					"validFor": null,
+					"value": {
+						"value": "Service Category 2",
+						"alias": "Service category 2 (100,000 kbps)"
+					}
+				},
+				{
+					"isDefault": false,
+					"rangeInterval": null,
+					"regex": null,
+					"unitOfMeasure": "N/A",
+					"valueFrom": null,
+					"valueTo": null,
+					"valueType": "TEXT",
+					"validFor": null,
+					"value": {
+						"value": "Service Category 3",
+						"alias": "Service category 3 (200,000 kbps)"
+					}
+				}
+			]
+		},
+		{
+			"name": "User management openness",
+			"configurable": false,
+			"description": "This attribute describes the capability for the NSC to manage their users or groups of users' network services and corresponding requirements. For instance, if NSC Y orders a network slice which is capable to support X users of Y, then Y should be capable to decide which X users could use this network slice. Hence, Y could manage the users, in terms of add, modify or delete users to receive network services provided by the specific network slice.",
+			"extensible": null,
+			"isUnique": true,
+			"maxCardinality": 1,
+			"minCardinality": 0,
+			"regex": null,
+			"valueType": "BINARY",
+			"serviceSpecCharRelationship": [
+				{
+					"name": "Character Attribute",
+					"role": "tag",
+					"relationshipType": "tag"
+				},
+				{
+					"name": "Functional",
+					"role": "tag",
+					"relationshipType": "tag"
+				},
+				{
+					"name": "Operational",
+					"role": "tag",
+					"relationshipType": "tag"
+				},
+				{
+					"name": "KPI",
+					"role": "tag",
+					"relationshipType": "tag"
+				}
+			],
+			"serviceSpecCharacteristicValue": [
+				{
+					"isDefault": true,
+					"rangeInterval": null,
+					"regex": null,
+					"unitOfMeasure": "N/A",
+					"valueFrom": null,
+					"valueTo": null,
+					"valueType": "BINARY",
+					"validFor": null,
+					"value": {
+						"value": "0",
+						"alias": "Not supported"
+					}
+				},
+				{
+					"isDefault": false,
+					"rangeInterval": null,
+					"regex": null,
+					"unitOfMeasure": "N/A",
+					"valueFrom": null,
+					"valueTo": null,
+					"valueType": "BINARY",
+					"validFor": null,
+					"value": {
+						"value": "1",
+						"alias": "Supported"
+					}
+				}
+			]
+		},
+		{
+			"name": "Data network access",
+			"description": "For each Supported data network list value in the Supported data networks attribute. This attribute defines how the network slice supported data networks handle the user data.",
+			"serviceSpecCharRelationship": [
+				{
+					"role": "Data access per data network",
+					"name": "Data network access: Data access per data network",
+					"relationshipType": "aggregation"
+				},
+				{
+					"role": "Tunnelling mechanism",
+					"name": "Data network access: Tunnelling mechanism",
+					"relationshipType": "aggregation"
+				},
+				{
+					"role": "LBO Allowed",
+					"name": "Data network access: LBO Allowed",
+					"relationshipType": "aggregation"
+				}
+			]
+		},
+		{
+			"name": "Data network access: Data access per data network",
+			"configurable": false,
+			"description": "The options for a specific Supported data network are as follows: Direct access to the Internet, Termination in a private network (e.g. via tunnelling mechanism such as L2TP, VPN Virtual Private Network, tunnel, etc.), All data traffic stays local to an operator network and the devices do not have access to the Internet or private network",
+			"extensible": null,
+			"isUnique": true,
+			"maxCardinality": 1,
+			"minCardinality": 0,
+			"regex": null,
+			"valueType": "ENUM",
+			"serviceSpecCharRelationship": [
+				{
+					"name": "Character Attribute",
+					"role": "tag",
+					"relationshipType": "tag"
+				},
+				{
+					"name": "Functional",
+					"role": "tag",
+					"relationshipType": "tag"
+				}
+			],
+			"serviceSpecCharacteristicValue": [
+				{
+					"isDefault": true,
+					"rangeInterval": null,
+					"regex": null,
+					"unitOfMeasure": "N/A",
+					"valueFrom": null,
+					"valueTo": null,
+					"valueType": "INTEGER",
+					"validFor": null,
+					"value": {
+						"value": "0",
+						"alias": "Direct internet access"
+					}
+				},
+				{
+					"isDefault": false,
+					"rangeInterval": null,
+					"regex": null,
+					"unitOfMeasure": "N/A",
+					"valueFrom": null,
+					"valueTo": null,
+					"valueType": "INTEGER",
+					"validFor": null,
+					"value": {
+						"value": "1",
+						"alias": "Termination in the private network"
+					}
+				},
+				{
+					"isDefault": false,
+					"rangeInterval": null,
+					"regex": null,
+					"unitOfMeasure": "N/A",
+					"valueFrom": null,
+					"valueTo": null,
+					"valueType": "INTEGER",
+					"validFor": null,
+					"value": {
+						"value": "2",
+						"alias": "Local traffic (no internet access)"
+					}
+				}
+			]
+		},
+		{
+			"name": "Data network access: Tunnelling mechanism",
+			"configurable": false,
+			"description": "The parameter, if present, defines the tunnelling mechanism used to connect to a private data network. 3GPP TS 29.561 lists the interworking with data networks and tunnelling mechanism used. This parameter must be present if Data access per data network is set to Termination in the private network.",
+			"extensible": null,
+			"isUnique": true,
+			"maxCardinality": 1,
+			"minCardinality": 0,
+			"regex": null,
+			"valueType": "SET",
+			"serviceSpecCharRelationship": [
+				{
+					"name": "Character Attribute",
+					"role": "tag",
+					"relationshipType": "tag"
+				},
+				{
+					"name": "Functional",
+					"role": "tag",
+					"relationshipType": "tag"
+				},
+				{
+					"role": "Data access per data network",
+					"name": "Data network access: Data access per data network",
+					"relationshipType": "dependency"
+				}
+			],
+			"serviceSpecCharacteristicValue": [
+				{
+					"isDefault": true,
+					"rangeInterval": null,
+					"regex": null,
+					"unitOfMeasure": "N/A",
+					"valueFrom": null,
+					"valueTo": null,
+					"valueType": "INTEGER",
+					"validFor": null,
+					"value": {
+						"value": "0",
+						"alias": "L2TP Tunnel"
+					}
+				},
+				{
+					"isDefault": false,
+					"rangeInterval": null,
+					"regex": null,
+					"unitOfMeasure": "N/A",
+					"valueFrom": null,
+					"valueTo": null,
+					"valueType": "INTEGER",
+					"validFor": null,
+					"value": {
+						"value": "1",
+						"alias": "GRE Tunnel"
+					}
+				},
+				{
+					"isDefault": false,
+					"rangeInterval": null,
+					"regex": null,
+					"unitOfMeasure": "N/A",
+					"valueFrom": null,
+					"valueTo": null,
+					"valueType": "INTEGER",
+					"validFor": null,
+					"value": {
+						"value": "2",
+						"alias": "VPN Tunnel"
+					}
+				},
+				{
+					"isDefault": false,
+					"rangeInterval": null,
+					"regex": null,
+					"unitOfMeasure": "N/A",
+					"valueFrom": null,
+					"valueTo": null,
+					"valueType": "INTEGER",
+					"validFor": null,
+					"value": {
+						"value": "3",
+						"alias": "Label based routing"
+					}
+				},
+				{
+					"isDefault": false,
+					"rangeInterval": null,
+					"regex": null,
+					"unitOfMeasure": "N/A",
+					"valueFrom": null,
+					"valueTo": null,
+					"valueType": "INTEGER",
+					"validFor": null,
+					"value": {
+						"value": "4",
+						"alias": "Other"
+					}
+				}
+			]
+		},
+		{
+			"name": "Data network access: LBO Allowed",
+			"configurable": false,
+			"description": "The parameter, if present, defines whether a data network is available in Local Breakout whilst roaming.",
+			"extensible": null,
+			"isUnique": true,
+			"maxCardinality": 1,
+			"minCardinality": 0,
+			"regex": null,
+			"valueType": "BINARY",
+			"serviceSpecCharRelationship": [
+				{
+					"name": "Character Attribute",
+					"role": "tag",
+					"relationshipType": "tag"
+				},
+				{
+					"name": "Functional",
+					"role": "tag",
+					"relationshipType": "tag"
+				}
+			],
+			"serviceSpecCharacteristicValue": [
+				{
+					"isDefault": true,
+					"rangeInterval": null,
+					"regex": null,
+					"unitOfMeasure": "N/A",
+					"valueFrom": null,
+					"valueTo": null,
+					"valueType": "BINARY",
+					"validFor": null,
+					"value": {
+						"value": "0",
+						"alias": "No"
+					}
+				},
+				{
+					"isDefault": false,
+					"rangeInterval": null,
+					"regex": null,
+					"unitOfMeasure": "N/A",
+					"valueFrom": null,
+					"valueTo": null,
+					"valueType": "BINARY",
+					"validFor": null,
+					"value": {
+						"value": "1",
+						"alias": "Yes"
+					}
+				}
+			]
+		},
+		{
+			"name": "V2X-PC5 Network Scheduled Mode",
+			"configurable": false,
+			"description": "This parameter describes if the network slice supports V2X-PC5 Network scheduled mode related to the V2X-PC5 interface (PC5 interface as used for V2X communication) specified in 3GPP TS 23.287 for 5GS. This attribute applies to both NR PC5 RAT and LTE PC5 RAT, see 3GPP TS 23.287.",
+			"extensible": null,
+			"isUnique": true,
+			"maxCardinality": 1,
+			"minCardinality": 0,
+			"regex": null,
+			"valueType": "ENUM",
+			"serviceSpecCharRelationship": [
+				{
+					"name": "Character Attribute",
+					"role": "tag",
+					"relationshipType": "tag"
+				},
+				{
+					"name": "Functional",
+					"role": "tag",
+					"relationshipType": "tag"
+				},
+				{
+					"role": "Default mode of communication for NR PC5",
+					"name": "V2X-PC5 Network Scheduled Mode: Default mode of communication for NR PC5",
+					"relationshipType": "aggregation"
+				}
+			],
+			"serviceSpecCharacteristicValue": [
+				{
+					"isDefault": true,
+					"rangeInterval": null,
+					"regex": null,
+					"unitOfMeasure": "N/A",
+					"valueFrom": null,
+					"valueTo": null,
+					"valueType": "INTEGER",
+					"validFor": null,
+					"value": {
+						"value": "0",
+						"alias": "Not supported"
+					}
+				},
+				{
+					"isDefault": false,
+					"rangeInterval": null,
+					"regex": null,
+					"unitOfMeasure": "N/A",
+					"valueFrom": null,
+					"valueTo": null,
+					"valueType": "INTEGER",
+					"validFor": null,
+					"value": {
+						"value": "1",
+						"alias": "Supported for LTE PC5"
+					}
+				},
+				{
+					"isDefault": false,
+					"rangeInterval": null,
+					"regex": null,
+					"unitOfMeasure": "N/A",
+					"valueFrom": null,
+					"valueTo": null,
+					"valueType": "INTEGER",
+					"validFor": null,
+					"value": {
+						"value": "2",
+						"alias": "Supported for NR PC5"
+					}
+				},
+				{
+					"isDefault": false,
+					"rangeInterval": null,
+					"regex": null,
+					"unitOfMeasure": "N/A",
+					"valueFrom": null,
+					"valueTo": null,
+					"valueType": "INTEGER",
+					"validFor": null,
+					"value": {
+						"value": "3",
+						"alias": "Supported for NR PC5 and LTE PC5"
+					}
+				}
+			]
+		},
+		{
+			"name": "V2X-PC5 Network Scheduled Mode: Default mode of communication for NR PC5",
+			"configurable": false,
+			"description": "This parameter specifies the default mode of communication for NR PC5. This parameter must be present when the 'Network Scheduled Mode' on PC5 is set to 'NR PC5' or 'NR PC5 and LTE PC5'.",
+			"extensible": null,
+			"isUnique": true,
+			"maxCardinality": 1,
+			"minCardinality": 0,
+			"regex": null,
+			"valueType": "ENUM",
+			"serviceSpecCharRelationship": [
+				{
+					"name": "Character Attribute",
+					"role": "tag",
+					"relationshipType": "tag"
+				},
+				{
+					"name": "Functional",
+					"role": "tag",
+					"relationshipType": "tag"
+				},
+				{
+					"role": "V2X-PC5 Network Scheduled Mode",
+					"name": "V2X-PC5 Network Scheduled Mode",
+					"relationshipType": "dependency"
+				}
+			],
+			"serviceSpecCharacteristicValue": [
+				{
+					"isDefault": true,
+					"rangeInterval": null,
+					"regex": null,
+					"unitOfMeasure": "N/A",
+					"valueFrom": null,
+					"valueTo": null,
+					"valueType": "INTEGER",
+					"validFor": null,
+					"value": {
+						"value": "0",
+						"alias": "Broadcast"
+					}
+				},
+				{
+					"isDefault": false,
+					"rangeInterval": null,
+					"regex": null,
+					"unitOfMeasure": "N/A",
+					"valueFrom": null,
+					"valueTo": null,
+					"valueType": "INTEGER",
+					"validFor": null,
+					"value": {
+						"value": "1",
+						"alias": "Groupcast"
+					}
+				},
+				{
+					"isDefault": false,
+					"rangeInterval": null,
+					"regex": null,
+					"unitOfMeasure": "N/A",
+					"valueFrom": null,
+					"valueTo": null,
+					"valueType": "INTEGER",
+					"validFor": null,
+					"value": {
+						"value": "2",
+						"alias": "Unicast"
+					}
+				}
+			]
+		},
+		{
+			"name": "Latency from (last) UPF to Application Server",
+			"configurable": false,
+			"description": "This optional attribute specifies maximum or worst case one-way latency between UPF and application server offered by the slice. This does not include latency introduced by the application server. In the case of chained UPFs, this refers to the last UPF (in the chain) towards the application server. This attribute extends what is covered by the 3GPP QoS PDB attribute (see GST QoS attribute) which is only between UE and UPF. This is an optional attribute for network slices that offer latency objectives between UPF and application server residing within the operator network.",
+			"extensible": null,
+			"isUnique": true,
+			"maxCardinality": 1,
+			"minCardinality": 0,
+			"regex": null,
+			"valueType": "INTEGER",
+			"serviceSpecCharRelationship": [
+				{
+					"name": "Character Attribute",
+					"role": "tag",
+					"relationshipType": "tag"
+				},
+				{
+					"name": "Performance",
+					"role": "tag",
+					"relationshipType": "tag"
+				}
+			],
+			"serviceSpecCharacteristicValue": [
+				{
+					"isDefault": false,
+					"rangeInterval": null,
+					"regex": null,
+					"unitOfMeasure": "Milliseconds",
+					"valueFrom": null,
+					"valueTo": null,
+					"valueType": "INTEGER",
+					"validFor": null,
+					"value": {
+						"value": "1"
+					}
+				}
+			]
+		},
+		{
+			"name": "Network Slice Specific Authentication and Authorization (NSSAA) Required",
+			"configurable": false,
+			"description": "This attribute specifies whether for the Network Slice, devices need to be also authenticated and authorized by a AAA server using additional credentials different than the ones used for the primary authentication (see Rel-16 of 3GPP TS 23.501 clause 5.15.10 for a definition of the Network Slice Specific Authentication and Authorization feature).",
+			"extensible": null,
+			"isUnique": true,
+			"maxCardinality": 1,
+			"minCardinality": 0,
+			"regex": null,
+			"valueType": "BINARY",
+			"serviceSpecCharRelationship": [
+				{
+					"name": "Character Attribute",
+					"role": "tag",
+					"relationshipType": "tag"
+				},
+				{
+					"name": "Functional",
+					"role": "tag",
+					"relationshipType": "tag"
+				}
+			],
+			"serviceSpecCharacteristicValue": [
+				{
+					"isDefault": true,
+					"rangeInterval": null,
+					"regex": null,
+					"unitOfMeasure": "N/A",
+					"valueFrom": null,
+					"valueTo": null,
+					"valueType": "BINARY",
+					"validFor": null,
+					"value": {
+						"value": "0",
+						"alias": "Not supported"
+					}
+				},
+				{
+					"isDefault": false,
+					"rangeInterval": null,
+					"regex": null,
+					"unitOfMeasure": "N/A",
+					"valueFrom": null,
+					"valueTo": null,
+					"valueType": "BINARY",
+					"validFor": null,
+					"value": {
+						"value": "1",
+						"alias": "Supported"
+					}
+				}
+			]
+		},
+		{
+			"name": "Multimedia Priority Service",
+			"configurable": false,
+			"description": "Multimedia Priority Service (MPS) leads to priority of traffic relative to other traffic.",
+			"extensible": null,
+			"isUnique": true,
+			"maxCardinality": 1,
+			"minCardinality": 0,
+			"regex": null,
+			"valueType": "BINARY",
+			"serviceSpecCharRelationship": [
+				{
+					"name": "Character Attribute",
+					"role": "tag",
+					"relationshipType": "tag"
+				},
+				{
+					"name": "Functional",
+					"role": "tag",
+					"relationshipType": "tag"
+				},
+				{
+					"role": "Multimedia Priority Service capability support",
+					"name": "Multimedia Priority Service: Multimedia Priority Service capability support",
+					"relationshipType": "aggregation"
+				},
+				{
+					"role": "Multimedia Priority Service support",
+					"name": "Multimedia Priority Service: Multimedia Priority Service support",
+					"relationshipType": "aggregation"
+				}
+			],
+			"serviceSpecCharacteristicValue": [
+				{
+					"isDefault": true,
+					"rangeInterval": null,
+					"regex": null,
+					"unitOfMeasure": "N/A",
+					"valueFrom": null,
+					"valueTo": null,
+					"valueType": "BINARY",
+					"validFor": null,
+					"value": {
+						"value": "0",
+						"alias": "Non-MPS"
+					}
+				},
+				{
+					"isDefault": false,
+					"rangeInterval": null,
+					"regex": null,
+					"unitOfMeasure": "N/A",
+					"valueFrom": null,
+					"valueTo": null,
+					"valueType": "BINARY",
+					"validFor": null,
+					"value": {
+						"value": "1",
+						"alias": "MPS"
+					}
+				}
+			]
+		},
+		{
+			"name": "Multimedia Priority Service: Multimedia Priority Service capability support",
+			"configurable": false,
+			"description": "This parameter specifies what capabilities are available to support MPS. More than one capability may be supported at once. This parameter must be present if Multimedia Priority Service support is set to MPS.",
+			"extensible": null,
+			"isUnique": true,
+			"maxCardinality": 1,
+			"minCardinality": 0,
+			"regex": null,
+			"valueType": "SET",
+			"serviceSpecCharRelationship": [
+				{
+					"name": "Character Attribute",
+					"role": "tag",
+					"relationshipType": "tag"
+				},
+				{
+					"name": "Functional",
+					"role": "tag",
+					"relationshipType": "tag"
+				},
+				{
+					"role": "Multimedia Priority Service",
+					"name": "Multimedia Priority Service",
+					"relationshipType": "dependency"
+				}
+			],
+			"serviceSpecCharacteristicValue": [
+				{
+					"isDefault": false,
+					"rangeInterval": null,
+					"regex": null,
+					"unitOfMeasure": "N/A",
+					"valueFrom": null,
+					"valueTo": null,
+					"valueType": "INTEGER",
+					"validFor": null,
+					"value": {
+						"value": "0",
+						"alias": "User prioritization"
+					}
+				},
+				{
+					"isDefault": false,
+					"rangeInterval": null,
+					"regex": null,
+					"unitOfMeasure": "N/A",
+					"valueFrom": null,
+					"valueTo": null,
+					"valueType": "INTEGER",
+					"validFor": null,
+					"value": {
+						"value": "1",
+						"alias": "Pre-emption"
+					}
+				}
+			]
+		},
+		{
+			"name": "Multimedia Priority Service: Multimedia Priority Service support",
+			"configurable": false,
+			"description": "This parameter specifies whether or not the network slice supports MPS for MMTel voice, MPS for MMTel video, and/or MPS for Data as specified in 3GPP TS 22.153.",
+			"extensible": null,
+			"isUnique": true,
+			"maxCardinality": 1,
+			"minCardinality": 0,
+			"regex": null,
+			"valueType": "SET",
+			"serviceSpecCharRelationship": [
+				{
+					"name": "Character Attribute",
+					"role": "tag",
+					"relationshipType": "tag"
+				},
+				{
+					"name": "Functional",
+					"role": "tag",
+					"relationshipType": "tag"
+				},
+				{
+					"name": "KPI",
+					"role": "tag",
+					"relationshipType": "tag"
+				},
+				{
+					"role": "Multimedia Priority Service",
+					"name": "Multimedia Priority Service",
+					"relationshipType": "dependency"
+				}
+			],
+			"serviceSpecCharacteristicValue": [
+				{
+					"isDefault": true,
+					"rangeInterval": null,
+					"regex": null,
+					"unitOfMeasure": "N/A",
+					"valueFrom": null,
+					"valueTo": null,
+					"valueType": "INTEGER",
+					"validFor": null,
+					"value": {
+						"value": "0",
+						"alias": "MPS for MMTel voice"
+					}
+				},
+				{
+					"isDefault": false,
+					"rangeInterval": null,
+					"regex": null,
+					"unitOfMeasure": "N/A",
+					"valueFrom": null,
+					"valueTo": null,
+					"valueType": "INTEGER",
+					"validFor": null,
+					"value": {
+						"value": "1",
+						"alias": "MPS for MMTel video"
+					}
+				},
+				{
+					"isDefault": false,
+					"rangeInterval": null,
+					"regex": null,
+					"unitOfMeasure": "N/A",
+					"valueFrom": null,
+					"valueTo": null,
+					"valueType": "INTEGER",
+					"validFor": null,
+					"value": {
+						"value": "2",
+						"alias": "MPS for Data"
+					}
+				}
+			]
+		},
+		{
+			"name": "Supported data network",
+			"configurable": false,
+			"description": "This attribute describes the data networks the network slice provides access to. The attribute is comprised of a list of Service category parameters with the associated network or networks list. If no Service category parameters are present, all UEs in the network slice are associated with the same network or list of networks.",
+			"extensible": null,
+			"isUnique": true,
+			"maxCardinality": 1,
+			"minCardinality": 0,
+			"regex": null,
+			"valueType": "SET",
+			"serviceSpecCharRelationship": [
+				{
+					"name": "Character Attribute",
+					"role": "tag",
+					"relationshipType": "tag"
+				},
+				{
+					"name": "Functional",
+					"role": "tag",
+					"relationshipType": "tag"
+				},
+				{
+					"role": "Service category",
+					"name": "Supported data network: Service category",
+					"relationshipType": "aggregation"
+				}
+			],
+			"serviceSpecCharacteristicValue": [
+				{
+					"isDefault": true,
+					"rangeInterval": null,
+					"regex": null,
+					"unitOfMeasure": "N/A",
+					"valueFrom": null,
+					"valueTo": null,
+					"valueType": "TEXT",
+					"validFor": null,
+					"value": {
+						"value": "DataNetwork1, DataNetwork2",
+						"alias": "Service category 1"
+					}
+				},
+				{
+					"isDefault": true,
+					"rangeInterval": null,
+					"regex": null,
+					"unitOfMeasure": "N/A",
+					"valueFrom": null,
+					"valueTo": null,
+					"valueType": "TEXT",
+					"validFor": null,
+					"value": {
+						"value": "DataNetwork1",
+						"alias": "Service category 2"
+					}
+				}
+			]
+		},
+		{
+			"name": "Supported data network: Service category",
+			"configurable": false,
+			"description": "This parameter defines a service category which may be assigned to a UE. If present, it shall be associated with a Supported data networks list parameter.",
+			"extensible": null,
+			"isUnique": true,
+			"maxCardinality": 1,
+			"minCardinality": 0,
+			"regex": null,
+			"valueType": "ENUM",
+			"serviceSpecCharRelationship": [
+				{
+					"name": "Character Attribute",
+					"role": "tag",
+					"relationshipType": "tag"
+				},
+				{
+					"name": "Functional",
+					"role": "tag",
+					"relationshipType": "tag"
+				}
+			],
+			"serviceSpecCharacteristicValue": [
+				{
+					"isDefault": false,
+					"rangeInterval": null,
+					"regex": null,
+					"unitOfMeasure": "N/A",
+					"valueFrom": null,
+					"valueTo": null,
+					"valueType": "TEXT",
+					"validFor": null,
+					"value": {
+						"value": "Service Category 1"
+					}
+				},
+				{
+					"isDefault": false,
+					"rangeInterval": null,
+					"regex": null,
+					"unitOfMeasure": "N/A",
+					"valueFrom": null,
+					"valueTo": null,
+					"valueType": "TEXT",
+					"validFor": null,
+					"value": {
+						"value": "Service Category 2"
+					}
+				}				
+			]
+		},
+		{
+			"name": "Maximum number of UEs with at least one PDU session/PDN connection",
+			"configurable": false,
+			"description": "This attribute, which applies for network slices where EPS interworking is supported describes the maximum number of UEs that can use the network slice simultaneously with at least one PDU session/PDN connection as specified by the 'Maximum number of UEs with at least one PDU session and PDN connection' parameter. The counting of UEs shall consider the UEs in 5GS with at least one PDU Session in the network slice, and the UEs in the EPS with at least one PDN connection in the network slice, i.e., it is required to count the UEs that have at least one PDN connection connected to an APN that is associated with the S-NSSAI of the network slice.",
+			"extensible": null,
+			"isUnique": true,
+			"maxCardinality": 1,
+			"minCardinality": 0,
+			"regex": null,
+			"valueType": "INTEGER",
+			"serviceSpecCharRelationship": [
+				{
+					"name": "Scalability Attribute",
+					"role": "tag",
+					"relationshipType": "tag"
+				}
+			],
+			"serviceSpecCharacteristicValue": [
+				{
+					"isDefault": false,
+					"rangeInterval": null,
+					"regex": null,
+					"unitOfMeasure": "N/A",
+					"valueFrom": null,
+					"valueTo": null,
+					"valueType": "INTEGER",
+					"validFor": null,
+					"value": {
+						"value": "100000"
+					}
+				}
+			]
+		},
+		{
+			"name": "V2X-PC5 parameter provisioning",
+			"configurable": false,
+			"description": "This attribute specifies the support for parameter provisioning over the control plane for V2X-PC5 interface (PC5 interface as used for V2X communication) specified in 3GPP TS 23.287 for 5GS. This attribute applies to both NR PC5 RAT and LTE PC5 RAT, see 3GPP TS 23.287. ",
+			"extensible": null,
+			"isUnique": true,
+			"maxCardinality": 1,
+			"minCardinality": 0,
+			"regex": null,
+			"valueType": "ENUM",
+			"serviceSpecCharRelationship": [
+				{
+					"name": "Functional",
+					"role": "tag",
+					"relationshipType": "tag"
+				}
+			],
+			"serviceSpecCharacteristicValue": [
+				{
+					"isDefault": true,
+					"rangeInterval": null,
+					"regex": null,
+					"unitOfMeasure": "N/A",
+					"valueFrom": null,
+					"valueTo": null,
+					"valueType": "INTEGER",
+					"validFor": null,
+					"value": {
+						"value": "0",
+						"alias": "Not supported"
+					}
+				},
+				{
+					"isDefault": false,
+					"rangeInterval": null,
+					"regex": null,
+					"unitOfMeasure": "N/A",
+					"valueFrom": null,
+					"valueTo": null,
+					"valueType": "INTEGER",
+					"validFor": null,
+					"value": {
+						"value": "1",
+						"alias": "Provisioning for LTE PC5"
+					}
+				},
+				{
+					"isDefault": false,
+					"rangeInterval": null,
+					"regex": null,
+					"unitOfMeasure": "N/A",
+					"valueFrom": null,
+					"valueTo": null,
+					"valueType": "INTEGER",
+					"validFor": null,
+					"value": {
+						"value": "2",
+						"alias": "Provisioning for NR PC5"
+					}
+				},
+				{
+					"isDefault": false,
+					"rangeInterval": null,
+					"regex": null,
+					"unitOfMeasure": "N/A",
+					"valueFrom": null,
+					"valueTo": null,
+					"valueType": "INTEGER",
+					"validFor": null,
+					"value": {
+						"value": "3",
+						"alias": "Provisioning for NR PC5 and LTE PC5"
+					}
+				}
+			]
+		},
+		{
+			"name": "PDU Set support",
+			"configurable": false,
+			"description": "PDU Set means one or more PDUs carrying the payload of one unit of information generated at the application level (e.g., frame(s) or video slice(s) etc for eXtended Reality (XR) Services). All the PDUs of a PDU set are transmitted within the same QoS Flow. When the network handles the PDU, it needs to consider the relation between the PDUs, i.e. per PDU set granularity.",
+			"extensible": null,
+			"isUnique": true,
+			"maxCardinality": 1,
+			"minCardinality": 0,
+			"regex": null,
+			"valueType": "BINARY",
+			"serviceSpecCharRelationship": [],
+			"serviceSpecCharacteristicValue": [
+				{
+					"isDefault": true,
+					"rangeInterval": null,
+					"regex": null,
+					"unitOfMeasure": "N/A",
+					"valueFrom": null,
+					"valueTo": null,
+					"valueType": "BINARY",
+					"validFor": null,
+					"value": {
+						"value": "0",
+						"alias": "Not supported"
+					}
+				},
+				{
+					"isDefault": false,
+					"rangeInterval": null,
+					"regex": null,
+					"unitOfMeasure": "N/A",
+					"valueFrom": null,
+					"valueTo": null,
+					"valueType": "BINARY",
+					"validFor": null,
+					"value": {
+						"value": "1",
+						"alias": "Supported"
+					}
+				}
+			]
+		}
+	],
+	"serviceSpecRelationship": [],
+	"targetServiceSchema": null
+}

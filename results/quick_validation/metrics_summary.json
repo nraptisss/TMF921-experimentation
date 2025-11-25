@@ -1,0 +1,13 @@
+{
+  "experiment": "quick_validation_zero_shot",
+  "model": "llama3:latest",
+  "num_scenarios": 10,
+  "num_successful": 10,
+  "feaci": {
+    "format_correctness": 100.0,
+    "accuracy": 20.0,
+    "cost_avg_tokens": 1080.1,
+    "inference_time_avg_seconds": 90.10724439620972
+  },
+  "timestamp": "2025-11-24T20:41:31.432153"
+}

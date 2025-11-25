@@ -1,0 +1,45 @@
+{
+  "scenario": "Deploy smart retail checkout-free with computer vision: 50 Mbps per store, 100ms latency, real-time inventory.",
+  "generated_intent": {
+    "name": "Smart Retail Checkout-Free Intent",
+    "description": "Deploy smart retail checkout-free with computer vision: 50 Mbps per store, 100ms latency, real-time inventory.",
+    "serviceSpecCharacteristic": [
+      {
+        "name": "Downlink throughput per network slice: Maximum downlink throughput",
+        "value": {
+          "value": 50000,
+          "unitOfMeasure": "kbps"
+        }
+      },
+      {
+        "name": "E2E latency",
+        "value": {
+          "value": 100,
+          "unitOfMeasure": "ms"
+        }
+      },
+      {
+        "name": "Availability",
+        "value": {
+          "value": 99.9,
+          "unitOfMeasure": "percent"
+        }
+      }
+    ]
+  },
+  "raw_response": "{\n  \"name\": \"Smart Retail Checkout-Free Intent\",\n  \"description\": \"Deploy smart retail checkout-free with computer vision: 50 Mbps per store, 100ms latency, real-time inventory.\",\n  \"serviceSpecCharacteristic\": [\n    {\n      \"name\": \"Downlink throughput per network slice: Maximum downlink throughput\",\n      \"value\": {\n        \"value\": 50000,\n        \"unitOfMeasure\": \"kbps\"\n      }\n    },\n    {\n      \"name\": \"E2E latency\",\n      \"value\": {\n        \"value\": 100,\n        \"unitOfMeasure\": \"ms\"\n     ",
+  "validation": {
+    "format_valid": true,
+    "characteristics_valid": false,
+    "plausibility_valid": true,
+    "errors": [
+      "Characteristic 'E2E latency' not found in GST specification"
+    ],
+    "warnings": [],
+    "overall_valid": false
+  },
+  "metrics": {
+    "tokens": 1055,
+    "time_seconds": 92.16456842422485
+  }
+}

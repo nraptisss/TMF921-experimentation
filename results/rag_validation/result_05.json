@@ -1,0 +1,49 @@
+{
+  "scenario": "Create blood pressure monitoring: 1 Mbps aggregated, 1000ms latency tolerance, cardiac alert system.",
+  "generated_intent": {
+    "name": "Blood Pressure Monitoring Network Slice",
+    "description": "Network slice for blood pressure monitoring applications requiring 1 Mbps aggregated throughput, 1000 ms latency tolerance, and cardiac alert system.",
+    "serviceSpecCharacteristic": [
+      {
+        "name": "Supported device velocity",
+        "value": {
+          "value": "0.5",
+          "unitOfMeasure": "km/h"
+        }
+      },
+      {
+        "name": "NB-IoT support",
+        "value": {
+          "value": "true",
+          "unitOfMeasure": ""
+        }
+      },
+      {
+        "name": "Delay tolerance",
+        "value": {
+          "value": "1000",
+          "unitOfMeasure": "ms"
+        }
+      }
+    ]
+  },
+  "retrieved_characteristics": [
+    "NB-IoT support",
+    "Supported device velocity"
+  ],
+  "name_corrections": [
+    "Latency tolerance \u2192 Delay tolerance"
+  ],
+  "validation": {
+    "format_valid": true,
+    "characteristics_valid": true,
+    "plausibility_valid": true,
+    "errors": [],
+    "warnings": [],
+    "overall_valid": true
+  },
+  "metrics": {
+    "tokens": 980,
+    "time_seconds": 97.7701005935669
+  }
+}

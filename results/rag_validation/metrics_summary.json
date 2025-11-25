@@ -1,0 +1,14 @@
+{
+  "experiment": "rag_validation_10_scenarios",
+  "model": "llama3:latest",
+  "num_scenarios": 10,
+  "num_successful": 10,
+  "num_corrections": 11,
+  "feaci": {
+    "format_correctness": 100.0,
+    "accuracy": 100.0,
+    "cost_avg_tokens": 1002.0,
+    "inference_time_avg_seconds": 92.45941634178162
+  },
+  "timestamp": "2025-11-25T10:56:49.491440"
+}

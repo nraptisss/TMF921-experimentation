@@ -1,0 +1,48 @@
+{
+  "scenario": "Deploy avalanche detection: 10 Mbps mountain network, 500ms latency, alert distribution.",
+  "generated_intent": {
+    "name": "Avalanche Detection Network Slice",
+    "description": "Network slice for avalanche detection with 10 Mbps bandwidth, 500ms latency, and alert distribution.",
+    "serviceSpecCharacteristic": [
+      {
+        "name": "NB-IoT support",
+        "value": {
+          "value": "true",
+          "unitOfMeasure": ""
+        }
+      },
+      {
+        "name": "Downlink throughput per network slice: Guaranteed downlink throughput quota",
+        "value": {
+          "value": "10000",
+          "unitOfMeasure": "kbps"
+        }
+      },
+      {
+        "name": "Delay tolerance",
+        "value": {
+          "value": "500",
+          "unitOfMeasure": "ms"
+        }
+      }
+    ]
+  },
+  "retrieved_characteristics": [
+    "NB-IoT support"
+  ],
+  "name_corrections": [
+    "E2E latency \u2192 Delay tolerance"
+  ],
+  "validation": {
+    "format_valid": true,
+    "characteristics_valid": true,
+    "plausibility_valid": true,
+    "errors": [],
+    "warnings": [],
+    "overall_valid": true
+  },
+  "metrics": {
+    "tokens": 914,
+    "time_seconds": 92.31377792358398
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "scenario": "Create environmental sensor network monitoring: 50 kbps per sensor cluster, nationwide coverage, 3600s aggregation interval.",
+  "generated_intent": {
+    "name": "Environmental Sensor Network Monitoring",
+    "description": "Monitor environmental sensor networks nationwide with 50 kbps per sensor cluster and 3600s aggregation interval.",
+    "serviceSpecCharacteristic": [
+      {
+        "name": "Downlink throughput per network slice: Maximum downlink throughput",
+        "value": {
+          "value": 50000,
+          "unitOfMeasure": "kbps"
+        }
+      },
+      {
+        "name": "Area of Service",
+        "value": {
+          "value": "Nationwide",
+          "unitOfMeasure": ""
+        }
+      },
+      {
+        "name": "Uplink throughput per network slice: Maximum uplink throughput",
+        "value": {
+          "value": 50000,
+          "unitOfMeasure": "kbps"
+        }
+      },
+      {
+        "name": "E2E latency",
+        "value": {
+          "value": 1000,
+          "unitOfMeasure": "ms"
+        }
+      },
+      {
+        "name": "Aggregation interval",
+        "value": {
+          "value": 3600,
+          "unitOfMeasure": "seconds"
+        }
+      }
+    ]
+  },
+  "raw_response": "{\n  \"name\": \"Environmental Sensor Network Monitoring\",\n  \"description\": \"Monitor environmental sensor networks nationwide with 50 kbps per sensor cluster and 3600s aggregation interval.\",\n  \"serviceSpecCharacteristic\": [\n    {\n      \"name\": \"Downlink throughput per network slice: Maximum downlink throughput\",\n      \"value\": {\n        \"value\": 50000,\n        \"unitOfMeasure\": \"kbps\"\n      }\n    },\n    {\n      \"name\": \"Area of Service\",\n      \"value\": {\n        \"value\": \"Nationwide\",\n        \"unitO",
+  "validation": {
+    "format_valid": true,
+    "characteristics_valid": false,
+    "plausibility_valid": true,
+    "errors": [
+      "Characteristic 'E2E latency' not found in GST specification",
+      "Characteristic 'Aggregation interval' not found in GST specification"
+    ],
+    "warnings": [],
+    "overall_valid": false
+  },
+  "metrics": {
+    "tokens": 1135,
+    "time_seconds": 95.14974164962769
+  }
+}

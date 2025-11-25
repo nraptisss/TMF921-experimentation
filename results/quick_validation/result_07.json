@@ -1,0 +1,43 @@
+{
+  "scenario": "Establish multi-unit laundry service: 2 Mbps aggregated, 1000ms latency tolerance, machine scheduling.",
+  "generated_intent": {
+    "name": "Multi-unit Laundry Service",
+    "description": "Establish a network slice for multi-unit laundry service with guaranteed 2 Mbps aggregated throughput and 1000ms latency tolerance.",
+    "serviceSpecCharacteristic": [
+      {
+        "name": "Downlink throughput per network slice: Maximum downlink throughput",
+        "value": {
+          "value": 2000000,
+          "unitOfMeasure": "kbps"
+        }
+      },
+      {
+        "name": "Delay tolerance",
+        "value": {
+          "value": 1000,
+          "unitOfMeasure": "ms"
+        }
+      },
+      {
+        "name": "Availability",
+        "value": {
+          "value": 99.9,
+          "unitOfMeasure": "percent"
+        }
+      }
+    ]
+  },
+  "raw_response": "{\n  \"name\": \"Multi-unit Laundry Service\",\n  \"description\": \"Establish a network slice for multi-unit laundry service with guaranteed 2 Mbps aggregated throughput and 1000ms latency tolerance.\",\n  \"serviceSpecCharacteristic\": [\n    {\n      \"name\": \"Downlink throughput per network slice: Maximum downlink throughput\",\n      \"value\": {\n        \"value\": 2000000,\n        \"unitOfMeasure\": \"kbps\"\n      }\n    },\n    {\n      \"name\": \"Delay tolerance\",\n      \"value\": {\n        \"value\": 1000,\n        \"unitO",
+  "validation": {
+    "format_valid": true,
+    "characteristics_valid": true,
+    "plausibility_valid": true,
+    "errors": [],
+    "warnings": [],
+    "overall_valid": true
+  },
+  "metrics": {
+    "tokens": 1051,
+    "time_seconds": 85.36481809616089
+  }
+}
