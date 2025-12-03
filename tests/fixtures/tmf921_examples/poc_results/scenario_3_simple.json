@@ -1,0 +1,13 @@
+{
+  "name": "Scenario 3 Intent",
+  "description": "Translate intent 'enable network intelligence distribution' into: edge intelligence deployment, dist...",
+  "serviceSpecCharacteristic": [
+    {
+      "name": "Service level",
+      "value": {
+        "value": "standard",
+        "unitOfMeasure": ""
+      }
+    }
+  ]
+}

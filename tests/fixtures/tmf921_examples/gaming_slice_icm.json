@@ -1,0 +1,87 @@
+{
+    "@context": "http://tio.models.tmforum.org/tio/v3.6.0/context.json",
+    "@type": "icm:Intent",
+    "@id": "urn:uuid:gaming-slice-001",
+    "name": "Gaming Network Slice Intent",
+    "description": "High-performance network slice for gaming applications with low latency and guaranteed bandwidth",
+    "hasExpectation": [
+        {
+            "@type": "icm:PropertyExpectation",
+            "@id": "#expectation-latency",
+            "target": {
+                "@id": "#target-network-slice"
+            },
+            "expectationCondition": {
+                "@type": "log:Condition",
+                "quan:smaller": {
+                    "property": "Latency",
+                    "value": {
+                        "@value": 20,
+                        "quan:unit": "ms"
+                    }
+                }
+            }
+        },
+        {
+            "@type": "icm:PropertyExpectation",
+            "@id": "#expectation-bandwidth",
+            "target": {
+                "@id": "#target-network-slice"
+            },
+            "expectationCondition": {
+                "@type": "log:Condition",
+                "quan:greater": {
+                    "property": "Bandwidth",
+                    "value": {
+                        "@value": 50,
+                        "quan:unit": "Mbps"
+                    }
+                }
+            }
+        },
+        {
+            "@type": "icm:PropertyExpectation",
+            "@id": "#expectation-availability",
+            "target": {
+                "@id": "#target-network-slice"
+            },
+            "expectationCondition": {
+                "@type": "log:Condition",
+                "quan:greater": {
+                    "property": "Availability",
+                    "value": {
+                        "@value": 99.95,
+                        "quan:unit": "percent"
+                    }
+                }
+            }
+        },
+        {
+            "@type": "icm:ReportingExpectation",
+            "@id": "#expectation-reporting",
+            "target": {
+                "@id": "urn:uuid:gaming-slice-001"
+            },
+            "reportDestination": [
+                "urn:intent-manager:customer-portal"
+            ],
+            "reportTriggers": [
+                "imo:IntentAccepted",
+                "imo:IntentComplies",
+                "imo:IntentDegrades",
+                "imo:IntentRejected"
+            ]
+        }
+    ],
+    "target": [
+        {
+            "@id": "#target-network-slice",
+            "@type": "icm:Target",
+            "resourceType": "NetworkSlice",
+            "chooseFrom": {
+                "@type": "set:resourcesOfType",
+                "resourceType": "5GNetworkSlice"
+            }
+        }
+    ]
+}

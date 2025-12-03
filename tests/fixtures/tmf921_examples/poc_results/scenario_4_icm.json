@@ -1,0 +1,33 @@
+{
+  "@context": "http://tio.models.tmforum.org/tio/v3.6.0/context.json",
+  "@type": "icm:Intent",
+  "@id": "#intent-4",
+  "name": "Scenario 4 Intent",
+  "description": "Infer geographic constraints from intent 'provide seamless coverage across city' by extracting: hand...",
+  "hasExpectation": [
+    {
+      "@type": "icm:PropertyExpectation",
+      "@id": "#expectation-4",
+      "target": {
+        "@id": "#target-4"
+      },
+      "expectationCondition": {
+        "@type": "log:Condition",
+        "quan:smaller": {
+          "property": "Delay",
+          "value": {
+            "@value": 50,
+            "quan:unit": "ms"
+          }
+        }
+      }
+    }
+  ],
+  "target": [
+    {
+      "@id": "#target-4",
+      "@type": "icm:Target",
+      "resourceType": "NetworkSlice"
+    }
+  ]
+}

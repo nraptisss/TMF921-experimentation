@@ -1,0 +1,79 @@
+@prefix icm:  <http://tio.models.tmforum.org/tio/v3.2.0/IntentCommonModel#> .
+@prefix imo:  <http://tio.models.tmforum.org/tio/v3.2.0/IntentManagmentOntology#> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix idan: <http://www.example.org/IDAN3#> .
+@prefix t:    <http://www.w3.org/2006/time#> .
+@prefix logi:  <http://tio.models.tmforum.org/tio/v3.2.0/LogicalOperators#> .
+@prefix quan: <http://tio.models.tmforum.org/tio/v3.2.0/QuantityOntology#> .
+@prefix set:  <http://tio.models.tmforum.org/tio/v3.2.0/SetOperators#> .
+@prefix fun:  <http://tio.models.tmforum.org/tio/v3.2.0/FunctionOntology#> .
+@prefix ui: <http://www..example.org/ui#> .
+@prefix mf: <http://www..example.org/mf#> .
+@prefix cem: <http://tio.labs.tmforum.org/tio/v1.0.0/CatalystExtensionModel#> .
+@prefix   iv: <http://tio.models.tmforum.org/tio/v3.2.0/IntentValidity#> .
+
+#intent
+idan:IS3_Power
+  a icm:Intent ;
+  cem:layer idan:service ;
+  imo:intentOwner idan:Service ;
+  rdfs:comment "'Intent for maintaining a desirable energy consumption profile of 10W per user'" ;
+  icm:hasExpectation idan:ES3_energy_consumption_expectation,
+                        idan:ES3_reporting_expectation
+     .
+
+idan:ES3_energy_consumption_expectation
+  a icm:EnergyConsumptionExpectation ;
+    icm:energyProfile idan:ES3_energy_profile ;
+    icm:target idan:TS3 ;
+.
+
+idan:ES3_energy_profile
+  a icm:EnergyProfile ;
+  icm:observation [ icm:latestValue 10 ;
+                    icm:unit idan:EC1_unit ;
+                  ] ;
+.
+
+idan:EC1_unit
+  a icm:Parameter ;
+  icm:unitDescription "'Watt/User'" ;
+  icm:unitType idan:Power ;
+.
+# targets
+idan:TS3
+  a icm:Target ;
+  icm:allOf [ rdfs:member idan:RanDomain;
+               rdfs:member idan:TransportDomain;
+               rdfs:member idan:CoreDomain;
+               rdfs:member idan:EdgeDomain]
+.
+
+
+# reporting
+
+# event for time-based reporting. Triggereing every 5 minutes
+idan:EventS3
+  a rdfs:Class ;
+  rdfs:subClassOf imo:Event ;
+  logi:if [ t:after [imo:timeOfLastEvent [rdfs:member idan:EventS3 ;
+                                              rdfs:member idan:IS3_Power ]]  ,
+                         [t:hasDuration idan:5M ] ;
+                t:before [ t:hasBeginning imo:Now ] ;
+         ] ;
+  imo:eventFor idan:IS3_Power
+.
+
+idan:ES3_reporting_expectation
+  a icm:ReportingExpectation ;
+  icm:target idan:IS3_Power  ;
+  icm:reportDestination [ rdfs:member idan:Operations ] ;
+  icm:reportTriggers [ rdfs:member imo:IntentRejected ; 
+                       rdfs:member imo:IntentAccepted ;
+                       rdfs:member imo:IntentDegrades ;
+                       rdfs:member imo:IntentComplies ;
+                       rdfs:member imo:IntentRemoval ;
+                       rdfs:member idan:EventS3 ]
+.

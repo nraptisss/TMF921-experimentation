@@ -1,0 +1,95 @@
+@prefix icm:  <http://tio.models.tmforum.org/tio/v3.2.0/IntentCommonModel#> .
+@prefix imo:  <http://tio.models.tmforum.org/tio/v3.2.0/IntentManagmentOntology#> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix idan: <http://www.example.org/IDAN3#> .
+@prefix t:    <http://www.w3.org/2006/time#> .
+@prefix logi:  <http://tio.models.tmforum.org/tio/v3.2.0/LogicalOperators#> .
+@prefix quan: <http://tio.models.tmforum.org/tio/v3.2.0/QuantityOntology#> .
+@prefix set:  <http://tio.models.tmforum.org/tio/v3.2.0/SetOperators#> .
+@prefix fun:  <http://tio.models.tmforum.org/tio/v3.2.0/FunctionOntology#> .
+@prefix ui: <http://www..example.org/ui#> .
+@prefix mf: <http://www..example.org/mf#> .
+@prefix cem: <http://tio.labs.tmforum.org/tio/v1.0.0/CatalystExtensionModel#> .
+@prefix   iv: <http://tio.models.tmforum.org/tio/v3.2.0/IntentValidity#> .
+# intent
+idan:IR1_3_Construction
+  a icm:Intent ;
+  cem:layer idan:resource ;
+  imo:intentOwner idan:EdgeCloud ;
+  icm:hasExpectation idan:ER1_3_1,
+                     idan:ER1_3_2,
+                     idan:ER1_3_3
+.
+
+# targets
+idan:TR1_3_1
+  a icm:Target ;
+  icm:chooseFrom [ set:resourcesOfType idan:VideoApp  ]  
+.
+
+# expectations
+# we need a construction site safety service aka. helmet service
+idan:ER1_3_1
+  a icm:DeliveryExpectation ;
+  icm:target idan:TR1_3_1 ;
+  icm:targetType idan:VideoApp
+.
+
+# we need certain performance/QoE properties for the service
+idan:ER1_3_2
+  a icm:PropertyExpectation ;
+  icm:target idan:TR1_3_1 ;
+  logi:allOf [rdfs:member idan:CR1_3_1 ]
+.
+
+# conditions
+
+idan:CR1_3_1
+  a icm:Condition ;
+  rdfs:label "" ;
+  idan:AccessMode [ rdfs:member idan:4G ;
+                    rdfs:member idan:5G ];
+  idan:UploadBandwidth [ quan:greater
+                 [ rdf:value "5"^^xsd:decimal ;
+                   icm:unit80000 "'Mbps'"] 
+               ];
+  idan:Latency [ quan:smaller
+                 [ rdf:value "2"^^xsd:decimal ;
+                   icm:unit80000 "'s'"] 
+               ];
+  idan:security cem:none;
+  idan:computing [ idan:containers [ rdf:value "50"^^xsd:decimal ;
+                                     idan:vcpu "2"^^xsd:decimal ;
+                                              idan:memory "4"^^xsd:decimal;
+                                              idan:storage "20"^^xsd:decimal;
+                                              idan:graphics "16"^^xsd:decimal ]
+                     ]
+.
+
+# reporting
+# event for time-based reporting. Triggereing every 5 minutes
+idan:EventR1_3_1
+  a rdfs:Class ;
+  rdfs:subClassOf imo:Event ;
+  logi:if [ t:after [imo:timeOfLastEvent [rdfs:member idan:EventR1_3_1 ;
+                                          rdfs:member idan:IR1_3_Construction ]]  ,
+                    [t:hasDuration idan:5M ] ;
+            t:before [ t:hasBeginning imo:Now ] ;
+         ] ;
+  imo:eventFor idan:IR1_3_Construction
+.
+
+idan:ER1_3_3
+  a icm:ReportingExpectation ;
+  icm:target idan:IR1_3_Construction  ;
+  icm:reportDestination [ rdfs:member idan:IMF_Customer1 ] ;
+  icm:reportTriggers [ rdfs:member imo:IntentRejected ; 
+                       rdfs:member imo:IntentAccepted ;
+                       rdfs:member imo:IntentDegrades ;
+                       rdfs:member imo:IntentComplies ;
+                       rdfs:member imo:IntentRemoval ;
+                       rdfs:member idan:EventR1_3_1 ]
+.
+

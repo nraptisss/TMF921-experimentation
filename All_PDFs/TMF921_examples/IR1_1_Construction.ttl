@@ -1,0 +1,110 @@
+@prefix icm:  <http://tio.models.tmforum.org/tio/v3.2.0/IntentCommonModel#> .
+@prefix imo:  <http://tio.models.tmforum.org/tio/v3.2.0/IntentManagmentOntology#> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix idan: <http://www.example.org/IDAN3#> .
+@prefix t:    <http://www.w3.org/2006/time#> .
+@prefix logi:  <http://tio.models.tmforum.org/tio/v3.2.0/LogicalOperators#> .
+@prefix quan: <http://tio.models.tmforum.org/tio/v3.2.0/QuantityOntology#> .
+@prefix set:  <http://tio.models.tmforum.org/tio/v3.2.0/SetOperators#> .
+@prefix fun:  <http://tio.models.tmforum.org/tio/v3.2.0/FunctionOntology#> .
+@prefix ui: <http://www..example.org/ui#> .
+@prefix mf: <http://www..example.org/mf#> .
+@prefix cem: <http://tio.labs.tmforum.org/tio/v1.0.0/CatalystExtensionModel#> .
+@prefix   iv: <http://tio.models.tmforum.org/tio/v3.2.0/IntentValidity#> .
+# intent
+idan:IR1_1_Construction
+  a icm:Intent ;
+  cem:layer idan:resource ;
+  imo:intentOwner idan:RAN ;
+  icm:hasExpectation idan:ER1_1_1,
+                     idan:ER1_1_2
+.
+
+# targets
+idan:TR1_1_1
+  a icm:Target ;
+  icm:chooseFrom [ set:resourcesOfType idan:HelmetService  ]  
+.
+
+
+# we need certain performance/QoE properties for the service
+idan:ER1_1_1
+  a icm:PropertyExpectation ;
+  icm:target idan:TR1_1_1 ;
+  logi:allOf [rdfs:member idan:CR1_1_1 ]
+.
+
+# utility
+
+# utility function for latency
+idan:UR1_1_1
+  a mf:LogisticFunction ;
+  a ui:Utility ;
+  mf:functionInput idan:RanLatency ;
+  mf:midpoint 20;
+  mf:supremum 1.0 ;
+  mf:logisticGrowth -0.2 ;
+  iv:validIf [ a icm:Condition;
+               quan:atLeast [ idan:RanLatency [ rdf:value 1 ] ];
+               quan:atMost [ idan:RanLatency [ rdf:value 80 ] ]
+             ] 
+.
+
+# utility function for throughput
+idan:UR1_1_2
+  a mf:LogisticFunction ;
+  a ui:Utility ;
+  mf:functionInput idan:RanThroughput  ;
+  mf:midpoint 200 ;
+  mf:supremum 1.0 ;
+  mf:logisticGrowth 0.02 ;
+  iv:validIf [ a icm:Condition;
+               quan:atLeast [ idan:RanThroughput [ rdf:value 1 ] ];
+               quan:atMost [ idan:RanThroughput [ rdf:value 400 ] ]
+             ] 
+.
+
+# conditions
+
+idan:CR1_1_1
+  a icm:Condition ;
+  rdfs:label "" ;
+  quan:smaller [ idan:RanLatency
+                 [ rdf:value "25"^^xsd:decimal ;
+                   icm:unit80000 "'ms'" ]
+               ] ;
+  ui:utility idan:UR1_1_1 ;
+  quan:greater [ idan:RanThroughput
+                 [ rdf:value "200"^^xsd:decimal ;
+                   icm:unit80000 "'MB/s'"] 
+               ];
+  ui:utility idan:UR1_1_2
+.
+
+# reporting
+
+# event for time-based reporting. Triggereing every 5 minutes
+idan:EventR1_1_1
+  a rdfs:Class ;
+  rdfs:subClassOf imo:Event ;
+  logi:if [ t:after [imo:timeOfLastEvent [rdfs:member idan:EventR1_1_1 ;
+                                          rdfs:member idan:IR1_1_Construction ]]  ,
+                    [t:hasDuration idan:5M ] ;
+            t:before [ t:hasBeginning imo:Now ] ;
+         ] ;
+  imo:eventFor idan:IR1_1_Construction
+.
+
+idan:ER1_1_2
+  a icm:ReportingExpectation ;
+  icm:target idan:IR1_1_Construction  ;
+  icm:reportDestination [ rdfs:member idan:IMF_Customer1 ] ;
+  icm:reportTriggers [ rdfs:member imo:IntentRejected ; 
+                       rdfs:member imo:IntentAccepted ;
+                       rdfs:member imo:IntentDegrades ;
+                       rdfs:member imo:IntentComplies ;
+                       rdfs:member imo:IntentRemoval ;
+                       rdfs:member idan:EventR1_1_1 ]
+.

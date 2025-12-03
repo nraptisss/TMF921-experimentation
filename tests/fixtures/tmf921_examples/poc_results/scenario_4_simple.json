@@ -1,0 +1,13 @@
+{
+  "name": "Scenario 4 Intent",
+  "description": "Infer geographic constraints from intent 'provide seamless coverage across city' by extracting: hand...",
+  "serviceSpecCharacteristic": [
+    {
+      "name": "Delay tolerance",
+      "value": {
+        "value": "50",
+        "unitOfMeasure": "ms"
+      }
+    }
+  ]
+}

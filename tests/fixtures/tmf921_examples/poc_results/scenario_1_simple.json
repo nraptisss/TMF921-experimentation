@@ -1,0 +1,13 @@
+{
+  "name": "Scenario 1 Intent",
+  "description": "Infer orchestration complexity from intent 'coordinate multiple slices' into: slice interaction poli...",
+  "serviceSpecCharacteristic": [
+    {
+      "name": "Service level",
+      "value": {
+        "value": "standard",
+        "unitOfMeasure": ""
+      }
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "@context": "http://tio.models.tmforum.org/tio/v3.6.0/context.json",
+  "@type": "icm:Intent",
+  "@id": "#intent-1",
+  "name": "Scenario 1 Intent",
+  "description": "Infer orchestration complexity from intent 'coordinate multiple slices' into: slice interaction poli...",
+  "hasExpectation": [
+    {
+      "@type": "icm:PropertyExpectation",
+      "@id": "#expectation-1",
+      "target": {
+        "@id": "#target-1"
+      },
+      "expectationCondition": {
+        "@type": "log:Condition",
+        "quan:equal": {
+          "property": "Service level",
+          "value": {
+            "@value": "standard",
+            "quan:unit": ""
+          }
+        }
+      }
+    }
+  ],
+  "target": [
+    {
+      "@id": "#target-1",
+      "@type": "icm:Target",
+      "resourceType": "NetworkSlice"
+    }
+  ]
+}

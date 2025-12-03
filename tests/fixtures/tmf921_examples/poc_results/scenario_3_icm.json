@@ -1,0 +1,33 @@
+{
+  "@context": "http://tio.models.tmforum.org/tio/v3.6.0/context.json",
+  "@type": "icm:Intent",
+  "@id": "#intent-3",
+  "name": "Scenario 3 Intent",
+  "description": "Translate intent 'enable network intelligence distribution' into: edge intelligence deployment, dist...",
+  "hasExpectation": [
+    {
+      "@type": "icm:PropertyExpectation",
+      "@id": "#expectation-3",
+      "target": {
+        "@id": "#target-3"
+      },
+      "expectationCondition": {
+        "@type": "log:Condition",
+        "quan:equal": {
+          "property": "Service level",
+          "value": {
+            "@value": "standard",
+            "quan:unit": ""
+          }
+        }
+      }
+    }
+  ],
+  "target": [
+    {
+      "@id": "#target-3",
+      "@type": "icm:Target",
+      "resourceType": "NetworkSlice"
+    }
+  ]
+}

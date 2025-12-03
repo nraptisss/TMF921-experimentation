@@ -1,0 +1,62 @@
+@prefix icm:  <http://tio.models.tmforum.org/tio/v3.2.0/IntentCommonModel#> .
+@prefix imo:  <http://tio.models.tmforum.org/tio/v3.2.0/IntentManagmentOntology#> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix idan: <http://www.example.org/IDAN3#> .
+@prefix t:    <http://www.w3.org/2006/time#> .
+@prefix logi:  <http://tio.models.tmforum.org/tio/v3.2.0/LogicalOperators#> .
+@prefix quan: <http://tio.models.tmforum.org/tio/v3.2.0/QuantityOntology#> .
+@prefix set:  <http://tio.models.tmforum.org/tio/v3.2.0/SetOperators#> .
+@prefix fun:  <http://tio.models.tmforum.org/tio/v3.2.0/FunctionOntology#> .
+@prefix ui: <http://www..example.org/ui#> .
+@prefix mf: <http://www..example.org/mf#> .
+@prefix cem: <http://tio.labs.tmforum.org/tio/v1.0.0/CatalystExtensionModel#> .
+@prefix   iv: <http://tio.models.tmforum.org/tio/v3.2.0/IntentValidity#> .
+
+##### Service Intent Report ###################################################
+#
+# This intent report is sent on acceptance of the service intnet to the intnet 
+# manager on business level
+# 
+idan:IR23R2_Emergency_Intent_Compliant
+  a icm:IntentReport ;
+  rdfs:comment "'Intent Report after compliant'" ;
+  icm:about idan:IR2_3_Emergency ;
+  # put in the live timestamp from the time the report is created:
+    icm:reportTimestamp            date_to_be_generated^^xsd:dateTime ;
+  icm:reportHandlingState icm:StateCompliant ;
+  icm:updateState icm:StateNoUpdate ;
+  icm:reportNumber 2 ;
+  cem:layer idan:resource ;
+  icm:hasExpectationReport idan:R23R2E1_property ,
+                           idan:R23R2E2_reporting ; 
+.
+
+
+idan:R23R2E1_property
+  a icm:PropertyExpectationReport ;
+    icm:about idan:ER2_3_2 ;
+    icm:result true ; 
+    icm:resultFrom idan:CR3 
+.
+
+idan:CR3
+  a icm:Condition ;
+  icm:about idan:CR2_3_1 ; 
+  rdfs:label "" ;
+  icm:observed [ idan:AccessMode idan:5GSA ;
+                   idan:UploadBandwidth 6.5;
+                   idan:Latency 0.9;
+				   idan:security cem:ipsec;
+                   idan:containers "'200/8/16/200'" ]
+			   
+##### Reporting Expectation Report ############################################
+#
+idan:R23R2E2_reporting
+  a icm:ExpectationReport ;
+  icm:reportsAbout idan:ES2_reporting_expectation ;
+  icm:reportingIntervalRemaining [ a t:Duration ;
+                                   t:numericDuration idan:5M 
+                            ] ;
+.

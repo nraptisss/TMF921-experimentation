@@ -1,0 +1,13 @@
+{
+  "name": "Scenario 5 Intent",
+  "description": "Infer organizational capability from intent 'build organizational capability' into: capability devel...",
+  "serviceSpecCharacteristic": [
+    {
+      "name": "Service level",
+      "value": {
+        "value": "standard",
+        "unitOfMeasure": ""
+      }
+    }
+  ]
+}

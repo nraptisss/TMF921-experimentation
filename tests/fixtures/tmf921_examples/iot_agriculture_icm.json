@@ -1,0 +1,71 @@
+{
+    "@context": "http://tio.models.tmforum.org/tio/v3.6.0/context.json",
+    "@type": "icm:Intent",
+    "@id": "urn:uuid:iot-agriculture-001",
+    "name": "IoT Agricultural Network Intent",
+    "description": "Network slice for IoT agricultural devices requiring wide coverage and reliability",
+    "hasExpectation": [
+        {
+            "@type": "icm:PropertyExpectation",
+            "@id": "#expectation-bandwidth",
+            "target": {
+                "@id": "#target-iot-slice"
+            },
+            "expectationCondition": {
+                "@type": "log:Condition",
+                "quan:greater": {
+                    "property": "Bandwidth",
+                    "value": {
+                        "@value": 1,
+                        "quan:unit": "Mbps"
+                    }
+                }
+            }
+        },
+        {
+            "@type": "icm:PropertyExpectation",
+            "@id": "#expectation-latency",
+            "target": {
+                "@id": "#target-iot-slice"
+            },
+            "expectationCondition": {
+                "@type": "log:Condition",
+                "quan:smaller": {
+                    "property": "Latency",
+                    "value": {
+                        "@value": 50,
+                        "quan:unit": "ms"
+                    }
+                }
+            }
+        },
+        {
+            "@type": "icm:PropertyExpectation",
+            "@id": "#expectation-devices",
+            "target": {
+                "@id": "#target-iot-slice"
+            },
+            "expectationCondition": {
+                "@type": "log:Condition",
+                "quan:greater": {
+                    "property": "MaximumNumberOfDevices",
+                    "value": {
+                        "@value": 10000,
+                        "quan:unit": "devices"
+                    }
+                }
+            }
+        }
+    ],
+    "target": [
+        {
+            "@id": "#target-iot-slice",
+            "@type": "icm:Target",
+            "resourceType": "NetworkSlice",
+            "chooseFrom": {
+                "@type": "set:resourcesOfType",
+                "resourceType": "IoTNetworkSlice"
+            }
+        }
+    ]
+}

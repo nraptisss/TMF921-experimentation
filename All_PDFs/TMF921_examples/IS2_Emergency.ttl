@@ -1,0 +1,63 @@
+@prefix icm:  <http://tio.models.tmforum.org/tio/v3.2.0/IntentCommonModel#> .
+@prefix imo:  <http://tio.models.tmforum.org/tio/v3.2.0/IntentManagmentOntology#> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix idan: <http://www.example.org/IDAN3#> .
+@prefix t:    <http://www.w3.org/2006/time#> .
+@prefix logi:  <http://tio.models.tmforum.org/tio/v3.2.0/LogicalOperators#> .
+@prefix quan: <http://tio.models.tmforum.org/tio/v3.2.0/QuantityOntology#> .
+@prefix set:  <http://tio.models.tmforum.org/tio/v3.2.0/SetOperators#> .
+@prefix fun:  <http://tio.models.tmforum.org/tio/v3.2.0/FunctionOntology#> .
+@prefix ui: <http://www..example.org/ui#> .
+@prefix mf: <http://www..example.org/mf#> .
+@prefix cem: <http://tio.labs.tmforum.org/tio/v1.0.0/CatalystExtensionModel#> .
+@prefix   iv: <http://tio.models.tmforum.org/tio/v3.2.0/IntentValidity#> .
+
+#intent
+idan:IS2_Emergency
+  a icm:Intent ;
+  cem:layer idan:service ;
+  imo:intentOwner idan:Service ;
+  rdfs:comment "'Intent for emergency critical service'" ;
+  icm:hasExpectation idan:ES2_emergency_expectation,
+                        idan:ES2_reporting_expectation
+     .
+
+idan:ES2_emergency_expectation
+  a icm:DeliveryExpectation ;
+    icm:target idan:TS2 ;
+.
+
+# targets
+idan:TS2
+  a icm:Target ;
+  icm:allOf [ rdfs:member idan:EmergencyService]
+.
+
+
+# reporting
+
+# event for time-based reporting. Triggereing every 5 minutes
+idan:EventS2
+  a rdfs:Class ;
+  rdfs:subClassOf imo:Event ;
+  logi:if [ t:after [imo:timeOfLastEvent [rdfs:member idan:EventS2 ;
+                                              rdfs:member idan:IS2_Emergency ]]  ,
+                         [t:hasDuration idan:5M ] ;
+                t:before [ t:hasBeginning imo:Now ] ;
+         ] ;
+  imo:eventFor idan:IS2_Emergency
+.
+
+idan:ES2_reporting_expectation
+  a icm:ReportingExpectation ;
+  icm:target idan:IS2_Emergency  ;
+  icm:reportDestination [ rdfs:member idan:Operations ] ;
+  icm:reportTriggers [ rdfs:member imo:IntentRejected ; 
+                       rdfs:member imo:IntentAccepted ;
+                       rdfs:member imo:IntentDegrades ;
+                       rdfs:member imo:IntentComplies ;
+                       rdfs:member imo:IntentRemoval ;
+                       rdfs:member idan:EventS2 ]
+.

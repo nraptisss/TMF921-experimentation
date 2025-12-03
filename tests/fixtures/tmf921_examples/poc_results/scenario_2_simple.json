@@ -1,0 +1,13 @@
+{
+  "name": "Scenario 2 Intent",
+  "description": "Infer organizational alignment from intent 'align with company strategy' into: strategic objective m...",
+  "serviceSpecCharacteristic": [
+    {
+      "name": "Service level",
+      "value": {
+        "value": "standard",
+        "unitOfMeasure": ""
+      }
+    }
+  ]
+}
