@@ -5,7 +5,8 @@
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 
 > **Research Achievement:** 94.3% accuracy on held-out test set using RAG + Local LLM  
-> **Scientific Rigor:** Publication-ready with statistical testing, cross-validation, and ablation studies
+> **Scientific Rigor:** Publication-ready with statistical testing, cross-validation, and ablation studies  
+> **TM Forum Compliance:** ICM JSON-LD export support (v2.2.0)
 
 Professional research codebase for translating natural language network requirements into TMF921-compliant Intent JSON structures using lightweight LLMs with Retrieval-Augmented Generation (RAG).
 
@@ -36,6 +37,12 @@ Professional research codebase for translating natural language network requirem
 - Human evaluation protocol
 - Honest metrics reporting
 
+**TM Forum Compliance (NEW in v2.2.0):**
+- Intent Common Model (ICM) JSON-LD export
+- TMF921 v5.0.0 specification compliance
+- Dual-format support (Simple JSON + ICM)
+- Backward compatible (optional feature)
+
 ## 🚀 Quick Start
 
 ### Installation
@@ -60,10 +67,39 @@ python scripts/run_experiment.py --experiment rag_cloud --scenarios 86
 
 # Run ablation study
 python experiments/ablation_study.py
-
-# Run cross-validation
-python experiments/cross_validation.py
 ```
+#### With ICM Export (NEW in v2.2.0)
+
+Enable TM Forum Intent Common Model (ICM) JSON-LD export:
+
+```python
+from experiments.rag_cloud import RAGCloudExperiment
+
+exp = RAGCloudExperiment(
+    model_name="llama3:8b",
+    num_scenarios=10,
+    export_icm=True  # ← Enable ICM export
+)
+
+exp.setup()
+exp.run()
+
+# Results saved in both formats:
+# - results/rag_cloud_10_scenarios/checkpoint_10.json (simple)
+# - results/rag_cloud_10_scenarios/checkpoint_10_icm.json (ICM)
+```
+
+**Benefits:**
+- ✅ TM Forum TMF921 v5.0.0 compliant
+- ✅ Semantic JSON-LD format
+- ✅ No impact on accuracy (maintains 94.3%)
+- ✅ Automatic conversion
+- ✅ Dual-format support
+
+See [`docs/ICM_USER_GUIDE.md`](docs/ICM_USER_GUIDE.md) for details.
+
+### 4. Cross-Validation
+python experiments/cross_validation.py
 
 ## 📊 Project Structure
 
@@ -95,6 +131,10 @@ tmf921-intent-translation/
 │   ├── PIPELINE_WALKTHROUGH.md  # Complete pipeline demo
 │   ├── SCIENTIFIC_RIGOR_COMPLETE.md
 │   ├── SEMANTIC_EVALUATION_GUIDE.md
+│   ├── TMF921_FORMAT.md     # TMF921 ICM format specification
+│   ├── ICM_USER_GUIDE.md    # ICM export user guide (NEW)
+│   ├── ICM_DEVELOPER_GUIDE.md  # ICM developer guide (NEW)
+│   ├── ICM_API_REFERENCE.md    # ICM API reference (NEW)
 │   └── PHASE_1_2_COMPLETE.md
 └── results/                 # Experiment results
 
