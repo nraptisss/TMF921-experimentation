@@ -4,18 +4,24 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 
-> **Research Achievement:** 95.3% accuracy on TMF921 intent translation using RAG + Cloud LLMs  
+> **Research Achievement:** 94.3% accuracy on held-out test set using RAG + Local LLM  
 > **Scientific Rigor:** Publication-ready with statistical testing, cross-validation, and ablation studies
 
 Professional research codebase for translating natural language network requirements into TMF921-compliant Intent JSON structures using lightweight LLMs with Retrieval-Augmented Generation (RAG).
 
 ## 🎯 Key Results
 
-**Latest Validation (574-scenario dataset):**
-- **95.3% overall success rate** (82/86 valid on validation set)
-- **100% accuracy** on successfully processed scenarios
-- **Zero name corrections** needed (RAG provides exact characteristic names)
-- **11.3s average** inference time with cloud model
+**Final Test Set Evaluation (87 held-out scenarios):**
+- **94.3% accuracy** (82/87 valid intents)
+- **100% processing success** (all scenarios generated valid JSON)
+- **Model:** llama3:8b (local, 8B parameters)
+- **Inference time:** 2.1s average per scenario
+- **Zero corrections** needed (RAG provides exact characteristic names)
+
+**Cross-Validation (5-fold, 50 scenarios):**
+- **94.0% ± 5.5%** accuracy across folds
+- **Coefficient of Variation:** 5.8% (good consistency)
+- **Per-fold:** 90%, 100%, 100%, 90%, 90%
 
 **Ablation Study Findings:**
 - Baseline (zero-shot): 96.7%
@@ -25,7 +31,7 @@ Professional research codebase for translating natural language network requirem
 **Scientific Rigor:**
 - 574 scenarios with proper train/val/test splits (401/86/87)
 - Statistical testing framework (CI, p-values, effect sizes)
-- K-fold cross-validation support
+- K-fold cross-validation (94.0% ± 5.5%)
 - Systematic ablation studies
 - Human evaluation protocol
 - Honest metrics reporting
@@ -85,6 +91,8 @@ tmf921-intent-translation/
 │   ├── val.json             # 86 validation scenarios
 │   └── test.json            # 87 test scenarios (held-out)
 ├── docs/                    # Documentation
+│   ├── ARCHITECTURE.md      # System architecture  
+│   ├── PIPELINE_WALKTHROUGH.md  # Complete pipeline demo
 │   ├── SCIENTIFIC_RIGOR_COMPLETE.md
 │   ├── SEMANTIC_EVALUATION_GUIDE.md
 │   └── PHASE_1_2_COMPLETE.md

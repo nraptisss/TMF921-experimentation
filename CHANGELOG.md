@@ -5,6 +5,66 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.1.0] - 2025-12-03
+
+### 🎉 Final Test Set Evaluation Complete
+
+**Test Set Performance: 94.3% accuracy on 87 held-out scenarios**
+
+### Added
+
+**Final Evaluation:**
+- Completed test set evaluation (87 scenarios, never used during development)
+- Achieved 94.3% accuracy with llama3:8b local model
+- Script: `run_final_test.py` for one-time test evaluation
+
+**Cross-Validation:**
+- Executed 5-fold cross-validation on validation set
+- Results: 94.0% ± 5.5% accuracy (CV = 5.8%)
+- Per-fold performance: 90%, 100%, 100%, 90%, 90%
+
+**Documentation:**
+- Added comprehensive pipeline walkthrough (`docs/PIPELINE_WALKTHROUGH.md`)
+- Detailed technical demonstration of scenario processing
+- Complete data flow visualization with actual examples
+- Step-by-step execution trace through all 8 pipeline stages
+
+**Results:**
+- Saved cross-validation results to `results/cross_validation/`
+- Saved final test results to `results/rag_cloud_87_scenarios/`
+- Checkpoints every 10 scenarios for reproducibility
+
+### Fixed
+
+- **Division by zero bug** in `experiments/base_experiment.py`
+  - Occurred when no scenarios were successfully processed
+  - Added check: `if successfully_processed > 0` before division
+  - Prevents crash when all scenarios fail
+
+### Changed
+
+- **Cross-validation default model**: Changed from `gpt-oss:20b-cloud` to `llama3:8b`
+  - Cloud model requires authentication
+  - Local model achieves similar performance (94% vs 95%)
+  - More accessible for reproduction
+
+### Results Summary
+
+**Publication-Ready Results:**
+- Test Set: 94.3% (82/87 scenarios)
+- Cross-Validation: 94.0% ± 5.5% (5-fold)
+- Validation Set: 95.3% (82/86 scenarios, cloud model)
+- Ablation Study: 100% with RAG + Correction
+
+**Key Findings:**
+- Local models (llama3:8b) nearly match cloud performance
+- RAG is essential (+14% improvement over baseline)
+- Few-shot learning breaks the system (0% accuracy)
+- Consistent performance across train/val/test splits
+- No overfitting observed
+
+---
+
 ## [2.0.0] - 2025-11-25
 
 ### 🎯 Major Release: Scientific Rigor & Publication-Ready

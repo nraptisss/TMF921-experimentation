@@ -230,7 +230,10 @@ class BaseExperiment(ABC):
         print(f"\nTotal Scenarios:        {total_scenarios}")
         print(f"Processing Failures:    {json_failures} ({json_failures/total_scenarios*100:.1f}%)")
         print(f"Successfully Processed: {successfully_processed} ({successfully_processed/total_scenarios*100:.1f}%)")
-        print(f"Valid Intents:          {len(valid_results)} ({len(valid_results)/successfully_processed*100:.1f}% of processed)")
+        if successfully_processed > 0:
+            print(f"Valid Intents:          {len(valid_results)} ({len(valid_results)/successfully_processed*100:.1f}% of processed)")
+        else:
+            print(f"Valid Intents:          {len(valid_results)} (N/A - no scenarios processed)")
         
         print(f"\n**Overall Success Rate: {len(valid_results)}/{total_scenarios} = {len(valid_results)/total_scenarios*100:.1f}%**")
         

@@ -185,7 +185,7 @@ if __name__ == "__main__":
     
     cv = CrossValidationExperiment(
         experiment_class=RAGCloudExperiment,
-        model_name="gpt-oss:20b-cloud",
+        model_name="llama3:8b",  # Use local model instead of cloud
         n_folds=5,
         scenarios_per_fold=10  # 10 scenarios per fold for quick test
     )

@@ -1,0 +1,25 @@
+{
+  "experiment": "final_test_set_87_scenarios",
+  "model": "llama3:8b",
+  "honest_counts": {
+    "total_scenarios": 87,
+    "processing_failures": 0,
+    "processing_failure_rate": 0.0,
+    "successfully_processed": 87,
+    "processing_success_rate": 1.0,
+    "valid_intents": 82,
+    "validation_success_rate_on_processed": 0.9425287356321839,
+    "overall_success_rate": 0.9425287356321839
+  },
+  "num_corrections": 16,
+  "feaci": {
+    "format_correctness": 100.0,
+    "accuracy": 94.25287356321839,
+    "cost_avg_tokens": 1502.0804597701149,
+    "cost_total_tokens": 130681,
+    "inference_time_avg_seconds": 2.1311016603447923,
+    "inference_time_total_seconds": 185.40584444999695,
+    "num_results": 87
+  },
+  "timestamp": "2025-12-02T09:03:18.285908"
+}
