@@ -19,6 +19,7 @@ sys.path.insert(0, str(Path(__file__).parent.parent / "src"))
 from tmf921.core import ScenarioDataset, GSTSpecification, TMF921Validator, OllamaClient
 from tmf921.post_processing import CharacteristicNameMapper
 from tmf921.utils import load_config, compute_feaci_metrics, print_feaci_metrics
+from tmf921.icm.converter import SimpleToICMConverter
 
 
 class BaseExperiment(ABC):
@@ -30,7 +31,8 @@ class BaseExperiment(ABC):
         model_name: str,
         num_scenarios: int,
         config_path: str = "config.yaml",
-        results_dir: str = "results"
+        results_dir: str = "results",
+        export_icm: bool = False
     ):
         """
         Initialize experiment.
@@ -41,12 +43,14 @@ class BaseExperiment(ABC):
             num_scenarios: Number of scenarios to process
             config_path: Path to configuration file
             results_dir: Directory to save results
+            export_icm: If True, also export ICM JSON-LD format
         """
         self.experiment_name = experiment_name
         self.model_name = model_name
         self.num_scenarios = num_scenarios
         self.config_path = config_path
         self.results_dir = Path(results_dir) / experiment_name
+        self.export_icm = export_icm
         
         # Components (initialized in setup())
         self.config = None
@@ -55,6 +59,7 @@ class BaseExperiment(ABC):
         self.name_mapper = None
         self.client = None
         self.scenarios = None
+        self.icm_converter = None if not export_icm else SimpleToICMConverter()
         
         # Results storage
         self.results = []
@@ -202,11 +207,37 @@ class BaseExperiment(ABC):
         print("=" * 80 + "\n")
     
     def save_checkpoint(self, num_scenarios: int):
-        """Save checkpoint."""
+        """Save checkpoint in both formats if ICM export enabled."""
+        # Save simple JSON format (always)
         checkpoint_file = self.results_dir / f"checkpoint_{num_scenarios}.json"
         with open(checkpoint_file, 'w') as f:
             json.dump(self.results, f, indent=2)
         print(f"  [CHECKPOINT] Saved {num_scenarios} results")
+        
+        # Also save ICM format if enabled
+        if self.export_icm and self.icm_converter:
+            icm_results = []
+            for result in self.results:
+                if result.get('generated_intent'):
+                    try:
+                        icm_intent = self.icm_converter.convert(result['generated_intent'])
+                        icm_results.append({
+                            'scenario': result['scenario'],
+                            'generated_intent_icm': icm_intent,
+                            'generated_intent_simple': result['generated_intent'],
+                            'validation': result.get('validation'),
+                            'metrics': result.get('metrics')
+                        })
+                    except Exception as e:
+                        print(f"    [WARNING] ICM conversion failed for result: {e}")
+                        icm_results.append(result)  # Keep original
+                else:
+                    icm_results.append(result)
+            
+            icm_checkpoint_file = self.results_dir / f"checkpoint_{num_scenarios}_icm.json"
+            with open(icm_checkpoint_file, 'w') as f:
+                json.dump(icm_results, f, indent=2)
+            print(f"  [ICM] Saved ICM format checkpoint")
     
     def compute_and_save_metrics(self):
         """Compute FEACI metrics with full transparency and honest reporting."""
@@ -262,5 +293,27 @@ class BaseExperiment(ABC):
         summary_file = self.results_dir / "metrics_summary.json"
         with open(summary_file, 'w') as f:
             json.dump(metrics_summary, f, indent=2)
+        
+        # Save ICM summary if export enabled
+        if self.export_icm and self.icm_converter:
+            icm_success_count = 0
+            for result in self.results:
+                if result.get('generated_intent'):
+                    try:
+                        self.icm_converter.convert(result['generated_intent'])
+                        icm_success_count += 1
+                    except:
+                        pass
+            
+            print(f"[ICM] Successfully converted {icm_success_count}/{successfully_processed} intents to ICM format")
+            metrics_summary['icm_export'] = {
+                'enabled': True,
+                'successful_conversions': icm_success_count,
+                'conversion_rate': icm_success_count / successfully_processed if successfully_processed > 0 else 0
+            }
+            
+            # Re-save with ICM metrics
+            with open(summary_file, 'w') as f:
+                json.dump(metrics_summary, f, indent=2)
         
         print(f"[OK] Results saved to: {self.results_dir}/")
