@@ -109,16 +109,17 @@ class TMF921Validator:
     
     def validate_characteristics(self, intent_dict: Dict[str, Any]) -> tuple[bool, List[str]]:
         """
-        Validate that characteristics exist in GST spec.
+        Validate that characteristics exist in GST spec and values match types.
+        
+        ENHANCED: Now validates value types, units, and data types.
         
         Returns:
             (is_valid, list_of_errors)
         """
         errors = []
-        warnings = []
         
         chars = intent_dict.get('serviceSpecCharacteristic', [])
-        for char in chars:
+        for i, char in enumerate(chars):
             char_name = char.get('name')
             
             # Check if characteristic exists in GST
@@ -126,14 +127,170 @@ class TMF921Validator:
                 errors.append(f"Characteristic '{char_name}' not found in GST specification")
                 continue
             
-            # Check value type compatibility
             gst_char = self.valid_characteristics[char_name]
-            expected_type = gst_char.get('valueType')
             
-            # Value validation would go here
-            # For now, we just check existence
+            # Get value from intent
+            value_obj = char.get('value', {})
+            if isinstance(value_obj, dict):
+                value = value_obj.get('value')
+                unit = value_obj.get('unitOfMeasure', '')
+            else:
+                value = value_obj
+                unit = ''
+            
+            # ENHANCED: Validate value type matches GST specification
+            expected_type = gst_char.get('valueType')
+            if expected_type:
+                type_errors = self._validate_value_type(char_name, value, expected_type)
+                errors.extend(type_errors)
+            
+            # ENHANCED: Validate unit of measure
+            expected_unit = gst_char.get('unitOfMeasure')
+            if expected_unit and unit:
+                if unit.lower() != expected_unit.lower():
+                    # Allow some common variations
+                    unit_variations = {
+                        'percent': '%',
+                        'percentage': '%',
+                        'milliseconds': 'ms',
+                        'msec': 'ms',
+                        'millisecond': 'ms'
+                    }
+                    normalized_unit = unit_variations.get(unit.lower(), unit.lower())
+                    normalized_expected = unit_variations.get(expected_unit.lower(), expected_unit.lower())
+                    
+                    if normalized_unit != normalized_expected:
+                        errors.append(
+                            f"{char_name}: Unit '{unit}' doesn't match GST specification '{expected_unit}'"
+                        )
+            
+            # ENHANCED: Validate value constraints (if any)
+            # Note: GST doesn't have explicit min/max, but we can add logical checks
+            constraint_errors = self._validate_value_constraints(char_name, value, unit, expected_type)
+            errors.extend(constraint_errors)
             
         return len(errors) == 0, errors
+    
+    def _validate_value_type(self, char_name: str, value: Any, expected_type: str) -> List[str]:
+        """
+        Validate value matches expected type from GST.
+        
+        Args:
+            char_name: Characteristic name
+            value: The value to validate
+            expected_type: Expected type (INTEGER, FLOAT, TEXT, BINARY, ENUM, SET)
+            
+        Returns:
+            List of error messages
+        """
+        errors = []
+        
+        if expected_type == 'INTEGER':
+            # Must be integer or string that can convert to int
+            if not isinstance(value, int):
+                try:
+                    int_val = int(str(value))
+                    # Check if it's actually an integer (not float disguised as int)
+                    if '.' in str(value):
+                        errors.append(f"{char_name}: Expected INTEGER, but value '{value}' has decimal point")
+                except (ValueError, TypeError):
+                    errors.append(f"{char_name}: Expected INTEGER, got value '{value}' (type: {type(value).__name__})")
+        
+        elif expected_type == 'FLOAT':
+            # Must be numeric
+            if not isinstance(value, (int, float)):
+                try:
+                    float(str(value))
+                except (ValueError, TypeError):
+                    errors.append(f"{char_name}: Expected FLOAT, got value '{value}' (type: {type(value).__name__})")
+        
+        elif expected_type == 'TEXT':
+            # Must be string
+            if not isinstance(value, str):
+                errors.append(f"{char_name}: Expected TEXT, got value '{value}' (type: {type(value).__name__})")
+        
+        elif expected_type == 'BINARY':
+            # Boolean or 0/1
+            if not isinstance(value, (bool, int)):
+                if str(value).lower() not in ['true', 'false', '0', '1', 'yes', 'no']:
+                    errors.append(f"{char_name}: Expected BINARY (boolean), got value '{value}'")
+        
+        elif expected_type == 'ENUM':
+            # Should be string from allowed set (but GST doesn't define allowed values)
+            # Just check it's a string
+            if not isinstance(value, str):
+                errors.append(f"{char_name}: Expected ENUM (text), got value '{value}' (type: {type(value).__name__})")
+        
+        elif expected_type == 'SET':
+            # Should be array/list
+            if not isinstance(value, (list, tuple, set)):
+                errors.append(f"{char_name}: Expected SET (array), got value '{value}' (type: {type(value).__name__})")
+        
+        return errors
+    
+    def _validate_value_constraints(
+        self, 
+        char_name: str, 
+        value: Any, 
+        unit: str,
+        value_type: str
+    ) -> List[str]:
+        """
+        Validate logical constraints on values.
+        
+        Args:
+            char_name: Characteristic name
+            value: The value
+            unit: Unit of measure
+            value_type: Type (INTEGER, FLOAT, etc.)
+            
+        Returns:
+            List of error messages
+        """
+        errors = []
+        
+        # Only validate numeric values
+        if value_type not in ['INTEGER', 'FLOAT']:
+            return errors
+        
+        try:
+            numeric_value = float(str(value))
+        except (ValueError, TypeError):
+            return errors  # Type validation will catch this
+        
+        # Logical constraints
+        
+        # 1. Percentages must be 0-100
+        if unit.lower() in ['%', 'percent', 'percentage']:
+            if numeric_value < 0 or numeric_value > 100:
+                errors.append(f"{char_name}: Percentage value {numeric_value} out of range [0, 100]")
+        
+        # 2. Throughput/bandwidth must be positive
+        if ('throughput' in char_name.lower() or 'bandwidth' in char_name.lower()):
+            if numeric_value < 0:
+                errors.append(f"{char_name}: Throughput/bandwidth cannot be negative ({numeric_value})")
+            
+            # Reasonable upper bounds
+            if unit.lower() == 'gbps' and numeric_value > 10000:
+                errors.append(f"{char_name}: Unrealistic bandwidth {numeric_value} Gbps (> 10 Tbps)")
+        
+        # 3. Latency/delay must be positive and reasonable
+        if ('latency' in char_name.lower() or 'delay' in char_name.lower()):
+            if numeric_value < 0:
+                errors.append(f"{char_name}: Latency/delay cannot be negative ({numeric_value})")
+            
+            if unit.lower() == 'ms' and numeric_value < 0.001:
+                errors.append(f"{char_name}: Unrealistic latency {numeric_value} ms (< 1 microsecond)")
+        
+        # 4. Counts must be non-negative integers
+        if ('number' in char_name.lower() or 'count' in char_name.lower() or 'density' in char_name.lower()):
+            if numeric_value < 0:
+                errors.append(f"{char_name}: Count cannot be negative ({numeric_value})")
+            
+            if value_type == 'INTEGER' and int(numeric_value) != numeric_value:
+                errors.append(f"{char_name}: Count must be whole number, got {numeric_value}")
+        
+        return errors
     
     def validate_plausibility(self, intent_dict: Dict[str, Any]) -> tuple[bool, List[str]]:
         """
