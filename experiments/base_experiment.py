@@ -200,6 +200,9 @@ class BaseExperiment(ABC):
             if i %10 == 0:
                 self.save_checkpoint(i)
         
+        # Save final checkpoint (important for ICM export)
+        self.save_checkpoint(len(self.scenarios))
+        
         # Compute and save final metrics
         self.compute_and_save_metrics()
         
