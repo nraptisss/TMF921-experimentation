@@ -277,6 +277,75 @@ print_feaci_metrics(metrics)
 
 ---
 
+## ICM Module (`tmf921.icm`) — *NEW in v2.2.0*
+
+### SimpleToICMConverter
+
+Convert simple JSON to TM Forum ICM JSON-LD format.
+
+```python
+from tmf921.icm import SimpleToICMConverter
+
+# Initialize converter
+converter = SimpleToICMConverter()
+
+# Convert simple intent to ICM
+simple_intent = {
+    "name": "Gaming Slice",
+    "description": "Low latency gaming",
+    "serviceSpecCharacteristic": [
+        {
+            "name": "Delay tolerance",
+            "value": {"value": "20", "unitOfMeasure": "ms"}
+        }
+    ]
+}
+
+icm_intent = converter.convert(simple_intent)
+# Returns: {
+#     "@context": "http://tio.models.tmforum.org/tio/v3.6.0/context.json",
+#     "@type": "icm:Intent",
+#     "@id": "#intent-1",
+#     "name": "Gaming Slice",
+#     "hasExpectation": [...],
+#     "target": [...]
+# }
+```
+
+### ICMToSimpleConverter
+
+Convert ICM format back to simple JSON (reverse conversion).
+
+```python
+from tmf921.icm import ICMToSimpleConverter
+
+converter = ICMToSimpleConverter()
+simple_intent = converter.convert(icm_intent)
+# Returns: Original simple format
+```
+
+### Using with Experiments
+
+```python
+from experiments.rag_cloud import RAGCloudExperiment
+
+# Enable ICM export in experiments
+exp = RAGCloudExperiment(
+    model_name="llama3:8b",
+    num_scenarios=10,
+    export_icm=True  # ← Enable ICM export
+)
+
+exp.setup()
+exp.run()
+
+# Both formats saved:
+# - checkpoint_10.json (simple)
+# - checkpoint_10_icm.json (ICM JSON-LD)
+```
+
+---
+
 ## Experiments
 
 ### BaseExperiment

@@ -1,0 +1,30 @@
+{
+  "experiment": "test_icm_export",
+  "model": "llama3:8b",
+  "honest_counts": {
+    "total_scenarios": 3,
+    "processing_failures": 0,
+    "processing_failure_rate": 0.0,
+    "successfully_processed": 3,
+    "processing_success_rate": 1.0,
+    "valid_intents": 2,
+    "validation_success_rate_on_processed": 0.6666666666666666,
+    "overall_success_rate": 0.6666666666666666
+  },
+  "num_corrections": 0,
+  "feaci": {
+    "format_correctness": 100.0,
+    "accuracy": 66.66666666666666,
+    "cost_avg_tokens": 1043.6666666666667,
+    "cost_total_tokens": 3131,
+    "inference_time_avg_seconds": 1.7941670417785645,
+    "inference_time_total_seconds": 5.382501125335693,
+    "num_results": 3
+  },
+  "timestamp": "2025-12-05T08:24:26.091753",
+  "icm_export": {
+    "enabled": true,
+    "successful_conversions": 3,
+    "conversion_rate": 1.0
+  }
+}

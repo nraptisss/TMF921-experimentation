@@ -157,7 +157,65 @@ Accuracy: 100.0%
 Avg Time: 11.9s
 ```
 
-### Step 4: Compare Experiments
+### Step 4: Export to ICM Format (NEW in v2.2.0)
+
+Convert your intents to TM Forum ICM JSON-LD format:
+
+```python
+from tmf921.icm import SimpleToICMConverter
+import json
+
+# Load a generated intent
+with open('results/rag_cloud_10_scenarios/checkpoint_10.json') as f:
+    results = json.load(f)
+
+# Convert first intent to ICM
+converter = SimpleToICMConverter()
+simple_intent = results[0]['generated_intent']
+icm_intent = converter.convert(simple_intent)
+
+# View result
+print(json.dumps(icm_intent, indent=2))
+```
+
+**Output (ICM JSON-LD):**
+```json
+{
+  "@context": "http://tio.models.tmforum.org/tio/v3.6.0/context.json",
+  "@type": "icm:Intent",
+  "@id": "#intent-1",
+  "name": "Gaming Slice",
+  "hasExpectation": [
+    {
+      "@type": "icm:PropertyExpectation",
+      "expectationCondition": {
+        "@type": "log:Condition",
+        "quan:smaller": {
+          "property": "Delay",
+          "value": {"@value": 20, "quan:unit": "ms"}
+        }
+      }
+    }
+  ]
+}
+```
+
+**Or run with ICM export enabled:**
+```python
+from experiments.rag_cloud import RAGCloudExperiment
+
+exp = RAGCloudExperiment(
+    model_name="llama3:8b",
+    num_scenarios=10,
+    export_icm=True  # ← Automatically saves ICM format
+)
+exp.setup()
+exp.run()
+
+# Results in: checkpoint_10_icm.json
+```
+
+### Step 5: Compare Experiments
 
 ```powershell
 python scripts/analyze_results.py --compare validation_50 rag_cloud_50_scenarios

@@ -5,6 +5,57 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.2.0] - 2025-12-05
+
+### 🎉 ICM Integration Complete & Full Validation
+
+**Validation Set Performance: 94.2% accuracy on 86 scenarios with ICM export**
+
+### Added
+
+**ICM (Intent Common Model) Export:**
+- Full TMF921 v5.0.0 ICM JSON-LD export capability
+- Bidirectional converter (Simple ↔ ICM)
+- 100% conversion success rate on all processed intents
+- Three comprehensive ICM documentation guides
+
+**Documentation Suite:**
+- `docs/ICM_USER_GUIDE.md` - User-facing ICM export guide
+- `docs/ICM_DEVELOPER_GUIDE.md` - Technical implementation details
+- `docs/ICM_API_REFERENCE.md` - Complete API documentation
+- `docs/README.md` - Documentation index and hub
+- `docs/DATASET.md` - Comprehensive dataset documentation
+- `docs/METRICS.md` - All metrics definitions and methodology
+- `docs/REPRODUCIBILITY.md` - Full reproducibility guide
+
+**Evaluation Script:**
+- `scripts/evaluate_pipeline_with_icm.py` - Full pipeline evaluation
+
+### Fixed
+
+- **Final checkpoint bug** in `experiments/base_experiment.py`
+  - ICM checkpoints weren't saved for experiments < 10 scenarios
+  - Now saves final checkpoint at experiment completion
+  
+- **Import path error** in `scripts/evaluate_pipeline_with_icm.py`
+  - Corrected sys.path for experiments module
+
+### Results (2025-12-05)
+
+**Full Validation Run (86 scenarios):**
+- Overall success rate: 94.2% (81/86)
+- Processing success: 98.8% (85/86)
+- Validation accuracy: 95.3% (81/85 processed)
+- ICM conversion: 100% (85/85)
+- Average inference time: 2.1s
+- Total tokens: 130,022
+
+**Failure Analysis:**
+- 1 JSON extraction failure
+- 4 validation failures (mostly "NSSAA Required" characteristic)
+
+---
+
 ## [2.1.0] - 2025-12-03
 
 ### 🎉 Final Test Set Evaluation Complete

@@ -94,12 +94,43 @@ The TMF921 Intent Translation system is designed as a modular research experimen
 - Map LLM outputs to exact GST names
 - Fallback for when RAG doesn't work
 
-#### 5. Utils (`tmf921.utils`)
+#### 5. ICM (`tmf921.icm`) — *NEW in v2.2.0*
+**Purpose:** TM Forum Intent Common Model export
+
+**Components:**
+- `models.py` - Pydantic models for ICM JSON-LD structure
+- `converter.py` - Bidirectional Simple ↔ ICM conversion
+
+**Flow:**
+```
+Simple JSON (94.2% accuracy)
+       │
+       ▼
+┌──────────────────────────────┐
+│    SimpleToICMConverter      │
+│  - Add @context, @type, @id  │
+│  - Convert to hasExpectation │
+│  - Create Target resources   │
+│  - Infer operators (quan:)   │
+└──────────────────────────────┘
+       │
+       ▼
+ICM JSON-LD (TM Forum compliant)
+```
+
+**Key Features:**
+- 100% conversion success rate
+- Bidirectional conversion (Simple ↔ ICM)
+- TMF921 v5.0.0 + TR290 v3.6.0 compliant
+
+#### 6. Utils (`tmf921.utils`)
 **Purpose:** Support utilities
 
 **Components:**
 - `config.py` - Configuration management
 - `metrics.py` - FEACI metrics computation
+- `statistics.py` - Statistical tests (McNemar, CI, effect size)
+- `splitting.py` - Dataset splitting utilities
 
 ---
 
