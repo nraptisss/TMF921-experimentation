@@ -4,30 +4,38 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 
-> **Research Achievement:** 94.3% accuracy on held-out test set using RAG + Local LLM  
+> **Research Achievement:** 87.5-94.3% accuracy using RAG + Local LLM  
 > **Scientific Rigor:** Publication-ready with statistical testing, cross-validation, and ablation studies  
-> **TM Forum Compliance:** ICM JSON-LD export support (v2.2.0)
+> **TM Forum Compliance:** ICM JSON-LD export support (v2.3.0)
 
 Professional research codebase for translating natural language network requirements into TMF921-compliant Intent JSON structures using lightweight LLMs with Retrieval-Augmented Generation (RAG).
 
 ## 🎯 Key Results
+
+### New Dataset v2.3.0 (320 scenarios, 15 domains)
+
+| Split | Scenarios | Accuracy | Processing |
+|-------|-----------|----------|------------|
+| Validation | 48 | **89.6%** | 93.8% |
+| Test | 48 | **87.5%** | 93.8% |
+
+**Dataset Features:**
+- 100% GST characteristic coverage (all 75 characteristics)
+- 15 industry domains (gaming, healthcare, manufacturing, etc.)
+- Balanced difficulty: 29% easy / 32% medium / 39% hard
+- Three-tier generation with `gpt-oss:120b-cloud`
+
+### Original Dataset (574 scenarios)
 
 **Final Test Set Evaluation (87 held-out scenarios):**
 - **94.3% accuracy** (82/87 valid intents)
 - **100% processing success** (all scenarios generated valid JSON)
 - **Model:** llama3:8b (local, 8B parameters)
 - **Inference time:** 2.1s average per scenario
-- **Zero corrections** needed (RAG provides exact characteristic names)
 
 **Cross-Validation (5-fold, 50 scenarios):**
 - **94.0% ± 5.5%** accuracy across folds
 - **Coefficient of Variation:** 5.8% (good consistency)
-- **Per-fold:** 90%, 100%, 100%, 90%, 90%
-
-**Ablation Study Findings:**
-- Baseline (zero-shot): 96.7%
-- RAG + Name Correction: **100%** (perfect synergy)
-- Few-shot examples: 0% (breaks the system - don't use!)
 
 **Scientific Rigor:**
 - 574 scenarios with proper train/val/test splits (401/86/87)
@@ -37,11 +45,12 @@ Professional research codebase for translating natural language network requirem
 - Human evaluation protocol
 - Honest metrics reporting
 
-**TM Forum Compliance (NEW in v2.2.0):**
+**TM Forum Compliance (v2.2.0+):**
 - Intent Common Model (ICM) JSON-LD export
 - TMF921 v5.0.0 specification compliance
 - Dual-format support (Simple JSON + ICM)
 - Backward compatible (optional feature)
+
 
 ## 🚀 Quick Start
 

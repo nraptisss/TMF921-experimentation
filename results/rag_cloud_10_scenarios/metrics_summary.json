@@ -1,25 +1,30 @@
 {
-  "experiment": "rag_cloud_10_scenarios_fold5",
+  "experiment": "rag_cloud_10_scenarios",
   "model": "llama3:8b",
   "honest_counts": {
     "total_scenarios": 10,
-    "processing_failures": 0,
-    "processing_failure_rate": 0.0,
-    "successfully_processed": 10,
-    "processing_success_rate": 1.0,
+    "processing_failures": 1,
+    "processing_failure_rate": 0.1,
+    "successfully_processed": 9,
+    "processing_success_rate": 0.9,
     "valid_intents": 9,
-    "validation_success_rate_on_processed": 0.9,
+    "validation_success_rate_on_processed": 1.0,
     "overall_success_rate": 0.9
   },
-  "num_corrections": 2,
+  "num_corrections": 1,
   "feaci": {
     "format_correctness": 100.0,
-    "accuracy": 90.0,
-    "cost_avg_tokens": 1570.7,
-    "cost_total_tokens": 15707,
-    "inference_time_avg_seconds": 2.407789611816406,
-    "inference_time_total_seconds": 24.077896118164062,
-    "num_results": 10
+    "accuracy": 100.0,
+    "cost_avg_tokens": 1528.2222222222222,
+    "cost_total_tokens": 13754,
+    "inference_time_avg_seconds": 2.6127621597713895,
+    "inference_time_total_seconds": 23.514859437942505,
+    "num_results": 9
   },
-  "timestamp": "2025-12-02T08:56:36.308379"
+  "timestamp": "2025-12-05T09:52:54.080665",
+  "icm_export": {
+    "enabled": true,
+    "successful_conversions": 9,
+    "conversion_rate": 1.0
+  }
 }

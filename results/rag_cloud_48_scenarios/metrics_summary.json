@@ -1,0 +1,30 @@
+{
+  "experiment": "rag_cloud_48_scenarios",
+  "model": "llama3:8b",
+  "honest_counts": {
+    "total_scenarios": 48,
+    "processing_failures": 3,
+    "processing_failure_rate": 0.0625,
+    "successfully_processed": 45,
+    "processing_success_rate": 0.9375,
+    "valid_intents": 42,
+    "validation_success_rate_on_processed": 0.9333333333333333,
+    "overall_success_rate": 0.875
+  },
+  "num_corrections": 7,
+  "feaci": {
+    "format_correctness": 100.0,
+    "accuracy": 93.33333333333333,
+    "cost_avg_tokens": 1514.7111111111112,
+    "cost_total_tokens": 68162,
+    "inference_time_avg_seconds": 2.2856210284762914,
+    "inference_time_total_seconds": 102.8529462814331,
+    "num_results": 45
+  },
+  "timestamp": "2025-12-05T10:03:52.808225",
+  "icm_export": {
+    "enabled": true,
+    "successful_conversions": 45,
+    "conversion_rate": 1.0
+  }
+}

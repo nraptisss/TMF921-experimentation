@@ -5,6 +5,59 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.3.0] - 2025-12-05
+
+### 🎉 New Synthetic Dataset & Three-Tier Generation
+
+**New Dataset Performance: 87.5% test accuracy on 48 diverse scenarios**
+
+### Added
+
+**Synthetic Dataset Generation:**
+- Three-tier generation methodology using `gpt-oss:120b-cloud`
+- **Tier 1**: 225 characteristic-driven scenarios (100% GST coverage)
+- **Tier 2**: 75 domain-driven scenarios (15 industries)
+- **Tier 3**: 20 complexity scenarios (hard/implicit)
+- Total: 320 high-quality scenarios (224 train / 48 val / 48 test)
+
+**New Documentation:**
+- `docs/DATA_GENERATION.md` - Comprehensive generation methodology
+- `docs/CRITICAL_ANALYSIS.md` - System analysis and improvement roadmap
+
+**Generation Script:**
+- `scripts/generate_dataset.py` - Full dataset generation pipeline
+
+### Changed
+
+**Dataset Improvements:**
+- 100% GST characteristic coverage (vs. ~15 frequently used before)
+- 15 industry domains covered (gaming, healthcare, manufacturing, etc.)
+- Balanced difficulty: 29% easy / 32% medium / 39% hard
+- Natural language format (vs. templated "Translate intent...")
+- Explicit ground truth mappings
+
+### Results (2025-12-05)
+
+**New Dataset Evaluation:**
+
+| Split | Scenarios | Accuracy | Processing |
+|-------|-----------|----------|------------|
+| Validation | 48 | 89.6% (43/48) | 93.8% |
+| Test | 48 | 87.5% (42/48) | 93.8% |
+
+**Comparison with Original Dataset:**
+
+| Metric | Original (v2.2) | New (v2.3) |
+|--------|-----------------|------------|
+| Test Accuracy | 94.3% (87 scenarios) | 87.5% (48 scenarios) |
+| Char Coverage | ~15 frequent | All 75 |
+| Domains | ~5 | 15 |
+| Difficulty | Mostly medium | 29/32/39 |
+
+> Note: Lower accuracy on new dataset is expected due to increased diversity and harder scenarios.
+
+---
+
 ## [2.2.0] - 2025-12-05
 
 ### 🎉 ICM Integration Complete & Full Validation
