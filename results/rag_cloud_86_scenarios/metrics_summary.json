@@ -1,25 +1,30 @@
 {
   "experiment": "rag_cloud_86_scenarios",
-  "model": "gpt-oss:20b-cloud",
+  "model": "llama3:8b",
   "honest_counts": {
     "total_scenarios": 86,
     "processing_failures": 4,
     "processing_failure_rate": 0.046511627906976744,
     "successfully_processed": 82,
     "processing_success_rate": 0.9534883720930233,
-    "valid_intents": 82,
-    "validation_success_rate_on_processed": 1.0,
-    "overall_success_rate": 0.9534883720930233
+    "valid_intents": 78,
+    "validation_success_rate_on_processed": 0.9512195121951219,
+    "overall_success_rate": 0.9069767441860465
   },
-  "num_corrections": 0,
+  "num_corrections": 16,
   "feaci": {
     "format_correctness": 100.0,
-    "accuracy": 100.0,
-    "cost_avg_tokens": 2552.8658536585367,
-    "cost_total_tokens": 209335,
-    "inference_time_avg_seconds": 11.320701032150083,
-    "inference_time_total_seconds": 928.2974846363068,
+    "accuracy": 95.1219512195122,
+    "cost_avg_tokens": 1529.560975609756,
+    "cost_total_tokens": 125424,
+    "inference_time_avg_seconds": 2.17597918975644,
+    "inference_time_total_seconds": 178.43029356002808,
     "num_results": 82
   },
-  "timestamp": "2025-11-25T18:02:00.600742"
+  "timestamp": "2025-12-03T13:52:06.033755",
+  "icm_export": {
+    "enabled": true,
+    "successful_conversions": 82,
+    "conversion_rate": 1.0
+  }
 }

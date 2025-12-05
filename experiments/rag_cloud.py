@@ -90,15 +90,14 @@ if __name__ == "__main__":
     import argparse
     
     parser = argparse.ArgumentParser(description="Run RAG + Cloud experiment")
-    parser.add_argument("--model", default="gpt-oss:20b-cloud", help="Model name")
-    parser.add_argument("--scenarios", type=int, default=50, help="Number of scenarios")
-    
+    parser.add_argument("--scenarios", type=int, default=86, help="Number of scenarios")
+    parser.add_argument("--export-icm", action="store_true", help="Enable ICM export")
     args = parser.parse_args()
     
-    experiment = RAGCloudExperiment(
-        model_name=args.model,
-        num_scenarios=args.scenarios
+    exp = RAGCloudExperiment(
+        model_name="llama3:8b",
+        num_scenarios=args.scenarios,
+        export_icm=args.export_icm
     )
-    
-    experiment.setup()
-    experiment.run()
+    exp.setup()
+    exp.run()
