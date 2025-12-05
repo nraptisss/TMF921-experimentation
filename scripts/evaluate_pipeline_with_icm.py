@@ -12,8 +12,9 @@ Measures:
 import sys
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent.parent / "src"))
+sys.path.insert(0, str(Path(__file__).parent.parent / "experiments"))
 
-from experiments.rag_cloud import RAGCloudExperiment
+from rag_cloud import RAGCloudExperiment
 
 
 def main():
