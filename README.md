@@ -98,6 +98,20 @@ exp.run()
 
 See [`docs/ICM_USER_GUIDE.md`](docs/ICM_USER_GUIDE.md) for details.
 
+## 📖 Documentation
+
+Complete documentation available in [`docs/`](docs/README.md):
+
+| Category | Guide | Description |
+|----------|-------|-------------|
+| **Start** | [TUTORIAL](docs/TUTORIAL.md) | Step-by-step getting started |
+| **Data** | [DATASET](docs/DATASET.md) | 574 scenarios, splits, categories |
+| **Metrics** | [METRICS](docs/METRICS.md) | FEACI, honest counts, cross-validation |
+| **Reproduce** | [REPRODUCIBILITY](docs/REPRODUCIBILITY.md) | Environment setup, verification |
+| **Architecture** | [ARCHITECTURE](docs/ARCHITECTURE.md) | System design, pipeline flow |
+| **ICM** | [ICM_USER_GUIDE](docs/ICM_USER_GUIDE.md) | TM Forum export |
+| **API** | [API](docs/API.md) | Complete API reference |
+
 ### 4. Cross-Validation
 python experiments/cross_validation.py
 
