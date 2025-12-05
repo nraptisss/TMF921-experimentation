@@ -1,0 +1,22 @@
+[
+  "Our esports tournament needs a seamless experience for 10,000 concurrent players worldwide.",
+  "We need the backup link to be twice as fast as the current 200 Mbps MPLS line.",
+  "We demand an ultra‑reliable connection for our autonomous drone fleet that can tolerate zero packet loss.",
+  "Deploy a video streaming service for our mobile app.",
+  "Provide a URLLC‑grade slice for our Industry 4.0 robotic assembly line, supporting 1 ms latency and 99.9999% availability.",
+  "Our remote surgery platform must be at least 30 % faster than the 50 ms latency we currently experience.",
+  "Need a 'rock‑solid' network for real‑time financial trading.",
+  "Set up a MEC edge compute node for V2X communications, ensuring 5G NR sub‑6 GHz coverage with a target end‑to‑end latency of 10 ms for safety messages.",
+  "Our AR collaboration tool should feel smoother than our current 60 fps video chat, targeting 'fluid' performance.",
+  "We want a 'green' network for our data center interconnect.",
+  "We need a gaming network that feels buttery smooth for 4K 120 fps streaming on consoles across the house.",
+  "Our new branch office must experience latency at least 20 % lower than the 50 ms we currently see on the legacy VPN.",
+  "We need an ultra‑reliable connection for our mission‑critical drone fleet that can tolerate any single link failure without dropping packets.",
+  "Our video streaming service must run smoothly on mobile devices.",
+  "Deploy a URLLC‑grade service for our factory automation line that requires deterministic latency under 1 ms and 99.9999 % reliability.",
+  "The new remote‑learning platform should feel faster than the 30 ms round‑trip we see on our campus Wi‑Fi, especially during live quizzes.",
+  "Our corporate VPN must be rock‑solid, providing a silky experience even when the network is under heavy load.",
+  "We want to support 4K video calls for up to 25 participants on a satellite link.",
+  "Set up a Time‑Sensitive Networking (TSN) slice for the robotic arm line that guarantees sub‑microsecond synchronization and can survive a single switch failure without missing a control cycle.",
+  "Our edge‑AI inference nodes must process sensor streams in near real‑time, meaning the end‑to‑end delay should be indistinguishable from the sensor's native 5 ms sampling period, even when the link is congested."
+]

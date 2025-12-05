@@ -1,0 +1,736 @@
+[
+  {
+    "natural_language": "The network slice must include availability monitoring; if the list of KQIs/KPIs is empty, the slice's performance monitoring attribute should be disabled.",
+    "characteristics": [
+      {
+        "name": "Performance monitoring: Availability",
+        "value": "0",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "hard",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "The operator requires full multimedia priority handling for voice and video streams, so all MPS capabilities should be activated.",
+    "characteristics": [
+      {
+        "name": "Multimedia Priority Service: Multimedia Priority Service capability support",
+        "value": "0,1",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "hard",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "Our customer only needs connectivity in the metropolitan area around the capital and the adjacent coastal strip; according to our mapping for the listed country those zones are represented by region identifiers 0, 2 and 3.",
+    "characteristics": [
+      {
+        "name": "Area of Service: Region specification",
+        "value": "0,2,3",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "hard",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "Please provision the slice to use the LTE data network named 'PublicNet'.",
+    "characteristics": [
+      {
+        "name": "Supported data network",
+        "value": "PublicNet",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "easy",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "For the upcoming private network slice, the client will handle core authentication and subscriber data, so we need the AUSF and UDM functions from them.",
+    "characteristics": [
+      {
+        "name": "Network functions owned by Network Slice Customer",
+        "value": "AUSF, UDM",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "medium",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "The smart‑meter readings can be stored locally and transmitted when the cell load drops below 20 % capacity, even if it takes up to 24 hours.",
+    "characteristics": [
+      {
+        "name": "Delay tolerance",
+        "value": "1",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "hard",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "Enable Network Slice Specific Authentication and Authorization for the upcoming eMBB slice; set the flag to 1.",
+    "characteristics": [
+      {
+        "name": "Network Slice Specific Authentication and Authorization (NSSAA) Required",
+        "value": "1",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "easy",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "The service must keep the latency from the final UPF to the backend server below 7 ms for all traffic.",
+    "characteristics": [
+      {
+        "name": "Latency from (last) UPF to Application Server",
+        "value": "7",
+        "unit": "Milliseconds"
+      }
+    ],
+    "difficulty": "medium",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "For all IoT devices on the network, we need to apply the default low‑bandwidth data profile defined in our supported data networks.",
+    "characteristics": [
+      {
+        "name": "Supported data network: Service category",
+        "value": "Service Category 1",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "hard",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "When we push firmware updates to remote substations we can accept higher latency – up to 500 ms – but the transfer must succeed at least 99.95% of the time and the overall reliability of the update session should be no less than 99.9% to avoid bricking devices.",
+    "characteristics": [
+      {
+        "name": "latency",
+        "value": "500",
+        "unit": "ms"
+      },
+      {
+        "name": "availability",
+        "value": "99.95",
+        "unit": "%"
+      },
+      {
+        "name": "reliability",
+        "value": "99.9",
+        "unit": "%"
+      }
+    ],
+    "difficulty": "medium",
+    "tier": "tier2",
+    "domain": "smart_grid"
+  },
+  {
+    "natural_language": "For the video‑streaming network slice we require the highest uplink throughput tier that the system offers; assign the corresponding service category.",
+    "characteristics": [
+      {
+        "name": "Uplink maximum throughput per UE: Service category",
+        "value": "Service Category 3",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "medium",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "For the upcoming high‑definition video streaming slice, do not allocate any NB‑IoT resources.",
+    "characteristics": [
+      {
+        "name": "NB-IoT support",
+        "value": "0",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "hard",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "The order‑routing engine must achieve at least 99.999% uptime; during peak trading hours its latency budget can stretch to 1.2 ms, and jitter should stay under 0.2 ms, to ensure continuous compliance reporting and avoid missed execution opportunities.",
+    "characteristics": [
+      {
+        "name": "availability",
+        "value": "99.999",
+        "unit": "%"
+      },
+      {
+        "name": "latency",
+        "value": "1.2",
+        "unit": "ms"
+      },
+      {
+        "name": "jitter",
+        "value": "0.2",
+        "unit": "ms"
+      }
+    ],
+    "difficulty": "medium",
+    "tier": "tier2",
+    "domain": "financial_trading"
+  },
+  {
+    "natural_language": "During the championship game the stadium will host a full capacity crowd of 100,000 attendees; we need the core slice to support a peak downlink capacity of 1 Gbps and an auxiliary slice for broadcast crews that must stay under 30 ms latency to ensure real‑time video feeds and instant replays.",
+    "characteristics": [
+      {
+        "name": "Number of terminals",
+        "value": "100000",
+        "unit": "devices"
+      },
+      {
+        "name": "Maximum downlink throughput per network slice",
+        "value": "1000",
+        "unit": "Mbps"
+      },
+      {
+        "name": "Latency requirement",
+        "value": "30",
+        "unit": "ms"
+      }
+    ],
+    "difficulty": "hard",
+    "tier": "tier2",
+    "domain": "stadium_events"
+  },
+  {
+    "natural_language": "The target deployment area should be able to handle a density of at least 2×10⁵ users per km².",
+    "characteristics": [
+      {
+        "name": "UE density",
+        "value": "200000",
+        "unit": "Number per km2"
+      }
+    ],
+    "difficulty": "medium",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "The robotic welding cells need to exchange status updates every 10 ms cycle with a reliability of 99.999% so that any missed command could produce a weld defect and increase scrap rates.",
+    "characteristics": [
+      {
+        "name": "cycle_time",
+        "value": "10",
+        "unit": "ms"
+      },
+      {
+        "name": "reliability",
+        "value": "99.999",
+        "unit": "%"
+      }
+    ],
+    "difficulty": "hard",
+    "tier": "tier2",
+    "domain": "manufacturing"
+  },
+  {
+    "natural_language": "We need the slice to accommodate up to 100,000 UEs simultaneously.",
+    "characteristics": [
+      {
+        "name": "Maximum number of UEs",
+        "value": "100000",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "easy",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "The upcoming smart‑factory slice must keep the location error below one centimeter for robotic arm coordination.",
+    "characteristics": [
+      {
+        "name": "Positioning support: Accuracy",
+        "value": "0.009",
+        "unit": "meter"
+      }
+    ],
+    "difficulty": "medium",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "We need a semi‑permanent allocation for the GFBR on this slice, so apply the appropriate Resource Type.",
+    "characteristics": [
+      {
+        "name": "Slice quality of service: Resource Type",
+        "value": "1",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "medium",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "For our URLLC services we need jumbo‑frame capability; the slice must handle packets up to 9 KB in size.",
+    "characteristics": [
+      {
+        "name": "Maximum supported packet size",
+        "value": "9000",
+        "unit": "Bytes"
+      }
+    ],
+    "difficulty": "hard",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "Considering roaming partners and local breakout traffic, we need the slice to handle the typical city‑wide load, which we estimate at about 250k active PDU sessions when EPS PDNs are included.",
+    "characteristics": [
+      {
+        "name": "Maximum number of PDU sessions",
+        "value": "250000",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "hard",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "We need the primary exchange gateway to deliver order entry latency of no more than 1 ms and jitter under 0.1 ms, while keeping the link up at least 99.999% of the time, because any extra delay or variability directly erodes our price‑time advantage in the market.",
+    "characteristics": [
+      {
+        "name": "latency",
+        "value": "1",
+        "unit": "ms"
+      },
+      {
+        "name": "jitter",
+        "value": "0.1",
+        "unit": "ms"
+      },
+      {
+        "name": "availability",
+        "value": "99.999",
+        "unit": "%"
+      }
+    ],
+    "difficulty": "hard",
+    "tier": "tier2",
+    "domain": "financial_trading"
+  },
+  {
+    "natural_language": "Our SCADA system must stay online almost all the time – we need at least 99.99% availability – and any control command has to reach the field devices within 20 ms, otherwise the grid could become unstable during rapid load changes.",
+    "characteristics": [
+      {
+        "name": "availability",
+        "value": "99.99",
+        "unit": "%"
+      },
+      {
+        "name": "latency",
+        "value": "20",
+        "unit": "ms"
+      }
+    ],
+    "difficulty": "easy",
+    "tier": "tier2",
+    "domain": "smart_grid"
+  },
+  {
+    "natural_language": "We need this slice to be treated as high priority for both control‑plane and user‑plane decisions because it carries a mission‑critical service for our enterprise client.",
+    "characteristics": [
+      {
+        "name": "Mission critical support",
+        "value": "1",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "medium",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "We need the slice to support up to 50,000 devices per square kilometre.",
+    "characteristics": [
+      {
+        "name": "UE density",
+        "value": "50000",
+        "unit": "Number per km2"
+      }
+    ],
+    "difficulty": "easy",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "The network slice should guarantee uninterrupted service for stationary IoT sensors, with only occasional foot traffic, implying a supported device velocity of essentially 0 km/h.",
+    "characteristics": [
+      {
+        "name": "Supported device velocity",
+        "value": "0",
+        "unit": "Kilometres per hour (km/h)"
+      }
+    ],
+    "difficulty": "hard",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "Please configure the network slice to provide deterministic communication with a periodicity of exactly 200 seconds.",
+    "characteristics": [
+      {
+        "name": "Deterministic communication: Periodicity",
+        "value": "200",
+        "unit": "Seconds"
+      }
+    ],
+    "difficulty": "easy",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "Please allocate a guaranteed uplink throughput of 5,000 kbps for the new IoT network slice.",
+    "characteristics": [
+      {
+        "name": "Uplink throughput per network slice: Guaranteed uplink throughput quota",
+        "value": "5000",
+        "unit": "kbps"
+      }
+    ],
+    "difficulty": "easy",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "For the science building’s remote lab simulations we must guarantee a maximum downlink throughput of 250 Mbps per network slice and keep availability at 99%, otherwise high‑resolution data sets will time out and experiments will be delayed.",
+    "characteristics": [
+      {
+        "name": "Maximum downlink throughput",
+        "value": "250",
+        "unit": "Mbps"
+      },
+      {
+        "name": "Availability",
+        "value": "99",
+        "unit": "%"
+      },
+      {
+        "name": "Area of Service",
+        "value": "Science Building",
+        "unit": ""
+      }
+    ],
+    "difficulty": "medium",
+    "tier": "tier2",
+    "domain": "education"
+  },
+  {
+    "natural_language": "Predictive‑maintenance data from the CNC machines can handle up to 15 ms latency, but we require the data feed to be at least 99.95% available so the analytics engine sees a continuous trend and can schedule service before a failure.",
+    "characteristics": [
+      {
+        "name": "latency",
+        "value": "15",
+        "unit": "ms"
+      },
+      {
+        "name": "availability",
+        "value": "99.95",
+        "unit": "%"
+      }
+    ],
+    "difficulty": "medium",
+    "tier": "tier2",
+    "domain": "manufacturing"
+  },
+  {
+    "natural_language": "We require a static allocation where the slice is bound to a predetermined list of devices and no further user changes are permitted after provisioning.",
+    "characteristics": [
+      {
+        "name": "User management openness",
+        "value": "0",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "hard",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "The GBR QoS flow for the IoT slice must guarantee at least 1.5 Mbps downlink, so set the GFBR‑DL accordingly.",
+    "characteristics": [
+      {
+        "name": "Slice quality of service: Guaranteed Flow Bit Rate - Downlink",
+        "value": "1500",
+        "unit": "kbps"
+      }
+    ],
+    "difficulty": "medium",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "We need the network to allow user‑plane changes without any perceived loss of service for the UE, even if the PDU session anchor moves and the IP address changes.",
+    "characteristics": [
+      {
+        "name": "Session and Service Continuity support",
+        "value": "3",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "hard",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "The customer requires all user traffic to be routed through a secure VPN tunnel back to their private data center, so the data network access should reflect termination in a private network.",
+    "characteristics": [
+      {
+        "name": "Data network access: Data access per data network",
+        "value": "1",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "medium",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "Please set the V2X‑PC5 network slice to operate in scheduled mode – use the value 1 for this attribute.",
+    "characteristics": [
+      {
+        "name": "V2X-PC5 Network Scheduled Mode",
+        "value": "1",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "easy",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "According to our SLA, all NSP‑provided communication services must have their performance KPIs sampled as often as technically feasible, essentially continuous monitoring.",
+    "characteristics": [
+      {
+        "name": "Performance monitoring: Monitoring sample frequency",
+        "value": "2",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "hard",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "Please enable the data network access for Local Breakout while the subscriber is roaming.",
+    "characteristics": [
+      {
+        "name": "Data network access: LBO Allowed",
+        "value": "1",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "easy",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "When we transfer high‑resolution patient imaging between facilities we need encryption at least AES‑256 (256‑bit key) and SHA‑256 integrity, while keeping latency under 30 ms to avoid delaying diagnosis.",
+    "characteristics": [
+      {
+        "name": "encryption_strength",
+        "value": "256",
+        "unit": "bits"
+      },
+      {
+        "name": "latency",
+        "value": "30",
+        "unit": "ms"
+      }
+    ],
+    "difficulty": "medium",
+    "tier": "tier2",
+    "domain": "healthcare"
+  },
+  {
+    "natural_language": "We need the whole campus Wi‑Fi to be available at least 99.5% of the time so that live lecture streams never drop, because any interruption could affect accreditation reviews.",
+    "characteristics": [
+      {
+        "name": "Availability",
+        "value": "99.5",
+        "unit": "%"
+      },
+      {
+        "name": "Area of Service",
+        "value": "Campus",
+        "unit": ""
+      }
+    ],
+    "difficulty": "easy",
+    "tier": "tier2",
+    "domain": "education"
+  },
+  {
+    "natural_language": "The mobile ordering system for concessions must handle roughly 30,000 terminals; each slice should provide at least 100 Mbps of downlink, but we would like the ability to scale up to 200 Mbps during peak intermission periods when order volumes spike.",
+    "characteristics": [
+      {
+        "name": "Number of terminals",
+        "value": "30000",
+        "unit": "devices"
+      },
+      {
+        "name": "Maximum downlink throughput per network slice",
+        "value": "100",
+        "unit": "Mbps"
+      },
+      {
+        "name": "Scalable downlink throughput per network slice",
+        "value": "200",
+        "unit": "Mbps"
+      }
+    ],
+    "difficulty": "easy",
+    "tier": "tier2",
+    "domain": "stadium_events"
+  },
+  {
+    "natural_language": "Please enable MMTel on the new slice; we need it turned on (value 1).",
+    "characteristics": [
+      {
+        "name": "MMTel support",
+        "value": "1",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "easy",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "Provide a URLLC‑grade slice for our Industry 4.0 robotic assembly line, supporting 1 ms latency and 99.9999% availability.",
+    "characteristics": [
+      {
+        "name": "maximum_latency",
+        "value": "1",
+        "unit": "ms"
+      },
+      {
+        "name": "availability",
+        "value": "99.9999",
+        "unit": "%"
+      },
+      {
+        "name": "maximum_jitter",
+        "value": "0.1",
+        "unit": "ms"
+      },
+      {
+        "name": "minimum_bandwidth",
+        "value": "200",
+        "unit": "Mbps"
+      }
+    ],
+    "difficulty": "hard",
+    "tier": "tier3",
+    "domain": null
+  },
+  {
+    "natural_language": "For drone‑based hull inspections we require sub‑centimetre positioning – ideally 2 cm – and ultra‑low latency under 5 ms so the live video feed stays synchronized with the navigation system; the link must also achieve 99.999 % reliability to prevent any data gaps during the inspection pass.",
+    "characteristics": [
+      {
+        "name": "positioning_accuracy",
+        "value": "2",
+        "unit": "cm"
+      },
+      {
+        "name": "latency",
+        "value": "5",
+        "unit": "ms"
+      },
+      {
+        "name": "availability",
+        "value": "99.999",
+        "unit": "%"
+      }
+    ],
+    "difficulty": "hard",
+    "tier": "tier2",
+    "domain": "port_logistics"
+  },
+  {
+    "natural_language": "The network should limit the downlink packet loss for voice GBR traffic to no more than one lost packet per hundred packets.",
+    "characteristics": [
+      {
+        "name": "Slice quality of service parameters: Maximum Packet Loss Rate",
+        "value": "1",
+        "unit": "Percentage"
+      }
+    ],
+    "difficulty": "medium",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "Set up a massive IoT slice with the least stringent QoS requirements, using the appropriate 5QI.",
+    "characteristics": [
+      {
+        "name": "Slice quality of service: 3GPP 5QI",
+        "value": "3",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "hard",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "For the corporate slice, ensure the guaranteed downlink capacity can support 50 concurrent video‑conference streams, each needing 150 kbps.",
+    "characteristics": [
+      {
+        "name": "Downlink throughput per network slice: Guaranteed downlink throughput quota",
+        "value": "7500",
+        "unit": "kbps"
+      }
+    ],
+    "difficulty": "hard",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "Since the low‑power IoT slice already stays under the power‑per‑throughput limit, we want to turn off its energy‑efficiency KPI monitoring.",
+    "characteristics": [
+      {
+        "name": "Energy efficiency: Network slice energy efficiency KPI",
+        "value": "0",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "hard",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "Our drone delivery service demands that the positioning solution stay within a few centimeters error margin to ensure safe package drop zones.",
+    "characteristics": [
+      {
+        "name": "Positioning support: Accuracy",
+        "value": "0.03",
+        "unit": "meter"
+      }
+    ],
+    "difficulty": "hard",
+    "tier": "tier1",
+    "domain": null
+  }
+]

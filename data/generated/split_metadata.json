@@ -1,0 +1,13 @@
+{
+  "total_scenarios": 320,
+  "train_size": 224,
+  "val_size": 48,
+  "test_size": 48,
+  "seed": 42,
+  "generation_model": "gpt-oss:120b-cloud",
+  "tiers": {
+    "tier1_characteristic": 225,
+    "tier2_domain": 75,
+    "tier3_complexity": 20
+  }
+}

@@ -1,0 +1,2927 @@
+[
+  {
+    "natural_language": "Our SLA requires the end‑to‑end communication service to be available 99 percent of the time in the metro area.",
+    "characteristics": [
+      {
+        "name": "Availability",
+        "value": "99",
+        "unit": "percent"
+      }
+    ],
+    "difficulty": "easy",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "We are aiming for a yearly availability target of at least 99.5 % for the 5G voice service across the region.",
+    "characteristics": [
+      {
+        "name": "Availability",
+        "value": "99.5",
+        "unit": "percent"
+      }
+    ],
+    "difficulty": "medium",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "The service must be up almost all the time, allowing only a few minutes of downtime per month.",
+    "characteristics": [
+      {
+        "name": "Availability",
+        "value": "99.99",
+        "unit": "percent"
+      }
+    ],
+    "difficulty": "hard",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "Please configure the new network slice so that it is only accessible in Greece (country code GR).",
+    "characteristics": [
+      {
+        "name": "Area of Service",
+        "value": "GR",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "easy",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "We need the slice to serve the Benelux market; ensure it is available in Belgium, the Netherlands and Luxembourg.",
+    "characteristics": [
+      {
+        "name": "Area of Service",
+        "value": "BE, NL, LU",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "medium",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "Our enterprise customers require coverage across all EU member states where we have roaming agreements, except the United Kingdom; provide the full list of applicable country codes.",
+    "characteristics": [
+      {
+        "name": "Area of Service",
+        "value": "AT, BE, BG, HR, CY, CZ, DK, EE, FI, FR, DE, GR, HU, IE, IT, LV, LT, LU, MT, NL, PL, PT, RO, SK, SI, ES, SE",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "hard",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "Please provision the service for the whole of France; for the Area of Service attribute this means using the region identifier 0.",
+    "characteristics": [
+      {
+        "name": "Area of Service: Region specification",
+        "value": "0",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "easy",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "The rollout will be limited to the northern and central provinces of Italy, which correspond to region IDs 1 and 2 in our internal list.",
+    "characteristics": [
+      {
+        "name": "Area of Service: Region specification",
+        "value": "1,2",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "medium",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "Our customer only needs connectivity in the metropolitan area around the capital and the adjacent coastal strip; according to our mapping for the listed country those zones are represented by region identifiers 0, 2 and 3.",
+    "characteristics": [
+      {
+        "name": "Area of Service: Region specification",
+        "value": "0,2,3",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "hard",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "We need the slice to operate at a minimum altitude of 500 meters across the entire service area.",
+    "characteristics": [
+      {
+        "name": "Area of Service: Minimum altitude",
+        "value": "500",
+        "unit": "meters"
+      }
+    ],
+    "difficulty": "easy",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "For the mountainous region, ensure the network slice supports a floor altitude that's at least 1.2 kilometers above sea level.",
+    "characteristics": [
+      {
+        "name": "Area of Service: Minimum altitude",
+        "value": "1200",
+        "unit": "meters"
+      }
+    ],
+    "difficulty": "medium",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "Our coverage area includes the Alpine zone, where the tallest peak reaches 2,300 m; the slice must maintain a minimum service altitude 200 m higher than any ground elevation.",
+    "characteristics": [
+      {
+        "name": "Area of Service: Minimum altitude",
+        "value": "2500",
+        "unit": "meters"
+      }
+    ],
+    "difficulty": "hard",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "Enable delay‑tolerant mode for the firmware‑upgrade traffic; set delay tolerance to 1.",
+    "characteristics": [
+      {
+        "name": "Delay tolerance",
+        "value": "1",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "easy",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "We want the video‑analytics batch jobs to run only after the network reaches off‑peak (after 8 pm), so the service can tolerate delays.",
+    "characteristics": [
+      {
+        "name": "Delay tolerance",
+        "value": "1",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "medium",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "The smart‑meter readings can be stored locally and transmitted when the cell load drops below 20 % capacity, even if it takes up to 24 hours.",
+    "characteristics": [
+      {
+        "name": "Delay tolerance",
+        "value": "1",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "hard",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "Please enable deterministic communication for the new slice; set Availability = 1.",
+    "characteristics": [
+      {
+        "name": "Deterministic communication: Availability",
+        "value": "1",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "easy",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "The slice must provide guaranteed latency for PLC traffic, so deterministic communication must be supported.",
+    "characteristics": [
+      {
+        "name": "Deterministic communication: Availability",
+        "value": "1",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "medium",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "Our video streaming service does not require strict timing; configure the slice without deterministic communication support.",
+    "characteristics": [
+      {
+        "name": "Deterministic communication: Availability",
+        "value": "0",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "hard",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "Please configure the network slice to provide deterministic communication with a periodicity of exactly 200 seconds.",
+    "characteristics": [
+      {
+        "name": "Deterministic communication: Periodicity",
+        "value": "200",
+        "unit": "Seconds"
+      }
+    ],
+    "difficulty": "easy",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "The slice must support deterministic messaging intervals of up to 350 seconds to meet our latency budget.",
+    "characteristics": [
+      {
+        "name": "Deterministic communication: Periodicity",
+        "value": "350",
+        "unit": "Seconds"
+      }
+    ],
+    "difficulty": "medium",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "Our telemetry service sends data roughly every 4 minutes, so the slice should guarantee deterministic timing for that cadence.",
+    "characteristics": [
+      {
+        "name": "Deterministic communication: Periodicity",
+        "value": "240",
+        "unit": "Seconds"
+      }
+    ],
+    "difficulty": "hard",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "Please configure the network slice with a guaranteed downlink throughput quota of 5000 kbps for all GBR traffic.",
+    "characteristics": [
+      {
+        "name": "Downlink throughput per network slice: Guaranteed downlink throughput quota",
+        "value": "5000",
+        "unit": "kbps"
+      }
+    ],
+    "difficulty": "easy",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "The slice must guarantee a minimum downlink rate of 2 Mbps for the aggregate GBR flows.",
+    "characteristics": [
+      {
+        "name": "Downlink throughput per network slice: Guaranteed downlink throughput quota",
+        "value": "2000",
+        "unit": "kbps"
+      }
+    ],
+    "difficulty": "medium",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "For the corporate slice, ensure the guaranteed downlink capacity can support 50 concurrent video‑conference streams, each needing 150 kbps.",
+    "characteristics": [
+      {
+        "name": "Downlink throughput per network slice: Guaranteed downlink throughput quota",
+        "value": "7500",
+        "unit": "kbps"
+      }
+    ],
+    "difficulty": "hard",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "Set the maximum downlink capacity for the enterprise slice to 150,000 kbps.",
+    "characteristics": [
+      {
+        "name": "Downlink throughput per network slice: Maximum downlink throughput",
+        "value": "150000",
+        "unit": "kbps"
+      }
+    ],
+    "difficulty": "easy",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "We need the slice serving video streaming to not exceed a total downlink rate of 200 Mbps across all users.",
+    "characteristics": [
+      {
+        "name": "Downlink throughput per network slice: Maximum downlink throughput",
+        "value": "200000",
+        "unit": "kbps"
+      }
+    ],
+    "difficulty": "medium",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "The new IoT slice must be limited so that the aggregate downlink traffic never goes beyond 0.1 Gbps.",
+    "characteristics": [
+      {
+        "name": "Downlink throughput per network slice: Maximum downlink throughput",
+        "value": "100000",
+        "unit": "kbps"
+      }
+    ],
+    "difficulty": "hard",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "Please configure the maximum downlink throughput per UE to 85,000 kbps.",
+    "characteristics": [
+      {
+        "name": "Downlink maximum throughput per UE: Maximum downlink throughput per UE value",
+        "value": "85000",
+        "unit": "kbps"
+      }
+    ],
+    "difficulty": "easy",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "For our premium subscriber class we need each user to get at least 65 Mbps downlink; set the per‑UE max accordingly.",
+    "characteristics": [
+      {
+        "name": "Downlink maximum throughput per UE: Maximum downlink throughput per UE value",
+        "value": "65000",
+        "unit": "kbps"
+      }
+    ],
+    "difficulty": "medium",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "The new live‑gaming service streams at 12 Mbps per player, and we must guarantee that no single UE exceeds its allocated downlink capacity; adjust the maximum downlink throughput per UE to match this requirement.",
+    "characteristics": [
+      {
+        "name": "Downlink maximum throughput per UE: Maximum downlink throughput per UE value",
+        "value": "12000",
+        "unit": "kbps"
+      }
+    ],
+    "difficulty": "hard",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "Please configure the 5G slice for our enterprise devices to use Service Category 2 as the downlink maximum throughput per UE.",
+    "characteristics": [
+      {
+        "name": "Downlink maximum throughput per UE: Service category",
+        "value": "Service Category 2",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "easy",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "For the enhanced mobile broadband (eMBB) slice, assign the medium‑throughput service tier so that each user equipment gets the appropriate downlink maximum throughput.",
+    "characteristics": [
+      {
+        "name": "Downlink maximum throughput per UE: Service category",
+        "value": "Service Category 2",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "medium",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "Our premium video streaming customers require the highest possible downlink capacity; set the UE downlink limit to the top service category in the network slice.",
+    "characteristics": [
+      {
+        "name": "Downlink maximum throughput per UE: Service category",
+        "value": "Service Category 1",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "hard",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "Please enable the Energy Efficiency KPI for our eMBB slice – it must be active (value 1).",
+    "characteristics": [
+      {
+        "name": "Energy efficiency: Network slice energy efficiency KPI",
+        "value": "1",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "easy",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "In line with 3GPP Release 17, the slice has to satisfy the energy‑efficiency KPI, so set the KPI flag to indicate compliance.",
+    "characteristics": [
+      {
+        "name": "Energy efficiency: Network slice energy efficiency KPI",
+        "value": "1",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "medium",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "Since the low‑power IoT slice already stays under the power‑per‑throughput limit, we want to turn off its energy‑efficiency KPI monitoring.",
+    "characteristics": [
+      {
+        "name": "Energy efficiency: Network slice energy efficiency KPI",
+        "value": "0",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "hard",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "Configure this 5G slice to enable multicast group communication – we need value 1.",
+    "characteristics": [
+      {
+        "name": "Group communication support",
+        "value": "1",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "easy",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "The slice must be able to broadcast emergency alerts to every device in the coverage area, so set the group‑communication mode accordingly.",
+    "characteristics": [
+      {
+        "name": "Group communication support",
+        "value": "2",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "medium",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "For the vehicle‑to‑everything platooning service, the slice should let cars share synchronized status updates with the platoon leader and peers without opening separate unicast links.",
+    "characteristics": [
+      {
+        "name": "Group communication support",
+        "value": "1",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "hard",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "Please configure the network slice so that its maximum supported packet size is 1500 bytes.",
+    "characteristics": [
+      {
+        "name": "Maximum supported packet size",
+        "value": "1500",
+        "unit": "Bytes"
+      }
+    ],
+    "difficulty": "easy",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "The slice should be able to transport full Ethernet frames without any fragmentation, which means the MTU must be at least the standard 1500‑byte payload.",
+    "characteristics": [
+      {
+        "name": "Maximum supported packet size",
+        "value": "1500",
+        "unit": "Bytes"
+      }
+    ],
+    "difficulty": "medium",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "For our URLLC services we need jumbo‑frame capability; the slice must handle packets up to 9 KB in size.",
+    "characteristics": [
+      {
+        "name": "Maximum supported packet size",
+        "value": "9000",
+        "unit": "Bytes"
+      }
+    ],
+    "difficulty": "hard",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "Please enable the mission‑critical flag for this slice; set it to 1.",
+    "characteristics": [
+      {
+        "name": "Mission critical support",
+        "value": "1",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "easy",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "We need this slice to be treated as high priority for both control‑plane and user‑plane decisions because it carries a mission‑critical service for our enterprise client.",
+    "characteristics": [
+      {
+        "name": "Mission critical support",
+        "value": "1",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "medium",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "The SLA for this slice requires no latency degradation under any congestion scenario, as it supports emergency response communications.",
+    "characteristics": [
+      {
+        "name": "Mission critical support",
+        "value": "1",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "hard",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "Please activate mission‑critical support with capability 1 enabled.",
+    "characteristics": [
+      {
+        "name": "Mission critical support: Mission-critical capability support",
+        "value": "1",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "easy",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "We require the network to support rapid failover for our emergency response units, which maps to capability 2.",
+    "characteristics": [
+      {
+        "name": "Mission critical support: Mission-critical capability support",
+        "value": "2",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "medium",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "The system must automatically switch traffic to a secondary route and maintain load balancing during any fault to keep mission‑critical applications running, implying both redundancy and load‑balancing capabilities.",
+    "characteristics": [
+      {
+        "name": "Mission critical support: Mission-critical capability support",
+        "value": "0,2",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "hard",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "Please configure this slice with mission‑critical support turned off – we don’t need any MC services (set it to 0).",
+    "characteristics": [
+      {
+        "name": "Mission critical support: Mission-critical service support",
+        "value": "0",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "easy",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "We need this slice to carry mission‑critical push‑to‑talk traffic, so enable the appropriate MC support flag.",
+    "characteristics": [
+      {
+        "name": "Mission critical support: Mission-critical service support",
+        "value": "1",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "medium",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "The public‑safety slice must interoperate with existing mission‑critical video and data streams, providing full MC functionality across all services.",
+    "characteristics": [
+      {
+        "name": "Mission critical support: Mission-critical service support",
+        "value": "2",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "hard",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "Please enable MMTel on the new slice; we need it turned on (value 1).",
+    "characteristics": [
+      {
+        "name": "MMTel support",
+        "value": "1",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "easy",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "The slice must be GSMA PRD NG.114 compliant for multimedia telephony, meaning MMTel must be present.",
+    "characteristics": [
+      {
+        "name": "MMTel support",
+        "value": "1",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "medium",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "Since we are only offering basic circuit‑switched fallback, the slice should not include IMS/MMTel capabilities.",
+    "characteristics": [
+      {
+        "name": "MMTel support",
+        "value": "0",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "hard",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "Please turn on NB‑IoT support for the new IoT slice; we need the NB‑IoT flag set to enabled.",
+    "characteristics": [
+      {
+        "name": "NB-IoT support",
+        "value": "1",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "easy",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "The slice must serve low‑power, wide‑area sensors, so make sure NB‑IoT capability is active in the RAN.",
+    "characteristics": [
+      {
+        "name": "NB-IoT support",
+        "value": "1",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "medium",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "For the upcoming high‑definition video streaming slice, do not allocate any NB‑IoT resources.",
+    "characteristics": [
+      {
+        "name": "NB-IoT support",
+        "value": "0",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "hard",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "Please ensure that the Network Slice Customer supplies the UPF and UDM functions for our new eMBB slice.",
+    "characteristics": [
+      {
+        "name": "Network functions owned by Network Slice Customer",
+        "value": "UPF, UDM",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "easy",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "For the upcoming private network slice, the client will handle core authentication and subscriber data, so we need the AUSF and UDM functions from them.",
+    "characteristics": [
+      {
+        "name": "Network functions owned by Network Slice Customer",
+        "value": "AUSF, UDM",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "medium",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "The slice will be entirely operated by the tenant, covering both data plane forwarding and all essential control plane services, leaving only the RAN under our control.",
+    "characteristics": [
+      {
+        "name": "Network functions owned by Network Slice Customer",
+        "value": "UPF, SMF, AUSF, UDM",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "hard",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "Please configure the slice to allow up to 120000 simultaneous PDU sessions.",
+    "characteristics": [
+      {
+        "name": "Maximum number of PDU sessions",
+        "value": "120000",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "easy",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "The enterprise slice must be sized for roughly one hundred thousand concurrent PDU sessions during peak demand.",
+    "characteristics": [
+      {
+        "name": "Maximum number of PDU sessions",
+        "value": "100000",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "medium",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "Considering roaming partners and local breakout traffic, we need the slice to handle the typical city‑wide load, which we estimate at about 250k active PDU sessions when EPS PDNs are included.",
+    "characteristics": [
+      {
+        "name": "Maximum number of PDU sessions",
+        "value": "250000",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "hard",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "Enable EPS counting for the maximum number of PDU sessions; set the flag to 1.",
+    "characteristics": [
+      {
+        "name": "Maximum number of PDU sessions: EPS counting required",
+        "value": "1",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "easy",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "The PDU‑session limit calculation should include PDN connections tied to the APN that maps to our slice's DNN/S‑NSSAI, so EPS counting must be turned on.",
+    "characteristics": [
+      {
+        "name": "Maximum number of PDU sessions: EPS counting required",
+        "value": "1",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "medium",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "For this slice we do not want EPS‑based session accounting; the counter should ignore PDN links, i.e., EPS counting not required.",
+    "characteristics": [
+      {
+        "name": "Maximum number of PDU sessions: EPS counting required",
+        "value": "0",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "hard",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "Please enable counting of LBO PDU sessions – set the flag to Yes.",
+    "characteristics": [
+      {
+        "name": "Maximum number of PDU sessions: LBO PDU Sessions Counting required",
+        "value": "1",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "easy",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "For the upcoming release, we need the system to ignore LBO PDU sessions when calculating the max PDU sessions limit.",
+    "characteristics": [
+      {
+        "name": "Maximum number of PDU sessions: LBO PDU Sessions Counting required",
+        "value": "0",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "medium",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "The capacity‑planning team wants the maximum PDU‑session metric to reflect only regular sessions, not any LBO‑initiated ones.",
+    "characteristics": [
+      {
+        "name": "Maximum number of PDU sessions: LBO PDU Sessions Counting required",
+        "value": "0",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "hard",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "We need the slice to accommodate up to 100,000 UEs simultaneously.",
+    "characteristics": [
+      {
+        "name": "Maximum number of UEs",
+        "value": "100000",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "easy",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "The slice should be able to serve roughly 150k user equipments at peak hours, so set the maximum UE count accordingly.",
+    "characteristics": [
+      {
+        "name": "Maximum number of UEs",
+        "value": "150000",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "medium",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "For the upcoming stadium event, we anticipate a crowd of 70,000 spectators, each with a device, but only about 70% will be active on the network at any given moment; therefore, the slice must support the maximum simultaneous UEs required.",
+    "characteristics": [
+      {
+        "name": "Maximum number of UEs",
+        "value": "49000",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "hard",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "Activate EPS counting for UE statistics in this network slice – the flag should be set to 1.",
+    "characteristics": [
+      {
+        "name": "Maximum number of UEs: EPS counting required",
+        "value": "1",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "easy",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "For the slice we need to count only UEs that have at least one active PDN connection, so EPS counting must be enabled.",
+    "characteristics": [
+      {
+        "name": "Maximum number of UEs: EPS counting required",
+        "value": "1",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "medium",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "We do not want EPS‑based UE counting in this slice; only the basic UE count is required, so disable EPS counting.",
+    "characteristics": [
+      {
+        "name": "Maximum number of UEs: EPS counting required",
+        "value": "0",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "hard",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "Enable counting of roaming UEs in the maximum UE calculation.",
+    "characteristics": [
+      {
+        "name": "Maximum number of UEs: Roaming UEs Counting required",
+        "value": "1",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "easy",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "Set the system so that roaming subscribers are not considered when enforcing the UE limit.",
+    "characteristics": [
+      {
+        "name": "Maximum number of UEs: Roaming UEs Counting required",
+        "value": "0",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "medium",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "Our capacity policy only applies to domestic devices; any visited users should be excluded from the UE tally.",
+    "characteristics": [
+      {
+        "name": "Maximum number of UEs: Roaming UEs Counting required",
+        "value": "0",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "hard",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "Please configure the slice to expose two availability KPIs for performance monitoring.",
+    "characteristics": [
+      {
+        "name": "Performance monitoring: Availability",
+        "value": "2",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "easy",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "We require that the slice have at least one KQI for availability monitoring; otherwise the slice should be considered unsupported.",
+    "characteristics": [
+      {
+        "name": "Performance monitoring: Availability",
+        "value": "1",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "medium",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "The network slice must include availability monitoring; if the list of KQIs/KPIs is empty, the slice's performance monitoring attribute should be disabled.",
+    "characteristics": [
+      {
+        "name": "Performance monitoring: Availability",
+        "value": "0",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "hard",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "Please configure the performance monitoring sample frequency to 1 for our voice services.",
+    "characteristics": [
+      {
+        "name": "Performance monitoring: Monitoring sample frequency",
+        "value": "1",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "easy",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "We want the KQI measurements for our broadband offering to be collected on a half‑hourly basis.",
+    "characteristics": [
+      {
+        "name": "Performance monitoring: Monitoring sample frequency",
+        "value": "1",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "medium",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "According to our SLA, all NSP‑provided communication services must have their performance KPIs sampled as often as technically feasible, essentially continuous monitoring.",
+    "characteristics": [
+      {
+        "name": "Performance monitoring: Monitoring sample frequency",
+        "value": "2",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "hard",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "Please ensure the network slice includes the availability prediction KPI with identifier 2.",
+    "characteristics": [
+      {
+        "name": "Performance prediction: Availability",
+        "value": "2",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "easy",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "We require the slice to expose availability prediction for the first two KQIs, i.e., IDs 0 and 1.",
+    "characteristics": [
+      {
+        "name": "Performance prediction: Availability",
+        "value": "0,1",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "medium",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "The slice should support predictive analytics for all availability-related metrics, covering both baseline and advanced levels, which correspond to the full set of availability KPIs.",
+    "characteristics": [
+      {
+        "name": "Performance prediction: Availability",
+        "value": "0,1,2",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "hard",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "Please configure the system to deliver KPI prediction values once per hour.",
+    "characteristics": [
+      {
+        "name": "Performance prediction: Prediction frequency",
+        "value": "1",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "easy",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "We’d like the performance predictor to output forecasts twice daily, aligning with our morning and evening reviews.",
+    "characteristics": [
+      {
+        "name": "Performance prediction: Prediction frequency",
+        "value": "2",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "medium",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "During off‑peak periods the network should suppress any predictive KPI updates, only sending them when traffic exceeds 80% of capacity.",
+    "characteristics": [
+      {
+        "name": "Performance prediction: Prediction frequency",
+        "value": "0",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "hard",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "Please configure the slice to include GNSS and RTT positioning, i.e., methods 0 and 2.",
+    "characteristics": [
+      {
+        "name": "Positioning support: Availability",
+        "value": "0,2",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "easy",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "We require the slice to expose OTDOA positioning capability; ensure the positioning set includes the corresponding identifier.",
+    "characteristics": [
+      {
+        "name": "Positioning support: Availability",
+        "value": "1",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "medium",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "Since this slice will serve autonomous driving use‑cases, it must expose the full suite of positioning techniques supported by the network.",
+    "characteristics": [
+      {
+        "name": "Positioning support: Availability",
+        "value": "0,1,2",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "hard",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "Please configure the positioning module so that the device can request location information at the highest allowed rate, i.e., set the prediction frequency to 2.",
+    "characteristics": [
+      {
+        "name": "Positioning support: Prediction frequency",
+        "value": "2",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "easy",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "We need to cap location queries to roughly one request per second; adjust the positioning support to reflect a moderate prediction frequency.",
+    "characteristics": [
+      {
+        "name": "Positioning support: Prediction frequency",
+        "value": "1",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "medium",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "For the new low‑cost plan, location data should only be available on an occasional basis, not continuously—set the prediction frequency accordingly.",
+    "characteristics": [
+      {
+        "name": "Positioning support: Prediction frequency",
+        "value": "0",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "hard",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "Please configure the new URLLC slice to provide positioning accuracy of ±0.01 m.",
+    "characteristics": [
+      {
+        "name": "Positioning support: Accuracy",
+        "value": "0.01",
+        "unit": "meter"
+      }
+    ],
+    "difficulty": "easy",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "The upcoming smart‑factory slice must keep the location error below one centimeter for robotic arm coordination.",
+    "characteristics": [
+      {
+        "name": "Positioning support: Accuracy",
+        "value": "0.009",
+        "unit": "meter"
+      }
+    ],
+    "difficulty": "medium",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "Our drone delivery service demands that the positioning solution stay within a few centimeters error margin to ensure safe package drop zones.",
+    "characteristics": [
+      {
+        "name": "Positioning support: Accuracy",
+        "value": "0.03",
+        "unit": "meter"
+      }
+    ],
+    "difficulty": "hard",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "Please allocate the slice to operate on the n77 band.",
+    "characteristics": [
+      {
+        "name": "Radio spectrum",
+        "value": "n77",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "easy",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "The slice must cover the 3.5 GHz mid‑band spectrum we currently use for enhanced mobile broadband.",
+    "characteristics": [
+      {
+        "name": "Radio spectrum",
+        "value": "n78",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "medium",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "Our legacy public‑safety devices only support the 2 GHz band, so the slice should be confined to that spectrum.",
+    "characteristics": [
+      {
+        "name": "Radio spectrum",
+        "value": "n1",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "hard",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "Please enable the highest level of monitoring and analytics (value 2) on the new 5G slice.",
+    "characteristics": [
+      {
+        "name": "Monitoring and analytics",
+        "value": "2",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "easy",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "We require a basic telemetry interface exposed through the NEF so we can collect performance stats, but no deep analytics.",
+    "characteristics": [
+      {
+        "name": "Monitoring and analytics",
+        "value": "1",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "medium",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "Our service guarantee mandates that any degradation be traceable; ensure the network supplies root‑cause analysis data via the exposure function.",
+    "characteristics": [
+      {
+        "name": "Monitoring and analytics",
+        "value": "2",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "hard",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "Please set the Session and Service Continuity mode to 1 for all subscriber sessions so that the IP address is retained at all times.",
+    "characteristics": [
+      {
+        "name": "Session and Service Continuity support",
+        "value": "1",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "easy",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "Our policy requires that the UE keep its existing IP address during any mobility event, meaning the network must preserve the connectivity service.",
+    "characteristics": [
+      {
+        "name": "Session and Service Continuity support",
+        "value": "1",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "medium",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "We need the network to allow user‑plane changes without any perceived loss of service for the UE, even if the PDU session anchor moves and the IP address changes.",
+    "characteristics": [
+      {
+        "name": "Session and Service Continuity support",
+        "value": "3",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "hard",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "We need the new eMBB slice to allow concurrent usage with other slices; set its simultaneous use class to 1.",
+    "characteristics": [
+      {
+        "name": "Simultaneous use of the network slice",
+        "value": "1",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "easy",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "The upcoming URLLC slice must be shareable with the existing massive IoT slice, but not with any other services. Assign the appropriate simultaneous‑use class.",
+    "characteristics": [
+      {
+        "name": "Simultaneous use of the network slice",
+        "value": "2",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "medium",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "Our network will run a mixed‑traffic slice for premium customers that should operate alongside best‑effort traffic without any performance degradation. Ensure the slice’s simultaneous use setting reflects full coexistence.",
+    "characteristics": [
+      {
+        "name": "Simultaneous use of the network slice",
+        "value": "0",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "hard",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "Please configure the UE to use Service Category 2 for simultaneous slice usage.",
+    "characteristics": [
+      {
+        "name": "Simultaneous use of the network slice: Service category",
+        "value": "Service Category 2",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "easy",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "The device must be placed in the same simultaneous‑use class as our high‑priority video streaming group, which is mapped to Service Category 3 in the policy table.",
+    "characteristics": [
+      {
+        "name": "Simultaneous use of the network slice: Service category",
+        "value": "Service Category 3",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "medium",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "We need this subscriber to have the same concurrent service capabilities as the enterprise broadband tier; according to our configuration, that corresponds to Service Category 1.",
+    "characteristics": [
+      {
+        "name": "Simultaneous use of the network slice: Service category",
+        "value": "Service Category 1",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "hard",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "Assign 5QI 2 to the new video streaming slice.",
+    "characteristics": [
+      {
+        "name": "Slice quality of service: 3GPP 5QI",
+        "value": "2",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "easy",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "Create a URLLC slice for factory automation and use the 5QI that provides the strictest latency and reliability guarantees.",
+    "characteristics": [
+      {
+        "name": "Slice quality of service: 3GPP 5QI",
+        "value": "1",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "medium",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "Set up a massive IoT slice with the least stringent QoS requirements, using the appropriate 5QI.",
+    "characteristics": [
+      {
+        "name": "Slice quality of service: 3GPP 5QI",
+        "value": "3",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "hard",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "Please set the Resource Type to 0 for the custom 5QI value we have chosen.",
+    "characteristics": [
+      {
+        "name": "Slice quality of service: Resource Type",
+        "value": "0",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "easy",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "We need a semi‑permanent allocation for the GFBR on this slice, so apply the appropriate Resource Type.",
+    "characteristics": [
+      {
+        "name": "Slice quality of service: Resource Type",
+        "value": "1",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "medium",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "Our SLA demands that the guaranteed flow bit rate is always exclusively allocated, never shared with other traffic – select the Resource Type that guarantees permanent resources.",
+    "characteristics": [
+      {
+        "name": "Slice quality of service: Resource Type",
+        "value": "2",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "hard",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "Please configure the priority level of the 5G slice dedicated to video streaming to 30.",
+    "characteristics": [
+      {
+        "name": "Slice quality of service: Priority Level",
+        "value": "30",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "easy",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "For our mission‑critical IoT slice we want the second‑highest scheduling priority, which should correspond to a priority level of 5.",
+    "characteristics": [
+      {
+        "name": "Slice quality of service: Priority Level",
+        "value": "5",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "medium",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "Assign the ultra‑reliable low‑latency traffic the utmost scheduling precedence over all other traffic in the network.",
+    "characteristics": [
+      {
+        "name": "Slice quality of service: Priority Level",
+        "value": "1",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "hard",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "Set the packet delay budget for 5QI 9 to 20 ms for both uplink and downlink.",
+    "characteristics": [
+      {
+        "name": "Slice quality of service: Packet Delay Budget",
+        "value": "20",
+        "unit": "Milliseconds"
+      }
+    ],
+    "difficulty": "easy",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "We need to guarantee that the end‑to‑end latency on the N6 interface does not exceed 30 ms for the low‑latency slice, so configure the PDB accordingly.",
+    "characteristics": [
+      {
+        "name": "Slice quality of service: Packet Delay Budget",
+        "value": "30",
+        "unit": "Milliseconds"
+      }
+    ],
+    "difficulty": "medium",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "Our new AR/VR service requires the minimum possible latency; please configure the scheduling parameters so that the packet delay budget is effectively disabled.",
+    "characteristics": [
+      {
+        "name": "Slice quality of service: Packet Delay Budget",
+        "value": "0",
+        "unit": "Milliseconds"
+      }
+    ],
+    "difficulty": "hard",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "Please configure the URLLC slice (5QI 85) so that the packet error rate never exceeds 0.00001.",
+    "characteristics": [
+      {
+        "name": "Slice quality of service: Packet Error Rate",
+        "value": "0.00001",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "easy",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "For the eMBB service using 5QI 78, the PER must be kept below one‑thousandth of the transmitted packets.",
+    "characteristics": [
+      {
+        "name": "Slice quality of service: Packet Error Rate",
+        "value": "0.001",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "medium",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "In our delay‑critical GBR flow (5QI 46), packets arriving later than the PDB count as lost; the total PER—including these late packets—has to stay under two‑hundredths of a percent.",
+    "characteristics": [
+      {
+        "name": "Slice quality of service: Packet Error Rate",
+        "value": "0.0002",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "hard",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "Please configure the averaging window for the GBR QoS flow to 100 ms.",
+    "characteristics": [
+      {
+        "name": "Slice quality of service: Averaging Window",
+        "value": "100",
+        "unit": "Milliseconds"
+      }
+    ],
+    "difficulty": "easy",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "For 5QI value 78 we require a non‑default averaging window of 250 ms to calculate GFBR and MFBR.",
+    "characteristics": [
+      {
+        "name": "Slice quality of service: Averaging Window",
+        "value": "250",
+        "unit": "Milliseconds"
+      }
+    ],
+    "difficulty": "medium",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "Our ultra‑reliable low‑latency slice should compute the guaranteed bitrate over a very brief interval, roughly 0.05 seconds.",
+    "characteristics": [
+      {
+        "name": "Slice quality of service: Averaging Window",
+        "value": "50",
+        "unit": "Milliseconds"
+      }
+    ],
+    "difficulty": "hard",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "Please configure the Maximum Data Burst Volume for the GBR QoS flow (5QI=85) to exactly 1 048 576 bytes.",
+    "characteristics": [
+      {
+        "name": "Slice quality of service: Maximum Data Burst Volume",
+        "value": "1048576",
+        "unit": "Bytes"
+      }
+    ],
+    "difficulty": "easy",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "For our delay‑critical slice we require that the network can deliver up to approximately 2 MiB of data within the 5G‑AN PDB; set the MDBV accordingly.",
+    "characteristics": [
+      {
+        "name": "Slice quality of service: Maximum Data Burst Volume",
+        "value": "2097152",
+        "unit": "Bytes"
+      }
+    ],
+    "difficulty": "medium",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "The new industrial automation service must limit any burst to only a few megabytes per PDB interval to keep buffer overruns down; use the minimal non‑default burst size that satisfies this, i.e., the smallest standard MDBV above zero.",
+    "characteristics": [
+      {
+        "name": "Slice quality of service: Maximum Data Burst Volume",
+        "value": "524288",
+        "unit": "Bytes"
+      }
+    ],
+    "difficulty": "hard",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "Please allocate a guaranteed downlink flow bit rate of 3000 kbps for the GBR slice supporting voice over LTE.",
+    "characteristics": [
+      {
+        "name": "Slice quality of service: Guaranteed Flow Bit Rate - Downlink",
+        "value": "3000",
+        "unit": "kbps"
+      }
+    ],
+    "difficulty": "easy",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "The GBR QoS flow for the IoT slice must guarantee at least 1.5 Mbps downlink, so set the GFBR‑DL accordingly.",
+    "characteristics": [
+      {
+        "name": "Slice quality of service: Guaranteed Flow Bit Rate - Downlink",
+        "value": "1500",
+        "unit": "kbps"
+      }
+    ],
+    "difficulty": "medium",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "For the premium video‑on‑demand slice we need to sustain 1080p streaming at 30 fps, which requires roughly 4.8 Mbps downlink; configure the guaranteed flow bit rate to cover this demand.",
+    "characteristics": [
+      {
+        "name": "Slice quality of service: Guaranteed Flow Bit Rate - Downlink",
+        "value": "4800",
+        "unit": "kbps"
+      }
+    ],
+    "difficulty": "hard",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "Please configure the GBR slice to guarantee an uplink flow bit rate of 5,000 kbps.",
+    "characteristics": [
+      {
+        "name": "Slice quality of service: Guaranteed Flow Bit Rate - Uplink",
+        "value": "5000",
+        "unit": "kbps"
+      }
+    ],
+    "difficulty": "easy",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "We need the guaranteed uplink bandwidth for the GBR QoS flow to be at least 2 Mbps to support our voice‑over‑LTE services.",
+    "characteristics": [
+      {
+        "name": "Slice quality of service: Guaranteed Flow Bit Rate - Uplink",
+        "value": "2000",
+        "unit": "kbps"
+      }
+    ],
+    "difficulty": "medium",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "The slice must sustain a high‑definition video uplink stream (1080p@30 fps), which translates to roughly a 3 Mbps guaranteed flow rate.",
+    "characteristics": [
+      {
+        "name": "Slice quality of service: Guaranteed Flow Bit Rate - Uplink",
+        "value": "3000",
+        "unit": "kbps"
+      }
+    ],
+    "difficulty": "hard",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "Please configure the downlink maximum flow bit rate for the GBR QoS flow to 5 Mbps.",
+    "characteristics": [
+      {
+        "name": "Slice quality of service: Maximum Flow Bit Rate - Downlink",
+        "value": "5000",
+        "unit": "kbps"
+      }
+    ],
+    "difficulty": "easy",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "We require a guaranteed downlink throughput of 2 Mbps for the video streaming slice, so set the MFBR‑DL accordingly.",
+    "characteristics": [
+      {
+        "name": "Slice quality of service: Maximum Flow Bit Rate - Downlink",
+        "value": "2000",
+        "unit": "kbps"
+      }
+    ],
+    "difficulty": "medium",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "For the IoT sensor slice, the downlink MFBR should be about one‑tenth of the uplink rate, which is 2 Mbps.",
+    "characteristics": [
+      {
+        "name": "Slice quality of service: Maximum Flow Bit Rate - Downlink",
+        "value": "200",
+        "unit": "kbps"
+      }
+    ],
+    "difficulty": "hard",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "Please configure the GBR flow's uplink maximum bit rate to 2500 kbps.",
+    "characteristics": [
+      {
+        "name": "Slice quality of service: Maximum Flow Bit Rate - Uplink",
+        "value": "2500",
+        "unit": "kbps"
+      }
+    ],
+    "difficulty": "easy",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "For the 5QI=85 slice, the uplink capacity must not exceed 4 Mbps.",
+    "characteristics": [
+      {
+        "name": "Slice quality of service: Maximum Flow Bit Rate - Uplink",
+        "value": "4000",
+        "unit": "kbps"
+      }
+    ],
+    "difficulty": "medium",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "Our new IoT telemetry service needs to handle bursty uplink traffic up to 12 megabits per second for critical alerts, so set the MFBR accordingly.",
+    "characteristics": [
+      {
+        "name": "Slice quality of service: Maximum Flow Bit Rate - Uplink",
+        "value": "12000",
+        "unit": "kbps"
+      }
+    ],
+    "difficulty": "hard",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "Set the maximum packet loss rate for both uplink and downlink voice GBR flows to 0 %.",
+    "characteristics": [
+      {
+        "name": "Slice quality of service parameters: Maximum Packet Loss Rate",
+        "value": "0",
+        "unit": "Percentage"
+      }
+    ],
+    "difficulty": "easy",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "The network should limit the downlink packet loss for voice GBR traffic to no more than one lost packet per hundred packets.",
+    "characteristics": [
+      {
+        "name": "Slice quality of service parameters: Maximum Packet Loss Rate",
+        "value": "1",
+        "unit": "Percentage"
+      }
+    ],
+    "difficulty": "medium",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "According to our SLA, the voice slice must keep packet loss below the 2 % ceiling stipulated for high‑priority conversational services.",
+    "characteristics": [
+      {
+        "name": "Slice quality of service parameters: Maximum Packet Loss Rate",
+        "value": "2",
+        "unit": "Percentage"
+      }
+    ],
+    "difficulty": "hard",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "Please turn on non‑IP traffic support on the new edge routers; we need it enabled (value 1).",
+    "characteristics": [
+      {
+        "name": "Support for non-IP traffic",
+        "value": "1",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "easy",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "The upcoming deployment must allow Ethernet‑only sessions to be forwarded without IP encapsulation, so make sure the devices have non‑IP session support active.",
+    "characteristics": [
+      {
+        "name": "Support for non-IP traffic",
+        "value": "1",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "medium",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "Our plant's control network still runs on raw Ethernet frames; the replacement switches have to handle that traffic, otherwise the SCADA link will break.",
+    "characteristics": [
+      {
+        "name": "Support for non-IP traffic",
+        "value": "1",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "hard",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "The new ultra‑reliable low‑latency slice must be capable of supporting devices moving at up to 2 km/h while preserving the defined QoS and seamless handover.",
+    "characteristics": [
+      {
+        "name": "Supported device velocity",
+        "value": "2",
+        "unit": "Kilometres per hour (km/h)"
+      }
+    ],
+    "difficulty": "easy",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "We need a slice that can keep the connection stable for cyclists, so the supported device speed should be roughly 1 km/h to satisfy the QoS requirements across different RATs.",
+    "characteristics": [
+      {
+        "name": "Supported device velocity",
+        "value": "1",
+        "unit": "Kilometres per hour (km/h)"
+      }
+    ],
+    "difficulty": "medium",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "The network slice should guarantee uninterrupted service for stationary IoT sensors, with only occasional foot traffic, implying a supported device velocity of essentially 0 km/h.",
+    "characteristics": [
+      {
+        "name": "Supported device velocity",
+        "value": "0",
+        "unit": "Kilometres per hour (km/h)"
+      }
+    ],
+    "difficulty": "hard",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "Please configure the PC5 synchronicity availability to 0.",
+    "characteristics": [
+      {
+        "name": "Synchronicity: Availability",
+        "value": "0",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "easy",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "We require a basic level of device synchronization over PC5 when the core network is unavailable, so set the availability to the low‑sync option.",
+    "characteristics": [
+      {
+        "name": "Synchronicity: Availability",
+        "value": "1",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "medium",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "The system must maintain timing coordination between all UE devices regardless of any network outage, effectively treating PC5 as continuously available for synchronization.",
+    "characteristics": [
+      {
+        "name": "Synchronicity: Availability",
+        "value": "2",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "hard",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "Please configure the synchronicity accuracy to 0.000001 seconds.",
+    "characteristics": [
+      {
+        "name": "Synchronicity: Accuracy",
+        "value": "0.000001",
+        "unit": "Seconds"
+      }
+    ],
+    "difficulty": "easy",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "The system must keep the time drift under 1 millisecond.",
+    "characteristics": [
+      {
+        "name": "Synchronicity: Accuracy",
+        "value": "0.001",
+        "unit": "Seconds"
+      }
+    ],
+    "difficulty": "medium",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "Our SLA requires that the clock skew never exceeds 5 microseconds.",
+    "characteristics": [
+      {
+        "name": "Synchronicity: Accuracy",
+        "value": "0.000005",
+        "unit": "Seconds"
+      }
+    ],
+    "difficulty": "hard",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "We need the slice to support up to 50,000 devices per square kilometre.",
+    "characteristics": [
+      {
+        "name": "UE density",
+        "value": "50000",
+        "unit": "Number per km2"
+      }
+    ],
+    "difficulty": "easy",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "The target deployment area should be able to handle a density of at least 2×10⁵ users per km².",
+    "characteristics": [
+      {
+        "name": "UE density",
+        "value": "200000",
+        "unit": "Number per km2"
+      }
+    ],
+    "difficulty": "medium",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "We anticipate 3 million IoT sensors spread across a 10 km² industrial park, requiring the slice to sustain the sensor density.",
+    "characteristics": [
+      {
+        "name": "UE density",
+        "value": "300000",
+        "unit": "Number per km2"
+      }
+    ],
+    "difficulty": "hard",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "Please allocate a guaranteed uplink throughput of 5,000 kbps for the new IoT network slice.",
+    "characteristics": [
+      {
+        "name": "Uplink throughput per network slice: Guaranteed uplink throughput quota",
+        "value": "5000",
+        "unit": "kbps"
+      }
+    ],
+    "difficulty": "easy",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "The enterprise slice must provide at least 2 Mbps of uplink capacity for all GBR QoS flows combined.",
+    "characteristics": [
+      {
+        "name": "Uplink throughput per network slice: Guaranteed uplink throughput quota",
+        "value": "2000",
+        "unit": "kbps"
+      }
+    ],
+    "difficulty": "medium",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "Our video‑surveillance slice should sustain a minimum uplink floor that can carry ten HD camera streams, each requiring 300 kbps, without degradation.",
+    "characteristics": [
+      {
+        "name": "Uplink throughput per network slice: Guaranteed uplink throughput quota",
+        "value": "3000",
+        "unit": "kbps"
+      }
+    ],
+    "difficulty": "hard",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "Please configure the maximum uplink throughput for the enhanced Mobile Broadband (eMBB) slice to 150000 kbps.",
+    "characteristics": [
+      {
+        "name": "Uplink throughput per network slice: Maximum uplink throughput",
+        "value": "150000",
+        "unit": "kbps"
+      }
+    ],
+    "difficulty": "easy",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "The upcoming massive IoT slice should guarantee a minimum aggregate uplink capacity of 75 Mbps for all connected devices.",
+    "characteristics": [
+      {
+        "name": "Uplink throughput per network slice: Maximum uplink throughput",
+        "value": "75000",
+        "unit": "kbps"
+      }
+    ],
+    "difficulty": "medium",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "For the ultra‑reliable low‑latency communications (URLLC) slice, we need to provision enough uplink bandwidth to handle peak bursts of 0.2 Gbps across the slice.",
+    "characteristics": [
+      {
+        "name": "Uplink throughput per network slice: Maximum uplink throughput",
+        "value": "200000",
+        "unit": "kbps"
+      }
+    ],
+    "difficulty": "hard",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "Please configure the network so that each UE's maximum uplink throughput is limited to 1800 kbps.",
+    "characteristics": [
+      {
+        "name": "Uplink maximum throughput per UE: Maximum Uplink Throughput per UE value",
+        "value": "1800",
+        "unit": "kbps"
+      }
+    ],
+    "difficulty": "easy",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "The uplink capacity per user equipment should be capped at 2 Mbps.",
+    "characteristics": [
+      {
+        "name": "Uplink maximum throughput per UE: Maximum Uplink Throughput per UE value",
+        "value": "2000",
+        "unit": "kbps"
+      }
+    ],
+    "difficulty": "medium",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "According to the service category for Category 3 devices, the uplink should not surpass the 1.1 Mbps ceiling per UE.",
+    "characteristics": [
+      {
+        "name": "Uplink maximum throughput per UE: Maximum Uplink Throughput per UE value",
+        "value": "1100",
+        "unit": "kbps"
+      }
+    ],
+    "difficulty": "hard",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "Please configure the uplink maximum throughput for all IoT devices in Slice A to use Service Category 2.",
+    "characteristics": [
+      {
+        "name": "Uplink maximum throughput per UE: Service category",
+        "value": "Service Category 2",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "easy",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "For the video‑streaming network slice we require the highest uplink throughput tier that the system offers; assign the corresponding service category.",
+    "characteristics": [
+      {
+        "name": "Uplink maximum throughput per UE: Service category",
+        "value": "Service Category 3",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "medium",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "The low‑latency slice serving autonomous‑vehicle telemetry should be limited to a moderate uplink bandwidth level—neither the lowest nor the top tier—so pick the appropriate service class.",
+    "characteristics": [
+      {
+        "name": "Uplink maximum throughput per UE: Service category",
+        "value": "Service Category 2",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "hard",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "Enable user management openness for the slice so we can add, modify, or delete users as needed.",
+    "characteristics": [
+      {
+        "name": "User management openness",
+        "value": "1",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "easy",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "The network slice should let us control which of our subscriber base can access it, meaning we must be able to assign or revoke users on the fly.",
+    "characteristics": [
+      {
+        "name": "User management openness",
+        "value": "1",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "medium",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "We require a static allocation where the slice is bound to a predetermined list of devices and no further user changes are permitted after provisioning.",
+    "characteristics": [
+      {
+        "name": "User management openness",
+        "value": "0",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "hard",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "Configure the new CPE to provide direct Internet connectivity; set the data network access option to the value that represents unrestricted Internet access.",
+    "characteristics": [
+      {
+        "name": "Data network access: Data access per data network",
+        "value": "0",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "easy",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "The customer requires all user traffic to be routed through a secure VPN tunnel back to their private data center, so the data network access should reflect termination in a private network.",
+    "characteristics": [
+      {
+        "name": "Data network access: Data access per data network",
+        "value": "1",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "medium",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "We need a fully isolated deployment where none of the subscriber equipment can reach either the public Internet or any external private network; everything must stay inside the operator’s own core network.",
+    "characteristics": [
+      {
+        "name": "Data network access: Data access per data network",
+        "value": "2",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "hard",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "Configure the private data network termination to use tunnelling mechanism 1.",
+    "characteristics": [
+      {
+        "name": "Data network access: Tunnelling mechanism",
+        "value": "1",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "easy",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "Set the data network access to use the GTP-C tunnelling method for LTE interworking.",
+    "characteristics": [
+      {
+        "name": "Data network access: Tunnelling mechanism",
+        "value": "0",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "medium",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "Since the private network will handle termination of data sessions, apply the default tunnelling configuration.",
+    "characteristics": [
+      {
+        "name": "Data network access: Tunnelling mechanism",
+        "value": "2",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "hard",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "Please enable the data network access for Local Breakout while the subscriber is roaming.",
+    "characteristics": [
+      {
+        "name": "Data network access: LBO Allowed",
+        "value": "1",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "easy",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "We need to make sure that roaming users cannot use the local breakout data path, effectively disabling it.",
+    "characteristics": [
+      {
+        "name": "Data network access: LBO Allowed",
+        "value": "0",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "medium",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "The policy should prevent any data traffic from being routed locally when the device is on a visited network, so LBO must be turned off for roaming sessions.",
+    "characteristics": [
+      {
+        "name": "Data network access: LBO Allowed",
+        "value": "0",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "hard",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "Please set the V2X‑PC5 network slice to operate in scheduled mode – use the value 1 for this attribute.",
+    "characteristics": [
+      {
+        "name": "V2X-PC5 Network Scheduled Mode",
+        "value": "1",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "easy",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "Our upcoming V2X service will run without any PC5 scheduling; it should behave as a best‑effort slice, so the scheduled‑mode flag must be disabled.",
+    "characteristics": [
+      {
+        "name": "V2X-PC5 Network Scheduled Mode",
+        "value": "0",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "medium",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "For the safety‑critical platooning use case we need deterministic latency on the PC5 interface, therefore the slice must be provisioned with the highest level of PC5 scheduling support.",
+    "characteristics": [
+      {
+        "name": "V2X-PC5 Network Scheduled Mode",
+        "value": "2",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "hard",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "Please set the default NR PC5 communication mode to 1 for the network‑scheduled PC5 operation.",
+    "characteristics": [
+      {
+        "name": "V2X-PC5 Network Scheduled Mode: Default mode of communication for NR PC5",
+        "value": "1",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "easy",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "Configure the PC5 scheduled mode to use the third option defined for NR PC5 defaults.",
+    "characteristics": [
+      {
+        "name": "V2X-PC5 Network Scheduled Mode: Default mode of communication for NR PC5",
+        "value": "2",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "medium",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "Our V2X rollout needs the primary NR PC5 mode that handles scheduled broadcasts without LTE fallback.",
+    "characteristics": [
+      {
+        "name": "V2X-PC5 Network Scheduled Mode: Default mode of communication for NR PC5",
+        "value": "0",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "hard",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "We need the slice to guarantee a maximum one‑way latency of 2 ms between the last UPF and the application server.",
+    "characteristics": [
+      {
+        "name": "Latency from (last) UPF to Application Server",
+        "value": "2",
+        "unit": "Milliseconds"
+      }
+    ],
+    "difficulty": "easy",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "The service must keep the latency from the final UPF to the backend server below 7 ms for all traffic.",
+    "characteristics": [
+      {
+        "name": "Latency from (last) UPF to Application Server",
+        "value": "7",
+        "unit": "Milliseconds"
+      }
+    ],
+    "difficulty": "medium",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "The slice must guarantee that the one‑way delay from the final UPF to the application server stays within a 1‑3 ms window, with the upper bound defining the slice's latency guarantee.",
+    "characteristics": [
+      {
+        "name": "Latency from (last) UPF to Application Server",
+        "value": "3",
+        "unit": "Milliseconds"
+      }
+    ],
+    "difficulty": "hard",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "Enable Network Slice Specific Authentication and Authorization for the upcoming eMBB slice; set the flag to 1.",
+    "characteristics": [
+      {
+        "name": "Network Slice Specific Authentication and Authorization (NSSAA) Required",
+        "value": "1",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "easy",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "For the new URLLC slice, we must enforce an extra AAA check beyond the standard subscriber authentication.",
+    "characteristics": [
+      {
+        "name": "Network Slice Specific Authentication and Authorization (NSSAA) Required",
+        "value": "1",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "medium",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "The slice we are provisioning for IoT devices will rely solely on the existing SIM‑based authentication; no additional AAA validation is needed.",
+    "characteristics": [
+      {
+        "name": "Network Slice Specific Authentication and Authorization (NSSAA) Required",
+        "value": "0",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "hard",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "Please turn on Multimedia Priority Service for the new video‑conferencing VLAN.",
+    "characteristics": [
+      {
+        "name": "Multimedia Priority Service",
+        "value": "1",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "easy",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "We need all streaming media traffic to be treated with higher precedence than regular data traffic on the campus backbone.",
+    "characteristics": [
+      {
+        "name": "Multimedia Priority Service",
+        "value": "1",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "medium",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "Run a baseline test with no priority for multimedia streams; keep MPS turned off during the experiment.",
+    "characteristics": [
+      {
+        "name": "Multimedia Priority Service",
+        "value": "0",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "hard",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "Please turn on Multimedia Priority Service and set its capability flag to 1.",
+    "characteristics": [
+      {
+        "name": "Multimedia Priority Service: Multimedia Priority Service capability support",
+        "value": "1",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "easy",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "Configure the MPS to support both low‑latency and high‑throughput modes, i.e., enable capabilities 0 and 1.",
+    "characteristics": [
+      {
+        "name": "Multimedia Priority Service: Multimedia Priority Service capability support",
+        "value": "0,1",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "medium",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "The operator requires full multimedia priority handling for voice and video streams, so all MPS capabilities should be activated.",
+    "characteristics": [
+      {
+        "name": "Multimedia Priority Service: Multimedia Priority Service capability support",
+        "value": "0,1",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "hard",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "Configure this network slice to support Multimedia Priority Service for MMTel voice only – set the MPS flag to 1.",
+    "characteristics": [
+      {
+        "name": "Multimedia Priority Service: Multimedia Priority Service support",
+        "value": "1",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "easy",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "The slice should prioritize both MMTel voice and video traffic, while data traffic can remain best‑effort; assign the appropriate MPS setting.",
+    "characteristics": [
+      {
+        "name": "Multimedia Priority Service: Multimedia Priority Service support",
+        "value": "2",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "medium",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "We need a generic data‑only slice with no priority handling for any MMTel services, effectively disabling Multimedia Priority Service.",
+    "characteristics": [
+      {
+        "name": "Multimedia Priority Service: Multimedia Priority Service support",
+        "value": "0",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "hard",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "Please provision the slice to use the LTE data network named 'PublicNet'.",
+    "characteristics": [
+      {
+        "name": "Supported data network",
+        "value": "PublicNet",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "easy",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "The new slice must connect to both the corporate IoT network and the public broadband service, which are identified as CorpIoTNet and PublicBroadband.",
+    "characteristics": [
+      {
+        "name": "Supported data network",
+        "value": "CorpIoTNet, PublicBroadband",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "medium",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "All user equipment in this slice should be restricted to the carrier's 5G core and the backup LTE fallback, without mentioning the network names directly.",
+    "characteristics": [
+      {
+        "name": "Supported data network",
+        "value": "5GCoreNet, LTEFallbackNet",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "hard",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "Please set the UE's service category to Service Category 1.",
+    "characteristics": [
+      {
+        "name": "Supported data network: Service category",
+        "value": "Service Category 1",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "easy",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "The subscriber should be treated as a premium user, so assign the corresponding service category from the supported data networks list.",
+    "characteristics": [
+      {
+        "name": "Supported data network: Service category",
+        "value": "Service Category 2",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "medium",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "For all IoT devices on the network, we need to apply the default low‑bandwidth data profile defined in our supported data networks.",
+    "characteristics": [
+      {
+        "name": "Supported data network: Service category",
+        "value": "Service Category 1",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "hard",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "We need to support up to 100,000 UEs that have at least one active PDU session or PDN connection on this slice.",
+    "characteristics": [
+      {
+        "name": "Maximum number of UEs with at least one PDU session/PDN connection",
+        "value": "100000",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "easy",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "The slice should be sized to handle roughly twice our present subscriber load, which translates to about 250,000 devices each maintaining at least one PDU/PDN connection.",
+    "characteristics": [
+      {
+        "name": "Maximum number of UEs with at least one PDU session/PDN connection",
+        "value": "250000",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "medium",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "Our architecture must not limit the slice when the network reaches its theoretical maximum UE density – about one million users could be simultaneously attached, each with at least one PDU session tied to the slice’s APN.",
+    "characteristics": [
+      {
+        "name": "Maximum number of UEs with at least one PDU session/PDN connection",
+        "value": "1000000",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "hard",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "Please enable V2X‑PC5 parameter provisioning on our 5G core and set the attribute to 1.",
+    "characteristics": [
+      {
+        "name": "V2X-PC5 parameter provisioning",
+        "value": "1",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "easy",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "Our V2X service requires full control‑plane provisioning for both NR and LTE PC5 interfaces; configure the V2X‑PC5 provisioning attribute accordingly.",
+    "characteristics": [
+      {
+        "name": "V2X-PC5 parameter provisioning",
+        "value": "2",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "medium",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "We want to prohibit any over‑the‑air parameter updates on the PC5 link for V2X devices, effectively disabling control‑plane provisioning.",
+    "characteristics": [
+      {
+        "name": "V2X-PC5 parameter provisioning",
+        "value": "0",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "hard",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "Please turn on PDU set support for the XR video service so that all PDUs belonging to a single frame are handled together within the same QoS flow.",
+    "characteristics": [
+      {
+        "name": "PDU Set support",
+        "value": "1",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "easy",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "We require the transport to treat the collection of PDUs that compose one XR slice as a single unit; make sure the network processes them with per‑PDU‑set granularity.",
+    "characteristics": [
+      {
+        "name": "PDU Set support",
+        "value": "1",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "medium",
+    "tier": "tier1",
+    "domain": null
+  },
+  {
+    "natural_language": "For the telemetry stream, handle each packet independently and do not group them; the network should ignore any relationship between successive PDUs.",
+    "characteristics": [
+      {
+        "name": "PDU Set support",
+        "value": "0",
+        "unit": "N/A"
+      }
+    ],
+    "difficulty": "hard",
+    "tier": "tier1",
+    "domain": null
+  }
+]
